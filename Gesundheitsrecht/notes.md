@@ -1,5 +1,8 @@
 # Notizen zum Gesundheitsrecht-Memo
 
+## zu erledigen
++ was ist ein amulantes Setting
+
 ## KVG
 ### Art. 32
 #### Abs. 1
@@ -45,6 +48,12 @@ Nicht zulässig und damit ungültig sind insbesondere folgende Massnahmen, ohne 
 
 #### Abs. 4
 Der Tarifvertrag bedarf der **Genehmigung durch die zuständige Kantonsregierung** oder, wenn er in der ganzen Schweiz gelten soll, durch den Bundesrat. Die Genehmigungsbehörde prüft, ob der Tarifvertrag mit dem Gesetz und dem Gebot der Wirtschaftlichkeit und Billigkeit in Einklang steht.
+
+### Art. 48
+#### Abs. 2
+Der Rahmentarif kommt beim Wegfall des Tarifvertrages zur Anwendung. Ein Jahr nach dem Wegfall des Tarifvertrages kann die Genehmigungsbehörde den Rahmen ohne Rücksicht auf den früheren Vertragstarif neu festsetzen.
+#### Abs. 4
+Für Parteien, die einen neuen Tarifvertrag abgeschlossen haben, tritt der Rahmentarif mit der Vertragsgenehmigung ausser Kraft.
 
 ### Art. 56
 #### Abs. 5
