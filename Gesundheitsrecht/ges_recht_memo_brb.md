@@ -2,77 +2,87 @@
 title: "Gleicher Preis für gleiche Leistung?"
 author: "Beat Brüngger"
 subtitle: Über die Möglichekeiten einer Preisdifferenzierung im ambulanten Einzelleistungstarif
-  Tarmed
+  TARMED
 output:
   pdf_document:
     toc: yes
     number_sections: true
-lang: german
+bibliography: bebru.bib
 ---
+<!-- lang: german -->
+
 
 # Ausgangslage
-<!--
-- Steigende Gesundheitskosten
-- Tarmed, Einzelleistungstarif
-- kantonal einheitliche Taxpunktwerte
- -->
-Eine im ambulanten Setting erbrachte Leistung gemäss dem in der KLV aufgeführten Leistungskatalog kann ein anerkannter Leistungserbringer dafür einen durch einen festgegebenen Preis verrechnen.    
-Aktuell geschieht dies sowohl bei Ärzten in freier Praxis als auch in Spitalambulatorien anhand des Einzelleistungstarifs Tarmed.
 
+## Steigende Gesundheitskosten
+Die steigenden Gesundheitskosten in der Schweiz beschäftigen die Politik und die Öffentlichkeit im Land gleichermassen. Es wird nach Ursachen gesucht (@graber_interpellation_2010), und um Lösungsansätze gerungen (@_botschaft_2004). Eine zentrale Rolle in der Diskussion um die Gesundheitskosten spielt dabei die Entwicklung der ambulanten ärztlichen Kosten. Unter anderem um die Transparenz über die Entwicklung dieser Leistungen zu erhöhen, wurde die gesamtschweizerisch einheitliche Tarifstruktur TARMED erstellt.
 
-> **Preisberechnung Tarmed:**  
-Um den Preis einer bestimmten Leistung zu erhalten wird die in der Tarifstruktur Tarmed festgelegte Anzahl an Taxpunkten mit dem für den jeweiligen Leistungserbringer gültigen Taxpunktwert multipliziert. Der Tarmed enthält damit die Struktur, welche den Preis aller enthaltenen Leistungen zueinander in ein bestimmtes Verhältnis setzt. Der Taxpunktwert bestimmt das für einen Leistungserbringer gültiges Preisniveau. Beides zusammen, Struktur und Preisniveau, ergibt den schlussendlich verrechenbaren Preis einer Leistung.
+## Tarifwerk TARMED
+Seit seiner Einführung per 1.1.2014 werden in der Schweiz im ambulanten Setting erbrachte ärztliche Leistungen im Rahmen des Bundesgesetzes über die Krankenversicherung (KVG, @_bundesgesetz_1994) nach dem TARMED (*tarif médical*, deutsch: Ärztetarif) abgerechnet. Die davor bestehenden kantonalen Tarife wurden damit abgelöst und eine gesamtschweizerische Tarifstruktur eingeführt. Diese Tarifstruktur gilt sowohl für Ärzte in freier Praxis (praxisambulante Leistungen), als auch für ambulante Spitalbereiche (spitalamulante Leistungen). Der TARMED enthält neben einem Tarifmodell (welches das zugrundeliegende betriebswirtschaftliche Denkmodell beschreibt) als zweites wesentliches Element die Tarifstruktur, welche den Wert aller in der Tarifnomenklatur aufgeführten Leistungen zueinander in ein bestimmtes Verhältnis setzt (über die einer Leistung zugeordneten Anzahl Taxpunkten).  
+Ein weiteres wichtiges Element für die Rechnungsstellung ambulanter ärztlicher Leistungserbringer sind die Tarifverträge zwischen den Leistungserbringern und den Versicherern, welche aus der Tarifstruktur TARMED konkrete Tarife werden lassen. Zu diesem Zweck enthalten die Tarifverträge einen sogenannten Taxpunktwert (TPW), welcher das Preisniveau für die Leistungen festlegt.
 
-Die Tarifstruktur ist wie in Art. 43 Abs. 5 KVG vorgeschrieben gesamtschweizerisch einheitlich. Die Taxpunktwerte unterscheiden sich aktuell einerseits nach Kantonen, und anderseits zwischen Ärzten in freier Praxis und Spitalambulatorien.  
-Der Taxpunktwert wird üblicherweise zwischen den Tarifpartnern (Leistungserbringer und Versicherer) verhandelt und in einem Tarifvertrag festgeschrieben. Werden sich diese nicht einig kann die zuständige Behörde in den vom Gesetz vorgesehenen Fällen (Art. 47 KVG) den Wert festlegen.
+> **Vom Tarif zu den Kosten:**  
+Um den Preis einer bestimmten Leistung zu erhalten wird die in der Tarifstruktur TARMED festgelegte Anzahl an Taxpunkten mit dem für den jeweiligen Leistungserbringer gültigen Taxpunktwert multipliziert. Um die Kosten einer Behandlung zu erhalten werden die so erhaltenen Preise der einzelnen Leistungen mit der Menge der tatsächlich erbrachten Anzahl an Leistungen multipliziert.
+
+$$ Kosten_{Leistung} = AnzahlTaxpunkte_{Leistung} * Taxpunktwert * Anzahl_{Leistung} $$
+
+(Referenz Tarifwerk TARMED: @kieser_tarif_2015)  
+
+Die Kosten werden neben der in der gesamtschweizerisch einheitlichen Tarifstruktur und der Menge der Leistungen also auch massgeblich von der Höhe des TPW beeinflusst. Die Taxpunktwerte unterscheiden sich aktuell einerseits nach Kantonen, und anderseits zwischen Ärzten in freier Praxis und Spitalambulatorien.  
+Der TPW wird üblicherweise zwischen den Tarifpartnern (Leistungserbringer und Versicherer) verhandelt und in einem Tarifvertrag festgeschrieben. Werden sich diese nicht einig kann die zuständige Behörde in den vom Gesetz vorgesehenen Fällen (Art. 47 KVG) den Wert festlegen.
+
+### Einführung TARMED
+Wie in der Verordnung über die Krankenversicherung (KVV, @_verordnung_1995) in Art. 59c Abs. 1 lit. c vorgeschrieben, darf der Wechsel eines Tarifmodells, wie es die Einführung des TARMED dargestellt hat, keine Mehrkosten zur Folge haben. Zu diesem Zweck wurde eine Kostenneutralitätsphase von 13 Monaten nach der Einführung des TARMED definiert (bis zum 30. April 2005). In dieser Zeit wurde durch den Bund ein Kostenmonitoring betrieben, aufgrund quartalsweiser Datenlieferungen der Leistungserbringer und Versicherer. Anhand dieser Informationen wurden die TPW so justiert, dass die Einführung des TARMED keine Mehrkosten zur Folge hatte (ebenso keine Minderkosten).
 
 # Rechtserheblicher Sachverhalt
-Damit ein Leistungserbringer für eine erbrachte Leistung eine Rechnung stellen kann, muss er den dafür gültigen Preis kennen. Für eine im ambulanten Setting erbrachte Leistung ist hierfür die Tarifstruktur Tarmed und ein Taxpunktwert nötig. Dieser Taxpunktwert wird zwischen den Tarifpartnern verhandelt oder von einer kantonalen Behörde festgesetzt.  
-**Die Frage die sich dabei stellt ist, nach welchen Kriterien sich dieser Taxpunktwert unter den in der Schweiz zugelassenen Leistungserbringern gemäss dem Gesetz differezieren darf.**
+Die TPW werden zwischen den Tarifpartnern (Leistungserbringer und Versicherer) verhandelt, oder falls sich diese nicht einig werden von einer kantonalen Behörde festgesetzt. Die Höhe der verhandelten TPW ist eine Möglichkeit für die Versicherer, direkt Einfluss auf die Entwicklung der Gesundheitskosten zu nehmen.  
+**Die Frage die sich dabei stellt ist, nach welchen Kriterien sich die TPW unter den in der Schweiz zugelassenen Leistungserbringern gemäss dem Gesetz differezieren dürfen.**
 
 # Rechtsnormen
-<!--
-- KVG und KVV: keine Einschränkungen bezüglich Taxpunktwerten sichtbar
- -->
-Das Krankenpflegeversicherungsgesetz KVG und die zugehörige Verordnung KVV geben den Rahmen für die Festsetzung des Taxpunktwertes vor.
 
-## Grundsätze zu Tarifen und Preisen
-Art. 43 KVG enthält die wichtigsten Grundlagen zu den Tarifen. Beim Tarmed handelt es sich um einen Einzelleistungstarif, welcher in Art. 43 Abs. 2 KVG als eine namentlich erwähnte Möglichkeit aufgeführt wird (neben Zeittarifen und Pauschaltarifen). Ausdrücklich erwähnt wird in diesem Absatz zudem, dass "zur Sicherung der Qualität die Vergütung bestimmter Leistungen ausnahmsweise von Bedingungen abhängig gemacht werden können, welche über die Voraussetzungen nach den Artikeln 36-40 hinausgehen". Für Einzelleistungstarife wird in Art. 43 Abs. 5 KVG präzisiert, dass die Tarifstruktur gesamtschweizerisch einheitlich sein muss.  
-In Art. 43 Abs. 4 KVG wird festgelegt, dass die Preise und Tarife in Verträgen zwischen Leistungserbringern und Versichern vereinbart werden (Tarifvertrag), oder in den vom Gesetz vorgegebenen Fällen von den zuständigen Behörden festgesetzt werden. Den Preisen und Tarifen soll dabei eine betriebswirtschaftliche Bemessung zu Grunde liegen.  
+KVG und KVV geben den Rahmen für die Festsetzung der TPW vor.
 
+## Gesetz: KVG
+### Grundsätze zu Tarifen und Preisen
+Art. 43 KVG enthält die wichtigsten Grundlagen zu den Tarifen. Beim TARMED handelt es sich um einen Einzelleistungstarif, welcher in Art. 43 Abs. 2 KVG (mit der einzigen expliziten Erwähnung der TPW in KVG und KVV) als eine namentlich erwähnte Möglichkeit eines Tarifs aufgeführt wird (neben Zeittarifen und Pauschaltarifen).  
+Für Einzelleistungstarife wird in Art. 43 Abs. 5 KVG präzisiert, dass die Tarifstruktur gesamtschweizerisch einheitlich sein muss (wie dies beim TARMED der Fall ist).  
+In Art. 43 Abs. 4 KVG wird festgelegt, dass die Preise und Tarife in Verträgen zwischen Leistungserbringern und Versichern vereinbart werden (Tarifvertrag), oder in den vom Gesetz vorgegebenen Fällen von den zuständigen Behörden festgesetzt werden. Den Preisen und Tarifen soll dabei eine betriebswirtschaftliche Bemessung zu Grunde liegen (diesem Grundsatz folgt das Tarifmodell des TARMED).  
 Art. 43 Abs. 6 KVG schlussendlich legt fest, dass die Vertragspartner und die zuständigen Behörden auf eine qualitativ hoch stehende zweckmässig Versorgung zu möglichst günstigen Kosten achten sollen.
 
-## Tarifverträge
-In Art. 46 KVG sind die mögilchen Vertragspartner eines Tarifvertrags aufgeführt: es könne auf der einen Seite sowohl einzelne oder mehrere Leistungserbringer, und auf der anderen Seite ebenfalls einzelne oder mehrere Versicherer, oder jeweils deren Verbände sein.  
+### Tarifverträge
+In Art. 46 KVG sind die mögilchen Vertragspartner eines Tarifvertrags aufgeführt: es können auf der einen Seite sowohl einzelne oder mehrere Leistungserbringer, und auf der anderen Seite ebenfalls einzelne oder mehrere Versicherer, oder jeweils deren Verbände sein.  
 Explizit ausgeschlossen werden in Art. 46 Abs. 3 Einschränkungen und Regeln, welche einzelne Leistungerbringer benachteiligen oder auf einen bestimmten Preis resp. Tarif festlegen.
 
-## Fehlen eines Tarifvertrages
+### Fehlen eines Tarifvertrages
 Werden sich die Tarifpartner nicht einig, und kommt somit kein Tarifvertrag zustande, setzt die zuständige kantonale Behörde den Tarif nach Anhörung der Beteiligten fest (Art. 47 Abs. 1 KVG).
 
-## Tarifverträge mit Ärzteverbänden
-Art. 48
+### Wirtschaftlichkeit der Leistungen
+Leistungserbringer und Versicherer sehen in den Tarifverträgen Massnahmen zur Sicherstellung der Wirtschaftlichkeit der Leistungen vor. Sie sorgen insbesondere dafür, dass diagnostische Massnahmen nicht unnötig wiederholt werden, wenn Versicherte mehrere Leistungserbringer konsultieren.
 
-## Verordnung
-In Art. 59c Abs. 1 wird ausgeführt, dass der Tarif höstens die transparent ausgewiesenen Kosten decken darf. Zudem darf der Tarif höstens die für eine effiziente Leistungserbringung erforderlichen Kosten decken.
+## Verordnung: KVV
+### Tarifgestaltung
+In Art. 59c Abs. 1 KVV wird ausgeführt, dass der Tarif höstens die transparent ausgewiesenen Kosten decken darf. Zudem darf der Tarif höchstens die für eine effiziente Leistungserbringung erforderlichen Kosten decken.
 
 ## Zusammenfassung der in Gesetz und Verordnung enthaltenen Kriterien bei der Festsetzung des Taxpunktwertes
 
-KVG und KVV legen Kriterien fest, nach denen ein Einzelleistungstarif zwischen den Tarifpartnern festgelegt werden darf:
+In KVG und KVV finden sich somit Gundsätze zu den Tarifpartnern, Tarifverträgen, und der Tarifstruktur:
 
-* die Tarifstruktur muss gesamtschweizerisch einheitlich sein
-* der Tarif darf höchstens die transparent ausgewiesenen Kosten decken
-* der Tarif darf höchstens die für eine effiziente Leistungserbringung erforderlichen Kosten decken
-* ein Wechsel des Tarifsystems kostenneutral erfolgen muss
-* die Tarifstruktur hat einer betriebswirtschaftlichen Bemessung und sachgerechten Art zu folgen
-* die gesundheitliche Versorgung soll zu möglichst günstigen Kosten erfolgen
-* der Tarifvertrag muss mit dem Gesetz und dem Gebot der Wirtschaftlichkeit und Billigkeit in Einklang stehen
+* Tarifpartner sind Leistungserbringer und Versicherer.
+* Restriktive Tarifverträge werden explizit ausgeschlossen.
+* Die Tarifstruktur muss gesamtschweizerisch einheitlich sein.
+* Die Tarifstruktur hat einer betriebswirtschaftlichen Bemessung und sachgerechten Art zu folgen.
+* Ein Wechsel des Tarifsystems muss kostenneutral erfolgen.
 
-Damit fehlen in KVG und KVV klare Kriterien nach der konkreten Berechnung der Taxpunktwerte, namentlich:
+Konkrete Kriterien wie die TPW festgesetzt werden sollen gibt es in KVG und KVV nicht. Hinweise dazu geben lediglich allgemeine Formulierungen, welche Raum für Interpretationen zulassen:
 
-* wie die Bemessung der Wirtschaftlichkeit zu erfolgen hat
-* nach welchen Kriterien der Taxpunktwert differenziert werden kann
+* Der Tarif darf höchstens die transparent ausgewiesenen Kosten decken.
+* Der Tarif darf höchstens die für eine effiziente Leistungserbringung erforderlichen Kosten decken.
+* Die gesundheitliche Versorgung soll zu möglichst günstigen Kosten erfolgen.
+* Der Tarifvertrag muss mit dem Gesetz und dem Gebot der Wirtschaftlichkeit und Billigkeit in Einklang stehen.
 
-## Empfehlungen des Bundesrates zur Umsetzung der bilateralen Rahmenverträge zur Einführung des Tarmed
+Insbesondere fehlt damit eine klare Aussage dazu, nach welchen Kriterien die TPW sich unterscheiden dürfen. Es wird jedoch deutlich, dass in KVG und KVV ein starkes Gewicht auf eine kostengünstige Gesundheitsversorgung gelegt wird. Wie dieses Ziel erreicht werden soll, ist jedoch nicht vorgeschrieben.
+
+## Empfehlungen des Bundesrates zur Umsetzung der bilateralen Rahmenverträge zur Einführung des TARMED
 
 * Taxpunktwert soll auf kantonaler Ebene ausgehandelt werden *gilt dies nur für die Kostenneutralitätsphase?*
 * Taxpunktwerte für einzelne Fachbereiche sind nicht zulässig
@@ -127,13 +137,13 @@ wiederspiegeln.
 
 * BVGer Entscheid C-6229/2011, stützt sich weitgehend auf Empfehlungen des Bundesrates und Analyse der EFK ab
 * Analyse der EFK, 2010:
-* Interpellation 09.3272: Einheitliche Tarmed-Taxpunktwerte in den Kantonen, Stelllungsnahme des Bundesrates vom 13.05.2009
+* Interpellation 09.3272: Einheitliche TARMED-Taxpunktwerte in den Kantonen, Stelllungsnahme des Bundesrates vom 13.05.2009
 * Interpellation 05.3095: Weiterführung der Kostenneutralität, Stelllungsnahme des Bundesrates vom 25.05.2005
     + 5. und 6., bestehende Differenzen sind problematisch, Weiterführung der vorbestehenden Differenzen, bilden nicht die tatsächlichen Kosten nach
 * Empfehlungen zur Umsetzung der bilateralen Rahmenverträge zur Einführung der Einzelleistungstarifstruktur
 für ärztliche Leistungen TARMED
-* **Rahmenvertrag Tarmed: Art. 11 Abs. 2** (zwischen FMH und santésuisse), resp. **Rahmenvertrag Tarmed: Art. 9 Abs. 2** (zwischen H+ und santésuisse)
-* kantonale Tarife vor der Einführung des Tarmed
+* **Rahmenvertrag TARMED: Art. 11 Abs. 2** (zwischen FMH und santésuisse), resp. **Rahmenvertrag TARMED: Art. 9 Abs. 2** (zwischen H+ und santésuisse)
+* kantonale Tarife vor der Einführung des TARMED
 
 ### Interpretation des Urteils
 
@@ -146,9 +156,16 @@ Im Urteil wird vom BVGer festgestellt, dass klare Kriterien für die Festlegung 
 * Geltende Rechtssprechung erlaubt keine Differenzierung
 * Deshalb ist eine Gesetzesanpassung nötig
 * Die Kostenneutralitätsphase hat vorbestehende Unterschiede fortgeführt und zementiert
-* Der Mangel an einer validen Datengrundlage führt dazu, dass die in Art. 59c festgelegten Kriterien seit der Einführung des Tarmed missachtet werden.
+* Der Mangel an einer validen Datengrundlage führt dazu, dass die in Art. 59c festgelegten Kriterien seit der Einführung des TARMED missachtet werden.
 * Effizient arbeitende Ärzte werden durch einen zu tiefen Lohn bestraft.
 * Kriterien der Qualität werden nicht berücksichtigt, trotz Vorgaben im Gesetz.
 
+# Behandlungsqualität: ein mögliches Differenzierungsmerkmal im Licht der Gesetzgebung
+
+* in KVG und KVV gibt es keine Hinweise, dass ein solches Merkmal unzulässig wäre
+* Folge: Kosten für die Leistungserbringer, dafür weniger Leistungen
+
 # PI und Motionen
 - auflisten
+
+# Bibliography
