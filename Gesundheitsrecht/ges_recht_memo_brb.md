@@ -1,16 +1,16 @@
 ---
 title: "Gleicher Preis für gleiche Leistung?"
 author: "Beat Brüngger"
+email: beat.bruengger@gmx.ch
+lang: german
 output:
   pdf_document:
     toc: yes
+    number_sections: true
 subtitle: Über die Möglichekeiten einer Preisdifferenzierung im ambulanten Einzelleistungstarif
   TARMED
 bibliography: bebru.bib
 ---
-<!-- number_sections: true
-lang: german -->
-
 
 # Ausgangslage
 
@@ -18,7 +18,7 @@ lang: german -->
 Die steigenden Gesundheitskosten in der Schweiz beschäftigen die Politik und die Öffentlichkeit im Land gleichermassen. Es wird nach Ursachen gesucht (@graber_interpellation_2010), und um Lösungsansätze gerungen (@_botschaft_2004). Eine zentrale Rolle in der Diskussion um die Gesundheitskosten spielt dabei die Entwicklung der ambulanten ärztlichen Kosten. Unter anderem um die Transparenz über die Entwicklung dieser Leistungen zu erhöhen, wurde die gesamtschweizerisch einheitliche Tarifstruktur TARMED erstellt.
 
 ## Tarifwerk TARMED
-Seit seiner Einführung per 1.1.2014 werden in der Schweiz im ambulanten Setting erbrachte ärztliche Leistungen im Rahmen des Bundesgesetzes über die Krankenversicherung (KVG, @_bundesgesetz_1994) nach dem TARMED (*tarif médical*, deutsch: Ärztetarif) abgerechnet. Die davor bestehenden kantonalen Tarife wurden damit abgelöst und eine gesamtschweizerische Tarifstruktur eingeführt. Diese Tarifstruktur gilt sowohl für Ärzte in freier Praxis (praxisambulante Leistungen), als auch für ambulante Spitalbereiche (spitalamulante Leistungen). Der TARMED enthält neben einem Tarifmodell (welches das zugrundeliegende betriebswirtschaftliche Denkmodell beschreibt) als zweites wesentliches Element die Tarifstruktur, welche den Wert aller in der Tarifnomenklatur aufgeführten Leistungen zueinander in ein bestimmtes Verhältnis setzt (über die einer Leistung zugeordneten Anzahl Taxpunkte).  
+Seit seiner Einführung per 1.1.2014 werden in der Schweiz im ambulanten Setting erbrachte ärztliche Leistungen im Rahmen des Bundesgesetzes über die Krankenversicherung (KVG, @_kvg_1994) nach dem TARMED (*tarif médical*, deutsch: Ärztetarif) abgerechnet. Die davor bestehenden kantonalen Tarife wurden damit abgelöst und eine gesamtschweizerische Tarifstruktur eingeführt. Diese Tarifstruktur gilt sowohl für Ärzte in freier Praxis (praxisambulante Leistungen), als auch für ambulante Spitalbereiche (spitalamulante Leistungen). Der TARMED enthält neben einem Tarifmodell (welches das zugrundeliegende betriebswirtschaftliche Denkmodell beschreibt) als zweites wesentliches Element die Tarifstruktur, welche den Wert aller in der Tarifnomenklatur aufgeführten Leistungen zueinander in ein bestimmtes Verhältnis setzt (über die einer Leistung zugeordneten Anzahl Taxpunkte).  
 Ein weiteres wichtiges Element für die Rechnungsstellung ambulanter ärztlicher Leistungserbringer sind die Tarifverträge zwischen den Leistungserbringern und den Versicherern, welche aus der Tarifstruktur TARMED konkrete Tarife werden lassen. Zu diesem Zweck enthalten die Tarifverträge einen sogenannten Taxpunktwert (TPW), welcher das Preisniveau für die Leistungen festlegt.
 
 ***
@@ -35,7 +35,7 @@ Die Taxpunktwerte unterscheiden sich aktuell einerseits nach Kantonen, und ander
 Der TPW wird üblicherweise zwischen den Tarifpartnern (Leistungserbringer und Versicherer) verhandelt und in einem Tarifvertrag festgeschrieben. Werden sich diese nicht einig, kann die zuständige Behörde in den vom Gesetz vorgesehenen Fällen (Art. 47 KVG) den Wert festlegen.
 
 ### Einführung TARMED
-Wie in der Verordnung über die Krankenversicherung (KVV, @_verordnung_1995) in Art. 59c Abs. 1 lit. c vorgeschrieben, darf der Wechsel eines Tarifmodells, wie es die Einführung des TARMED dargestellt hat, keine Mehrkosten zur Folge haben. Zu diesem Zweck wurde eine Kostenneutralitätsphase von 13 Monaten nach der Einführung des TARMED definiert (bis zum 30. April 2005). In dieser Zeit wurde aufgrund quartalsweiser Datenlieferungen der Leistungserbringer und Versicherer durch den Bund ein Kostenmonitoring betrieben. Anhand dieser Informationen wurden die TPW so justiert, dass die Einführung des TARMED keine Mehrkosten zur Folge hatte (ebenso keine Minderkosten). Mit diesem Vorgehen konnte verhindert werden, dass durch die Einführung des TARMED grobe Fehlallokationen von Leistungen und Einkommen der Leistungserbringer entstanden.
+Wie in der Verordnung über die Krankenversicherung (KVV, @_kvv_1995) in Art. 59c Abs. 1 lit. c vorgeschrieben, darf der Wechsel eines Tarifmodells, wie es die Einführung des TARMED dargestellt hat, keine Mehrkosten zur Folge haben. Zu diesem Zweck wurde eine Kostenneutralitätsphase von 13 Monaten nach der Einführung des TARMED definiert (bis zum 30. April 2005). In dieser Zeit wurde aufgrund von Datenlieferungen der Leistungserbringer und Versicherer durch den Bund ein Kostenmonitoring betrieben. Anhand dieser Informationen wurden die TPW so justiert, dass die Einführung des TARMED keine Mehrkosten zur Folge hatte (ebenso keine Minderkosten). Mit diesem Vorgehen konnte verhindert werden, dass durch die Einführung des TARMED grobe Fehlallokationen von Leistungen und Einkommen der Leistungserbringer entstanden.
 
 (Referenz Kapitel Tarifwerk TARMED: @kieser_tarif_2015)  
 
@@ -45,9 +45,9 @@ Die TPW werden zwischen den Tarifpartnern (Leistungserbringer und Versicherer) v
 
 # Rechtsnormen
 
-KVG und KVV geben den Rahmen für die Festsetzung der TPW vor.
+Das Bundesgesetz über die Krankenversicherung KVG (@_kvg_1994) und die Verordnung vom 27. Juni 1995 über die Krankenversicherung KVV (@_kvv_1995) geben den Rahmen für die Festsetzung der TPW vor.
 
-## Gesetz: KVG
+## Bundesgesetz vom 18. März 1994 über die Krankenversicherung (KVG)
 
 ### Leistungsumfang
 Die Versicherer der obligatorischen Krankenpflegeversicherung (OKP) dürfen nach dem in Art. 34 Abs. 1 formulierten Grundsatz "keine anderen Kosten als diejenigen für die Leistungen nach den Artikeln 25-33 übernehmen." Kosten welche der Sicherstellung einer flächendeckenden Versorgung dienen sind somit nicht von der OKP zu übernehmen.
@@ -66,9 +66,9 @@ Explizit ausgeschlossen werden in Art. 46 Abs. 3 Einschränkungen und Regeln, we
 Werden sich die Tarifpartner nicht einig, und kommt somit kein Tarifvertrag zustande, setzt die zuständige kantonale Behörde den Tarif nach Anhörung der Beteiligten fest (Art. 47 Abs. 1 KVG).
 
 ### Wirtschaftlichkeit der Leistungen
-Leistungserbringer und Versicherer sehen in den Tarifverträgen Massnahmen zur Sicherstellung der Wirtschaftlichkeit der Leistungen vor. Sie sorgen insbesondere dafür, dass diagnostische Massnahmen nicht unnötig wiederholt werden, wenn Versicherte mehrere Leistungserbringer konsultieren.
+Art. 56 Abs. 5 verlangt von den Leistungserbringern und Versicherern, dass die in den Tarifverträgen Massnahmen zur Sicherstellung der Wirtschaftlichkeit der Leistungen vorsehen (und dass sie eine Methode zur Kontrolle der Wirtschaftlichkeit festlegen, Art. 56 Abs. 6 KVG). Sie sorgen insbesondere dafür, dass diagnostische Massnahmen nicht unnötig wiederholt werden, wenn Versicherte mehrere Leistungserbringer konsultieren.
 
-## Verordnung: KVV
+## Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)
 ### Tarifgestaltung
 In Art. 59c Abs. 1 KVV wird ausgeführt, dass der Tarif höstens die transparent ausgewiesenen Kosten decken darf. Zudem darf der Tarif höchstens die für eine effiziente Leistungserbringung erforderlichen Kosten decken.
 
@@ -92,7 +92,7 @@ Konkrete Kriterien wie die TPW festgesetzt werden sollen gibt es in KVG und KVV 
 Insbesondere fehlt damit eine klare Aussage dazu, nach welchen Kriterien die TPW sich unterscheiden dürfen. Es wird jedoch deutlich, dass in KVG und KVV ein starkes Gewicht auf eine kostengünstige Gesundheitsversorgung gelegt wird. Wie dieses Ziel erreicht werden soll ist nicht vorgeschrieben.
 
 # Aktuelle Situation: wenig differenzierte TPW
-Nach Abschluss der Kostenneutralitätsphase zu Beginn der Einführung des TARMED, während der die TPW laufend so angepasst wurden, dass indgesamt durch den neuen Tarif weder Mehr- noch Minderkosten entstanden, haben sich die TPW nur noch wenig verändert.  
+Nach Abschluss der Kostenneutralitätsphase zu Beginn der Einführung des TARMED, während der die TPW laufend so angepasst wurden, dass insgesamt durch den neuen Tarif weder Mehr- noch Minderkosten entstanden, haben sich die TPW nur noch wenig verändert.  
 Folglich entsprechen die aktuellen TPW weitgehend einem Abbild der Situation vor der Einführung des TARMED:
 
 * Die TPW werden kantonal mit den jeweiligen Ärztgesellschaften verhandelt. Die TPW unterscheiden sich von Kanton zu Kanton.
@@ -106,16 +106,16 @@ In bisher zwei Fällen wurde zwischen den Vertragspartnern vorübergehend weiter
 Zwischen der Einkaufsgesmeinschaft HSK (Helsana, Sanitas und KPT) und der Gesellschaft der Ärztinnen und Ärzte des Kanton Solothurn (GAeSO) wurde ein um einen Rappen höherer TPW verhandelt als mit der Einkaufsgemeinschaft tarifsuisse (der Einkaufsgesellschaft von santésuisse). Aufgrund von Schwierigkeiten in der Rechnungsstellung der Ärzte wurde diese Differenzierung nach kurzer Zeit wieder rückgängig gemacht.
 
 ### Unterteilung nach Region innerhalb eines Kantones
-Im Rahmen eines zweijährigen Piltoprojektes (2010 bis 2012) wurde zwischen der Berner Ärztegesellschaft und der Krankenversicherung Visana für Ärzte in bestimmten Regionen ein um einige Rappen höherer TPW für die finanzielle Unterstützung der Ärzte in wenig privilegierten Bergregionen verhandelt.  
-In seiner Antwort auf die Interpellation 10.3584 spricht sich der Bundesrat gegen dieses Vorgehen aus, da die finanzielle Besserstellung einer Gruppe von Ärzten nicht wie in Art. 59 lit. c KVV verlangt aufgrund transparent ausgewiesener Kosten, sondern aufgrund regionalpolitischer Überlegungen erfolgte. Die Massnahme widerspreche dem im KVG verankerten Wirtschaftlichkeitsgebot. Der Bundesrat stellt jedoch auch klar, dass die Genehmigung von kantonalen Tarifverträgen der zuständigen Kantonsregierung obliegt, und nicht dem Bundesrat.  
+Im Rahmen eines zweijährigen Piltoprojektes (2010 bis 2012) wurde zwischen der Berner Ärztegesellschaft und der Krankenversicherung Visana für Ärzte und Ärztinnen in bestimmten Regionen ein um einige Rappen höherer TPW für die finanzielle Unterstützung der Ärzte in wenig privilegierten Bergregionen verhandelt.  
+In seiner Antwort auf die Interpellation 10.3584 (@lumengo_interpellation_2006) spricht sich der Bundesrat gegen dieses Vorgehen aus, da die finanzielle Besserstellung einer Gruppe von Ärzten und Ärztinnen nicht wie in Art. 59 lit. c KVV verlangt aufgrund transparent ausgewiesener Kosten, sondern aufgrund regionalpolitischer Überlegungen erfolgte. Die Massnahme widerspreche dem im KVG verankerten Wirtschaftlichkeitsgebot. Der Bundesrat stellt jedoch auch klar, dass die Genehmigung von kantonalen Tarifverträgen der zuständigen Kantonsregierung obliegt, und nicht dem Bundesrat.  
 
-Gemäss Art. 34 KVG dürfen die Versicherer der obligatorsichen Krankenversicherung keine anderen Kosten als diejenigen für die Leistungen nach den Artikeln 25-33 übernehmen. Somit steht diese Massnahme im Widerspruch mit der Gesetzgebung, und hätte von der kantonalen Behörde nicht genehmigt werden dürfen.
+Zudem dürfen gemäss Art. 34 KVG die Versicherer der obligatorsichen Krankenversicherung keine anderen Kosten als diejenigen für die Leistungen nach den Artikeln 25-33 übernehmen. Die oben beschriebene Massnahme steht also im Widerspruch mit der Gesetzgebung, und hätte von der kantonalen Behörde nicht genehmigt werden dürfen.
 
 # Geltende Rechtssprechung
 
 ## Entscheid C-6229/2011 des Bundesverwaltungsgerichts vom 5. Mai 2014
 
-Im Urteil C-6229/2011 des Bundesverwaltungsgerichts (BVGer) zum Thema TPW, in welchem tarifsuisse gegen den von der Regierung im Kanton Neuenburg festgesetzten praxisambulanten TPW Beschwerde einreicht, wird vom BVGer festgestellt:
+Im Urteil C-6229/2011 (@_bvger_2014) des Bundesverwaltungsgerichts (BVGer) zum Thema TPW, in welchem tarifsuisse gegen den von der Regierung im Kanton Neuenburg festgesetzten praxisambulanten TPW Beschwerde einreicht, wird vom BVGer festgestellt:
 
 * Klare Kriterien für die Festsetzung der TPW fehlen im Gesetz.
 * Massgebend für die behördliche Festsetzung eines TPW sind die anwendbaren Gesetzesnormen, welche weder eine Datengrundlage noch andere Kriterien präzisieren.
@@ -130,13 +130,13 @@ Zudem führt das BVGer im Urteil Grundsätze für die Festlegung der TPW ausserh
 * Auf Basis der heutigen Argumente müssen die innerkantonalen TPW im Grundsatz konvergieren und es gibt keine Begründung für differenzierte TPW.
 * Grundsätzlich sollten unterschiedliche TPW nur kantonale Kostenunterschiede im Preisindex und bei Lohn und Mieten wiederspiegeln.
 
-Aufgrund der oben beschriebenen Situation, der anerkannten Gültigkeit von Art. 59c KVV, aber im vorliegenden Fall fehlender nötiger Datengrundlage, setzt das BVGer im Urteil den fraglichen praxisambulanten TPW schlussendlich auf denselben Betrag wie der vertraglich vereinbarte spitalambulante TPW im Kanton Neuenburg fest.
+Aufgrund der oben beschriebenen Situation, der anerkannten Gültigkeit von Art. 59c KVV, aber im vorliegenden Fall fehlender nötiger Datengrundlage, setzte das BVGer im Urteil den fraglichen praxisambulanten TPW schlussendlich auf denselben Betrag wie der vertraglich vereinbarte spitalambulante TPW im Kanton Neuenburg fest.
 
-Seinen Entscheid stützt das BVGer Quellen ausserhalb der Gesetzesnormen ab, da diese zwar Gültigkeit haben, jedoch klare Vorgaben und nötige Datengrundlagen fehlen.
+Seinen Entscheid stützt das BVGer auf Quellen ausserhalb der Gesetzesnormen ab, da diese zwar Gültigkeit haben, jedoch klare Vorgaben und nötige Datengrundlagen fehlen.
 
 # Quellen ausserhalb der bestehenden Gesetzesnormen
 
-Wie vom BVGer im Urteil C-6229/2011 festgehalten fehlen klare Vorgaben für die Festsetzung der TPW. In der Frage, nach welchen Kriterien die TPW differenziert werden dürfen, ist es somit sinnvoll, weitere Quellen heranzuziehen (wie dies vom BVGer im Urteil C-6229/2011 auch getan wurde).
+Wie vom BVGer im Urteil C-6229/2011 festgehalten fehlen klare Vorgaben für die Festsetzung der TPW in der Gesetzgebung. In der Frage, nach welchen Kriterien die TPW differenziert werden dürfen, ist es somit sinnvoll, weitere Quellen heranzuziehen (wie dies vom BVGer im Urteil C-6229/2011 auch getan wurde).
 
 ## Historische Spurensuche: die Meinung des Bundesrates im Laufe der Zeit
 
@@ -145,7 +145,7 @@ In seiner Rechtssprechung im Urteil C-6229/2011 legt das BVGer viel Gewicht auf 
 ### Botschaft über die Revision der Krankenversicherung
 
 In seiner Botschaft über die Revision der Krankenversicherung vom 6. Nov. 1991 spricht sich der Bundesrat für eine dezentrale Vereinbarung der TPW aus, welche namentlich die regionalen Kostenunterschiede wie Lohn- und Preisgefälle berücksichtigen sollen. Weiterhin ist an selber Stelle erwähnt, dass diese Vereinbarungen durchaus dezentraler, vielgestaltiger und flexibler erfolgen **dürfen und sollen**, als zum damaligen Zeitpunkt üblich. Dies könne zu einem verstärkten Wettbewerb und innovativem Verhalten führen.  
-Zum Thema Tarifverträge wird weiter ausgeführt, dass die damalige Praxis Verbändsverträge auf Kantonsebene seien, und dass diese voraussichtlich auch weiterhin eine bedeutende Rolle spielen würden. Dagegen sei nichts einzuwenden, nicht zuletzt weil dadurch in Regel gleich gewichtige Vertragspartner miteinander verhandelten.  
+Zum Thema Tarifverträge wird weiter ausgeführt, dass die damalige Praxis Verbändsverträge auf Kantonsebene seien, und dass diese voraussichtlich auch weiterhin eine bedeutende Rolle spielen würden. Dagegen sei nichts einzuwenden, nicht zuletzt weil dadurch in der Regel gleich gewichtige Vertragspartner miteinander verhandelten.  
 Um eine Konzertierung, Harmonisierung und Rationalisierung im Tarifwesen zu erreichen, könnten weiter sogar auch gesamtschweizerische Vereinbarungen wünschenswert sein.
 
 ### Empfehlungen des Bundesrates zur Umsetzung der bilateralen Rahmenverträge zur Einführung des TARMED
@@ -161,18 +161,19 @@ Der Bundesrat macht in diesem Dokument deutlich, dass die kantonalen Behörden f
 
 ### Stellungsnahme des Bundesrate auf die Interpellation 09.3272: Einheitliche Tarmed-Taxpunktwerte in den Kantonen
 
-Die Interpellation stellt dem Bundesrat die Frage, wie er die innerkantonalen Unterschiede der TPW im praxis- resp. spitalamulanten Bereich beurteilt.  
+Die Interpellation 09.3272 (@humbel_interpellation_2009) stellt dem Bundesrat die Frage, wie er die innerkantonalen Unterschiede der TPW im praxis- resp. spitalamulanten Bereich beurteilt.  
 In seiner Stellungsnahme vom 13.5.2009 dazu schreibt der Bundesrat:
+
 * Die bundesrätliche Empfehlung, dass sich die TPW innerkantonal annähern sollen, hat weiterhin Gültigkeit, da es keine sachlichen Gründe für eine innerkantonale Differenzierung der Tarife nach Leistungserbringer gibt.
 * Die Tarifautonomie der Tarifpartner wurde bisher nie infrage gestellt.
 * Der Bundesrat erwartet, dass die Tarifpartner bei den Tarifverhandlungen auch die Kostenentwicklung berücksichtigen, und dass sie die **verlangte** Annäherung der TPW nach dem Prinzip "gleiche Vergütung für gleiche Leistung" vollziehen.
 * Sollten sich die TPW nicht nach diesem Prinzip einander annähern werde der Bundesrat eine Gesetzesänderung in Betracht ziehen.
 
-In dieser Stellungsnahme spricht sich der Bundesrat deutlich gegen differenzierte TPW nach Leistungserbringer aus: generell (da es hierfür keine sachlichen Gründe gebe), und insbesondere im praxis- resp. spitalamulanten Bereich.
+In dieser Stellungsnahme spricht sich der Bundesrat deutlich gegen differenzierte TPW nach Leistungserbringer aus: generell (da es hierfür keine sachlichen Gründe gebe), und im Speziellen im praxis- resp. spitalamulanten Bereich (als Antwort auf die in der Interpellation gestellten Frage).
 
 ### Wandel der bundesrätlichen Meinung
 
-Anhand der drei oben erwähnten Beispiele lässt sich der Wandel der Meinung des Bundesrates zum Thema Differenzierung der TPW gut nachvollziehen. Nachdem in der Botschaft zum KVG 1991 differenzierte Tarife zum Verstärken des Wettbewerbs erwünscht war, waren solche bei der Einführung des TARMED 2004 entgegen den bundesrätlichen Empfehlungen für die Kostenneutralitätsphase, und 2009 schliesslich ein klarer Makel im System, welchem aufgrund fehlender aktueller Kompetenzen des Bundes in Zukunft allenfalls mit einer Gesetzesänderung Einhalt geboten werden soll.
+Anhand der drei oben erwähnten Beispiele lässt sich der Wandel der Meinung des Bundesrates zum Thema Differenzierung der TPW gut nachvollziehen. Nachdem in der Botschaft zum KVG 1991 differenzierte Tarife zum Verstärken des Wettbewerbs erwünscht waren, waren solche bei der Einführung des TARMED 2004 entgegen den bundesrätlichen Empfehlungen für die Kostenneutralitätsphase, und 2009 schliesslich ein klarer Makel im System (eine Abweichung vom von ihm erwarteten Prinzip "gleiche Vergütung für gleiche Leistung"), welchem aufgrund fehlender aktueller Kompetenzen des Bundes in Zukunft allenfalls mit einer Gesetzesänderung Einhalt geboten werden soll.
 
 ## Rahmenvertrag TARMED
 
@@ -183,8 +184,8 @@ Innerhalb des aktuell gültigen Rahmens (dem Rahmenvertrag TARMED) ist somit ein
 # Schlussbetrachtung
 
 Eine weitere Differenzierung der TPW wird zum aktuellen Zeitpunkt neben einem Artikel im Rahmenvertrag TARMED insbesondere aufgrund der aktuellen Rechtssprechung des BVGer verhindert. Die Tatsache, dass die aktuelle Rechtssprechung sich klar gegen eine weitere Differenzierung der TPW ausspricht, stellt eine hohe Hürde für die Tarifpartner dar.  
-Obwohl weder im KVG noch in der KVV eine solche Differenzierung ausgeschlossen wird, hat sich das BVGer enschieden sich in seiner Rechtssprechung auf die Empfehlungen und Stellungsnahmen des Bundesrates zu stützen, welche sich im Laufe der Jahre immer klarer gegen eine solche Differenzierung stellten.  
-Wollen die Tarifpartner weitere Differenzierungsmerkmale (wie z.B. Qualitätskriterien, Leistungsangebot, Dichte der Leistungserbringer in einem Versorgungsgebiet) in den zukünftigen Verhandlungen der TPW mit berücksichtigen können, muss allenfalls eine Gesetzesänderung ins Auge gefasst werden, welche solche explizit erlaubt. Andernfalls besteht die Gefahr, dass solche Vereinbarungen von der kantonalen Behörde gestützt auf den Entscheid des BVGer nicht genehmigt werden.   
-Aus diesem Grund wurde die Motion 16.3001: Gesundheitssystem. Ausgewogenes Angebot durch Differenzierung des Taxpunktwertes dem  Bundesrat überreicht, welche diesen beauftragt nötige Änderungen des KVG auszuarbeiten, welche die ambulante Versorgung optimieren, und namentlich eine Differenzierung der TPW möglich machen.
+Obwohl weder im KVG noch in der KVV eine solche Differenzierung ausgeschlossen wird, hat sich das BVGer enschieden, sich in seiner Rechtssprechung auf die Empfehlungen und Stellungsnahmen des Bundesrates zu stützen, welche sich im Laufe der Jahre immer klarer gegen eine solche Differenzierung stellten.  
+Wollen die Tarifpartner weitere Differenzierungsmerkmale (wie z.B. Qualitätskriterien, Leistungsangebot, Dichte der Leistungserbringer in einem Versorgungsgebiet) in den zukünftigen Verhandlungen der TPW mit berücksichtigen können, muss allenfalls eine Gesetzesänderung ins Auge gefasst werden, welche solche explizit erlaubt. Andernfalls besteht die Gefahr, dass solche Vereinbarungen von der kantonalen Behörde, gestützt auf den Entscheid des BVGer (@_bvger_2014), nicht genehmigt werden.   
+Aus diesem Grund wurde die Motion 16.3001 (@steiert_motion_2016) dem  Bundesrat überreicht, welche diesen beauftragt nötige Änderungen des KVG auszuarbeiten, welche die ambulante Versorgung optimieren, und namentlich eine Differenzierung der TPW möglich machen.
 
 # Bibliography
