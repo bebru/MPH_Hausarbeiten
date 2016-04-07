@@ -168,9 +168,19 @@ Die Interpellation 09.3272 (@humbel_interpellation_2009) stellt dem Bundesrat di
 
 In dieser Stellungnahme spricht sich der Bundesrat deutlich gegen differenzierte TPW nach Leistungserbringer aus: generell (da es hierfür keine sachlichen Gründe gebe), und im Speziellen im praxis- resp. spitalambulanten Bereich (als Antwort auf die in der Interpellation gestellten Frage).
 
+### Stellungnahme des Bundesrate auf die Motion 15.3385: Gesundheitswesen. Ausgewogene Versorgung dank differenzierten Taxpunktwerten in den KVG-Tarifen statt erneuter Zulassungsstopp
+
+In der Motion 15.3385 (@cassis_motion_2015) wird der Bundesrat damit beauftragt KVG-Anpassungen auszuarbeiten, welche differenzierte TPW explizit zulassen. Die Absicht der Motion ist, durch differenzierte TPW eine Steuerung der Versorgungssituation aufgrund von Qualitätskriterien und der Dichte des Versorgungsangebots zu erreichen, ohne dass ein Zulassungsstopp für neue Arztpraxen nötig ist.
+
+In seiner Stellungnahme zur Motion, deren Ablehnung er beantragte, schreibt der Bundesrat, dass eine solche Massnahme:
+
+* dem in Art. 59c KVV formulierten Grundsatz widerspricht, dass nur transparent ausgewiesene Kosten übernommen werden dürfen.
+* eine unklare Wirksamkeit mit problematischen Anreizen schaffen würde.
+* in der Umsetzung kompliziert, schwerfällig und kostspielig sei.
+
 ### Wandel der Meinung des Bundesrates
 
-Anhand der drei oben erwähnten Beispiele lässt sich der Wandel der Meinung des Bundesrates zum Thema Differenzierung der TPW gut nachvollziehen. Nachdem in der Botschaft zum KVG 1991 differenzierte Tarife zum Verstärken des Wettbewerbs erwünscht waren, waren solche bei der Einführung des TARMED 2004 entgegen den  Empfehlungen des Bundesrates für die Kostenneutralitätsphase, und 2009 schliesslich ein klarer Makel im System (eine Abweichung vom von ihm erwarteten Prinzip "gleiche Vergütung für gleiche Leistung"), welchem aufgrund fehlender aktueller Kompetenzen des Bundes in Zukunft allenfalls mit einer Gesetzesänderung Einhalt geboten werden soll.
+Anhand der drei oben erwähnten Beispiele lässt sich der Wandel der Meinung des Bundesrates zum Thema Differenzierung der TPW gut nachvollziehen. Nachdem in der Botschaft zum KVG 1991 differenzierte Tarife zum Verstärken des Wettbewerbs erwünscht waren, waren solche bei der Einführung des TARMED 2004 entgegen den  Empfehlungen des Bundesrates für die Kostenneutralitätsphase, 2009 ein klarer Makel im System (eine Abweichung vom von ihm erwarteten Prinzip "gleiche Vergütung für gleiche Leistung"), welchem aufgrund fehlender aktueller Kompetenzen des Bundes in Zukunft allenfalls mit einer Gesetzesänderung Einhalt geboten werden soll, und 2015 schliesslich sind differenzierte TPW für den Bundesrat ausdrücklich ein untaugliches Instrument zur Steuerung der Versorgungssituation durch die Vertragspartner (Leistungserbringer und Versicherer).
 
 ## Rahmenvertrag TARMED
 
@@ -181,8 +191,9 @@ Innerhalb des aktuell gültigen Rahmens (dem Rahmenvertrag TARMED) ist somit ein
 # Schlussbetrachtung
 
 Eine weitere Differenzierung der TPW wird zum aktuellen Zeitpunkt neben einem Artikel im Rahmenvertrag TARMED insbesondere aufgrund der aktuellen Rechtsprechung des BVGer verhindert. Die Tatsache, dass die aktuelle Rechtsprechung sich klar gegen eine weitere Differenzierung der TPW ausspricht, stellt eine hohe Hürde für die Tarifpartner dar.  
-Obwohl weder im KVG noch in der KVV eine solche Differenzierung ausgeschlossen wird, hat sich das BVGer entschieden, sich in seiner Rechtsprechung auf die Empfehlungen und Stellungnahmen des Bundesrates zu stützen, welche sich im Laufe der Jahre immer klarer gegen eine solche Differenzierung stellten.  
-Wollen die Tarifpartner weitere Differenzierungsmerkmale (wie z.B. Qualitätskriterien, Leistungsangebot, Dichte der Leistungserbringer in einem Versorgungsgebiet) in den zukünftigen Verhandlungen der TPW mit berücksichtigen können, muss allenfalls eine Gesetzesänderung ins Auge gefasst werden, welche solche explizit erlaubt. Andernfalls besteht die Gefahr, dass solche Vereinbarungen von der kantonalen Behörde, gestützt auf den Entscheid des BVGer @_bvger_2014, nicht genehmigt werden.   
-Aus diesem Grund wurde die Motion 16.3001 (@steiert_motion_2016) dem  Bundesrat überreicht, welche diesen beauftragt nötige Änderungen des KVG auszuarbeiten, welche die ambulante Versorgung optimieren, und namentlich eine Differenzierung der TPW möglich machen.
+Zwar hat der Bundesrat in seinen Empfehlungen und Stellungnahmen selber immer wieder deutlich gemacht, dass die Genehmigung der Tarifverträge den kantonalen Behörden obliegen. In Ermangelung an klaren Vorgaben in KVG und KVV hat sich das BVGer dennoch dafür entschieden, sich in seiner Rechtsprechung auf diese Quellen, welche im Laufe der Jahre immer klarer eine ablehnende Haltung diesem Thema gegenüber zum Ausdruck brachten, zu stützen.  
+Wollen die Tarifpartner weitere Differenzierungsmerkmale (wie z.B. Qualitätskriterien, Leistungsangebot, Dichte der Leistungserbringer in einem Versorgungsgebiet) in den zukünftigen Verhandlungen der TPW mit berücksichtigen können, muss allenfalls eine Gesetzesänderung ins Auge gefasst werden, welche solche explizit erlaubt. Andernfalls besteht die Gefahr, dass die Vereinbarungen von der kantonalen Behörde, gestützt auf den Entscheid des BVGer @_bvger_2014, nicht genehmigt werden.  
+Aus diesem Grund wurde dem Bundesrat Anfang 2016, nach der Ablehnung der gesetzlichen Verankerung des Zulassungsstopps für neue Arztpraxen, die Motion 16.3001 (@steiert_motion_2016) überreicht, welche diesen erneut, wie bereits mit der Motion 15.3385 (@cassis_motion_2015), beauftragt, nötige Änderungen des KVG auszuarbeiten, welche die ambulante Versorgung optimieren, und namentlich eine Differenzierung der TPW möglich machen sollen.  
+Unabhängig von der Frage ob differenzierte TPW sinnvoll sind oder nicht, macht das Tauziehen zwischen Befürwortern und Gegnern in dieser Frage deutlich, dass ein Mangel an Klarheit darin besteht, welchen Zweck die TPW erfüllen sollen. Mit ihnen ist es möglich das Preisniveau der ambulanten Leistungen von Gruppen von Leistungserbringern direkt zu beeinflussen. Welche Leistungserbringer nach welchen Kriterien gruppiert werden dürfen, und welche Unterschiede zwischen diesen Gruppen mit der Höhe des TPW ausgeglichen werden sollen, ist unklar, und eine Präzisierung in Gesetz oder Verordnung damit angezeigt.
 
 # Bibliography
