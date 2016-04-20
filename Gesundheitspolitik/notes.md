@@ -16,22 +16,3 @@
 * wo steht der Prozess?
 * wer sind die Akteure?
 * was ist der konkrete Inhalt
-
-## Gesundheitspolitik, was ist angesprochen worden?
-
-* Kosten(-explosion)
-* komplex
-* Demographie
-* Qualität (wie messen)
-* Ärztemangel
-* Macht der Ärzte
-* Weiterbildung des Gesundheitspersonals
-* Reformen nur in kleinen Schritten
-* Wo ist der Patient?
-* Soziale Ungleichheit
-* KVG ist ein Versicheruengsrecht, und eigentlich nicht dazu da, um die Versorgung zu steuern (Catherine Gasser).
-  * Antwort Reto Wiesli: theoretisch richtig, praktisch ist das KVG das zentrale nationale Gesundheitsgesetz, und als Folge der Entstehungsgschichte ist es ein Flickwerk
-  * die kantonalen Gesundheitsgesetze regeln die Versorgung
-
-## div.
-Buch von Couchepin und niederländischem Gesundheitsminister mit einem Vergleich der beiden Gesundheitssysteme
