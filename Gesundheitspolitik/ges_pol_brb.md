@@ -13,7 +13,7 @@ output:
   pdf_document:
     toc: yes
     number_sections: true
-subtitle: Ein Politstück in drei Akten
+subtitle: Ein Politstück in vier Akten
 bibliography: bebru.bib
 ---
 
@@ -32,6 +32,7 @@ KVG           | Bundesgesetz über die Krankenversicherung
 MTK           | Medizinaltarif-Kommission UVG
 MV            | Militärversicherung
 santésuisse   | Branchenverband der Schweizer Krankenversicherer
+SGK-N         | Kommission für soziale Sicherheit und Gesundheit des Nationalrats
 TARMED        | **tar**if **méd**ical, Tarif für ambulant
 erbrachte ärztliche Leistungen
 TARMED Suisse | Gesellschaft für Unterhalt und Weiterentwicklung der Tarifstruktur TARMED
@@ -87,6 +88,41 @@ Wie in @widmer_tarmed_2004 empfohlen wurde 2010 eine durch die EFK erstellte Eva
 
 Im Jahr des Erscheinens der Evaluation der EFK ist den Tarifpartnern klar, dass die Tarifstruktur nicht mehr sachgerecht ist, und diese deshalb umfassend erneuert werden muss. Für die Tarifpflege zuständig ist die Gesellschaft TARMED Suisse. Da diese ihre Entschiedungen immer einstimmig fällen muss, ist die Revision des TARMED aufgrund der Interessenkonflikte innerhalb von TARMED Suisse allerdings blockiert.  
 Um aus dieser Blockade heraus zu finden schlägt die EFK vor, zwar am Verhandlungsprimat festzuhalten, jedoch zusätzlich die Rolle des Bundes zu stärken. Bei fehlender Einigung der Tarifpartner soll der Bundesrat vorläufige Tariflösungen durchsetzen können.
+
+# Erster Akt: Anpassung KVG
+
+## Parlamentarische Initiative 11.429: "Tarmed: subsidiäre Kompetenz des Bundesrates"
+
+Als Reaktion auf den Bericht der EFK hat die "Kommission für soziale Sicherheit und Gesundheit des Nationalrats" (SGK-N) am 24. März 2011 die Kommissionsinitiative 11.429 "Tarmed: subsidiäre Kompetenz des Bundesrates" beschlossen. Diese deckt sich inhaltlich mit der Vorlage "KVG. Massnahmen zur Eindämmung der Kostenentwicklung" (09.053), welche in der Herbstsession 2010 in der Schlussabstimmung im Nationalrat jedoch gescheitert ist.  
+Beide Initiativen (09.053 und 11.429) haben das Ziel, dem Bundesrat ein Druckmittel gegenüber den Tarifpartnern in die Hand zu geben, welches diese dazu bringen soll, sich eigenständig auf Lösungen in den Verhandlungen von Tarifstrukturen resp. deren Revision zu einigen.  
+In seiner Stellungnahme zur Initiative 11.429 schreibt der Bundesrat, dass er sich dem Bedarf einer Revision des TARMED bewusst ist, am Grundsatz der Tarifautonomie der Tarifpartner aber  festhalten möchte. Unter den beiden Voraussetzungen, dass die Tarifstruktur nicht mehr sachgerecht ist, und sich die Tarifpartner nicht auf eine Revision einigen konnten, ist er jedoch bereit eine subsidiäre Kompetenz zur Festsetzung von Anpassungen an den Tarifstrukturen zu unterstützen.
+
+## Art. 43 Abs. 5bis KVG: Kompetenz des Bundesrates zur Festlegung von Tarifen
+
+Per 23. Dez. 2011 wurde das KVG um den Absatz 5bis in Artikel 43 erweitert, welcher dem Bundesrat die subsidiäre Kompetenz gibt, die Tarifstruktur anzupassen, falls diese nicht mehr sachgerecht ist, und sich die Tarifpartner nicht auf eine Lösung einigen können. Mit dieser Erweiterung des KVG hat der Bundesrat die Möglichkeit erhalten, unter den erwähnten Voraussetzungen direkt in eine Tarifstruktur einzugreifen.  
+Die neue subsidiäre Kompetenz beschränkt sich grundsätzlich nicht auf den TARMED (auch wenn diese hauptsächlich aufgrund der Probleme mit diesem entstanden ist), sondern schliesst insbesondere auch Tarife für Logopäd/-innen, Apotheker/-innen,  Ergotherapeut/-innen, Physiotherapeut-/innen, Chiropraktor/-innen,   Hebammen oder Zahnärzte/-ärztinnen mit ein.  
+
+# Zweiter Akt: Hausarztmedizin in der Bundesverfassung
+
+## Volksiniatitive "Ja zur Hausarztmedizin"
+
+Die Volksiniatitive "Ja zur Hausarztmedizin" wurde am 1. April 2010 eingereicht. Die Initiative hat zum Ziel die Hausarztmedizin als in der Regel erste Anlaufstelle für die Behandlung von Krankheiten und Unfällen, sowie für die Gesundheitserziehung und -vorsorge zu positionieren.  
+Am 13. Okt. 2010 entscheidet sich der Bundesrat die Initiative Volk und Ständen zur Ablehnung vorzuschlagen, und stattdessen einen direkten Gegenvorschlag zu lancieren.  
+Das Anliegen der Förderung der Hausarztmedizin stiess in beiden Räten auf grosse Sympathie, bevorzugte aber den Vorschlag des Bundesrates die medizinische Grundversorgung miteinzubeziehen, und erarbeitete einene direkten Gegenvorschlag zur Initiative. Dieser direkte Gegenvorschlag fokussiert weniger auf die konkrete Berufsgruppe der Hausärzte und Hausärztinnen, anerkennt diese aber als wesentlichen Bestandteil in der medizinischen Grundversorgung.  Da die Initianten im Gegenvorschlag ihre Anliegen erfüllt sehen, wurde die Initiative zurückgezogen. Am 18. Mai 2014 dann wird in der Volksabstimmung der direkte Gegenvorschlag des Bundesrates mit 88% Ja-Stimmen und von allen Kantonen angenommen.
+
+## Art. 117a BV: Hausarztmedizin
+
+Mit der Annahme des Gegenvorschlags wird die Bundesverfassung um den Artikel 117a erweitert, nachdem Bund und Kantone im Rahmen ihrer Zuständigkeiten für einer ausreichende, allen zugängliche medizinische Grundversorgung von hoher Qualität zu sorgen haben. Zudem sollen sie die Hausarztmedizin als einen wesentlichen Bestandteil dieser Grundversorgung anerkennen und fördern.  
+In Abs. 2 des neuen Artikels wird zudem gefordert, dass der Bundesrat Vorschriften für die angemessene Abgeltung der Leistungen der Hausarztmedizin erlässt.  
+Gegen diesen Absatz wehrte sich eine bürgerliche Kommissionsminderheit der SGK-N in der Differenzbereinigung zwischen den beiden Räten - jedoch vergeblich. Etwas salopp ausgedrückt erhielt der Bund mit diesem Absatz den verfassungsmässigen Auftrag, für einen angemessenen Lohn resp. in der konkreten Situation für eine entsprechende Lohnerhöhung der Hausärzte und Hausärztinnen zu sorgen.
+
+# Dritter Akt: Masterplan
+
+## Masterplan "Hausarztmedizin und medizinische Grundversorgung"
+
+# Vierter Akt: Eingriff in den TARMED
+
+## Verordnung über die Anpassung von Tarifstrukturen in der Krankenversicherung
 
 # Epilog
 
