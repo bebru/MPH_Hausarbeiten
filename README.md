@@ -7,3 +7,5 @@ Hausarbeiten für verschiedene MPH-Module
   * tag finale Version: gesundheitsrecht_final
 * Gesundheitspolitik
   * Abgabe am 2.5.2016
+  * in RStudio mit default template pdf erzeugt
+  * tag finale Version: gesundheitspolitik_final
