@@ -1,5 +1,15 @@
 # Case study
 
+## Infos
+
+* nicht übertreiben
+* ca. 6 h(!)
+* max. 5 Seiten (können auch 3 sein), 2000-2500 Zeichen (können auch 1800 sein)
+* Reform-Projekt
+* Vergleich mit 1-2 Nachbarstaaten
+* European Observatory on Health Systems: sehr gute Quelle, zu vielen Ländern, aber auch Themen
+* Approach/Methoden kann ganz kurz sein, wohl hauptsächlich Literaturrechereche
+
 ## Possible topics
 
 The topic can be selected in one of the following broad areas:
