@@ -57,7 +57,7 @@ Ein zentrales Ziel bei der Erarbeitung des TARMED war die finanzielle Aufwertung
 > Politischer Entscheidungsprozess der Schweiz: **Vollzugskomplex, Evaluation**    
 > Policy Cycle: **Evaluation**
 
-Bereits im Dezember 2014, knapp ein Jahr nach der Einführung des TARMED, wurde im Auftrag des BAG und erstellt vom Institut für Politikwissenschaft der Universität Zürich die "Vorbereitung einer Wirkungsanalyse" für den TARMED publiziert (@widmer_tarmed_2004). Hierin wird die erste zentrale Zieldimension des TARMED wie folgt umschrieben:
+Bereits im Dezember 2004, knapp ein Jahr nach der Einführung des TARMED, wurde im Auftrag des BAG und erstellt vom Institut für Politikwissenschaft der Universität Zürich die "Vorbereitung einer Wirkungsanalyse" für den TARMED publiziert (@widmer_tarmed_2004). Hierin wird die erste zentrale Zieldimension des TARMED wie folgt umschrieben:
 
 > "TARMED zielt auf eine **Aufwertung der intellektuellen respektive ärztlichen Leistungen** gegenüber den technischen (apparativen) Leistungen. Mit der Aufwertung der intellektuellen Leistungserbringung verbunden ist als Folge, dass die bestehenden Einkommensunterschiede zwischen verschiedenen Facharztgruppen verringert werden sollen."
 
