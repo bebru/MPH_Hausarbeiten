@@ -14,10 +14,10 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhead{}
 - \renewcommand{\headrulewidth}{0pt}
-- \fancyfoot[C]{Optimale Vergütung von hausräztlichen Leistungen}
+- \fancyfoot[C]{Die Vergütung von hausräztlichen Leistungen}
 - \fancyfoot[LE,RO]{\thepage}
 documentclass: article
-subtitle: Die Situation in der Schweiz im Vergleich zu alternativen Ansätzen
+subtitle: Die Situation in der Schweiz im Vergleich zu Ansätzen im benachbarten Ausland
 bibliography: bebru.bib
 ---
 
@@ -27,40 +27,104 @@ bibliography: bebru.bib
 
 # Einführung
 
-Die Vergütung von ambulanten ärztlichen Leistungen wird in der Schweiz über das Tarifwerk TARMED (tarif médical) geregelt, sowohl bei Grundversorgern, als auch bei Spezialärzten. Der TARMED wurde per 1.1.2004 eingeführt, und ist ein Einzelleistungstarif (engl.: fee-for-service). Das bedeutet, dass anerkannte Leistungserbringer für das Erbringen jeder im TARMED aufgeführten Leistung einen im Voraus bekannten Preis verrechenn können.  
-Wie bereits in der von der Eidgenössischen Finanzkontrolle EFK 2010 erstellten Evaluation der Zielerreichung des TARMED (@sangra_tarmed_2010) beschrieben, bietet die aktuelle Implementation dieses System verschiedene Schwachstellen. Insbesondere die ebenda auf Seite 92 beschriebenen Fehlanreize durch zu tief resp. zu hoch bewerteten Leistungen führen in der Schweiz aktuell zu Problemen in der Vergütung der hausärztlichen Leistungen. Der Bericht führt unter anderen folgende beiden Punkte auf:
+Die Vergütung von ambulanten ärztlichen Leistungen wird in der Schweiz über das Tarifwerk TARMED (tarif médical) geregelt, sowohl bei Grundversorgern, als auch bei Spezialärzten. Der TARMED wurde per 1.1.2004 eingeführt, und ist ein Einzelleistungstarif (engl.: fee-for-service, FFS). Das bedeutet, dass anerkannte Leistungserbringer für das Erbringen jeder im TARMED aufgeführten Leistung einen im Voraus bekannten Preis verrechenn können.  
+Wie bereits in der von der Eidgenössischen Finanzkontrolle EFK 2010 erstellten Evaluation der Zielerreichung des TARMED [@sangra_tarmed_2010] beschrieben, bietet die aktuelle Implementation dieses System verschiedene Schwachstellen. Insbesondere die ebenda auf Seite 92 beschriebenen Fehlanreize durch zu tief resp. zu hoch bewerteten Leistungen führen in der Schweiz aktuell zu Problemen in der Vergütung der hausärztlichen Leistungen. Der Bericht führt unter anderen folgende beiden Punkte auf:
 
 * Steigende Kosten in den Sozialversicherungen durch vermehrte Abrechnung von zu hoch bewerteten Leistungen, "obwohl sie evtl. medizinisch nicht unbedingt notwendig wären."
 * Ungleiche Einkommensentwicklung, je nach Spezialität der Ärzte, da operativ tätige Ärzte mittels Verbesserung der Effizienz einen grösseren Handlungsspielraum haben ihr Einkommen zu steigern, als dies Grundversorger haben.
 
-Diese beiden Punkte bedeuten, dass die vorhandenen Fehlanreize im Einzelleistungstarif TARMED potentiell dazu führen, dass eine Mengenausweitung an medizinischen Leistungen einen stärker als nötigen Anstieg der Gesundheitskosten zur Folge hat, eine medizinisch nicht sinnvolle Behandlung durchgeführt wird, und dass weniger Ärzte in Ausbildung sich für eine Spezialisierung in Hausarztmedizin entschliessen, als dies für eine flächendeckende Versorgung nötig wäre.
+Diese beiden Punkte bedeuten, dass die vorhandenen Fehlanreize im Einzelleistungstarif TARMED potentiell dazu führen, dass eine Mengenausweitung an medizinischen Leistungen einen stärker als nötigen Anstieg der Gesundheitskosten zur Folge hat, eine medizinisch nicht sinnvolle Behandlung durchgeführt wird, und dass weniger Ärzte in Ausbildung sich für eine Spezialisierung in Hausarztmedizin entschliessen, als dies für eine flächendeckende Versorgung nötig wäre (und indbesonderer in ländlichen Regionen der Schweiz zu einer tieferen Dichte an Grundversorgern führt, als erwünscht wäre).  
+Aktuell werden diese Probleme im Zuge der zum wiederholten Male gescheiterten Revision des TARMED, und der bevorstehenden Bekanngabe der Prämien der Grundversicherung OKP für das kommende Jahr, auch in den Medien diskutiert (z.B. in  @forster_steigende_2016 und @nordwestschweiz_schweiz_2016).
 
-Im Masterplan @_gesundheit_2013 adressiert das Eidgenössische Departement des Inneren (EDI) die obigen Punkte im "Ziel 2.2: Gesundheit durch Effizienzsteigerungen bezahlbar halten". Gemäss dem  EDI müssen hierzu Fehlanreize im Vergütungssystem der ambulanten Versorgung (unter anderen: TARMED) beseitigt werden, und Massnahmen zur Effizienzsteigerung und Massnahmen zur Qualitätssteigerung sich gegenseitig unterstützen, und gemeinsam geplant werden. Konkretisiert wird dieses Ziel mit einer dazu zugeordneten Massnahme ("Stärkung der Pauschalabgeltungen gegenüber den Einzelleistungstarifen sowie Revision bestehender Tarife (bspw. TARMED), um die Anreize zur Ausdehnung des Angebotes bei den Leistungserbringenden einzuschränken.").  
+Im Masterplan "Gesundheit 2020" [@edi_gesundheit_2013] adressiert das Eidgenössische Departement des Inneren (EDI) zudem die obigen Punkte im "Ziel 2.2: Gesundheit durch Effizienzsteigerungen bezahlbar halten". Gemäss dem  EDI müssen hierzu Fehlanreize im Vergütungssystem der ambulanten Versorgung (unter anderen: TARMED) beseitigt werden, und Massnahmen zur Effizienzsteigerung und Massnahmen zur Qualitätssteigerung sich gegenseitig unterstützen und gemeinsam geplant werden. Konkretisiert wird dieses Ziel mit einer dazu zugeordneten Massnahme ("Stärkung der Pauschalabgeltungen gegenüber den Einzelleistungstarifen sowie Revision bestehender Tarife (bspw. TARMED), um die Anreize zur Ausdehnung des Angebotes bei den Leistungserbringenden einzuschränken.").  
 
 # Vorgehensweise und Methoden
 
 Die Literaturrechereche wurde nicht systematisch durchgeführt. Neben Dokumenten der eidg. Verwaltung und des European Observatory on Health Systems and Policies sind über [Google Scholar](scholar.google.ch) gefundene Dokumente in diese Arbeit eingeflossen.  
 
-* Für die Beurteilung der aktuellen Situation in der Schweiz wird auf Dokumente der eidg. Verwaltung (@sangra_tarmed_2010 und @_gesundheit_2013) zurückgegriffen.  
+* Für die Beurteilung der aktuellen Situation in der Schweiz wird auf Dokumente der eidg. Verwaltung (@sangra_tarmed_2010 und @edi_gesundheit_2013) zurückgegriffen.  
 * Das European Observatory on Health Systems and Policies zeigt in @thomson_financing_2009 die Palette der in der Europäischen Union in Gebrauch befindlichen Vergütungssysteme auf.  
-* In @peckham_gp_2014 werden die Effekte der unterschiedlichen Vergütungssysteme auf Outcomes wie beispielsweise angebotsinduzierte Nachfrage untersucht.  
 * Anhand des Fallbeispiels Niederlande, beschrieben in @smolders_optimal_2007, werden die Vor- und Nachteile unterschiedlicher Vergütungssysteme angeschaut.  
 
-Aufgrund dieser Auslegeordnung werden schlussendlich mögliche Alternativen zum in der Schweiz implementierten System diskutiert.  
+Aufgrund dieser Auslegeordnung werden schlussendlich mögliche Anpassungen im in der Schweiz implementierten System diskutiert.  
+
 # Resultate und Diskussion
-
-## Überblick über verschiedene Vergütungssysteme
-
-@thomson_financing_2009 auf Seiten 42/43
-
-Auch anschauen: @thomson_addressing_2009
 
 ## Vergütungssystem in der Schweiz
 
-In der Schweiz kommt in der Vergütung hausärztlicher Leistungen mit dem Tarifwerk TARMED ein Einzelleistungstarif zur Anwendung. Jede von einem anerkannten Leistungserbringer erbrachten Leistung hat einen je nach Kanton unterschiedlichen Preis. Dieser kann dem Patienten resp. dessen Krankenversicherungen in Rechnung gestellt werden.  
-Daneben kommt in einigen Versicherungsmodellen (üblicherweise unter der Bezeichnung Managed Care bekannt), welche Krankenversicherungen freiwillig anbieten können, ein Capitationsystem zur Anwendung. Hierbei wird mit einem Netzwerk von Ärzten aufgrund des ihm zugeordneten Versichertenkollektivs ein (teilleiweise risikoadjustiertes) Budget vereinbart. Benötigt das Ärztenetzwerk für die Behandlung des Versichertenkollektivs in einem Jahr weniger als das vereinbarte Budget, erhält es von der Versicherung einen Teil des gegenüber dem Budget eingesparten Betrag als Bonus ausbezahlt. Bei Überschreitung des Budgets muss das Netzwerk der Versicherung einen Malus zahlen. Die genauen Modalitäten dieser Vereinbarungen werden zwischen den Versicherungen und den Ärztenetzwerken verhandelt. Die Versicherten erhalten für die Teilnahme an einem solchen Versicherungsmodell einen Rabatt auf ihre Versicherungsprämie.  
-Somit kommt in der Schweiz bei der Vergütung hausärztlicher Leistungen ein gemischtes System, bestehend aus Einzelleistungstarif und Capitationsystem, zur Anwendung. Gundlange für das Einkommen der Grundversoger bildet dabei immer der Einzelleistungstarif. Das Capitationsystem modifiziert allenfalls  die Einnahmen der einzelnen Ärzte.
+In der Schweiz kommt in der Vergütung hausärztlicher Leistungen mit dem Tarifwerk TARMED ein Einzelleistungstarif (FFS) zur Anwendung. Jede von einem anerkannten Leistungserbringer erbrachten Leistung hat einen je nach Kanton unterschiedlichen Preis. Dieser kann dem Patienten resp. dessen Krankenversicherungen in Rechnung gestellt werden.  
+Daneben kommt in einigen Versicherungsmodellen (üblicherweise unter der Bezeichnung Managed Care bekannt), welche Krankenversicherungen freiwillig anbieten können, ein Capitationsystem zur Anwendung. Hierbei wird mit einem Netzwerk von Ärzten aufgrund des ihm zugeordneten Versichertenkollektivs ein (teilleiweise risikoadjustiertes) Budget vereinbart. Benötigt das Ärztenetzwerk für die Behandlung des Versichertenkollektivs in einem Jahr weniger als das vereinbarte Budget, erhält es von der Versicherung einen Teil des gegenüber dem Budget eingesparten Betrag als Bonus ausbezahlt. Bei Überschreitung des Budgets muss das Netzwerk der Versicherung möglicherweise einen Malus zahlen. Die genauen Modalitäten dieser Vereinbarungen werden zwischen den Versicherungen und den Ärztenetzwerken verhandelt, und variieren deshalb. Die Versicherten erhalten für die Teilnahme an einem solchen Versicherungsmodell einen Rabatt auf ihre Versicherungsprämie.  
+Somit kommt in der Schweiz ein gemischtes System, bestehend aus FFS und Capitation mit Budgetverantwortung, zur Anwendung. Gundlange für das Einkommen der Grundversoger bildet dabei immer der Einzelleistungstarif, das Capitationsystem modifiziert über das Zahlungen des Ärztenetzwerks allenfalls die Einnahmen der einzelnen Ärzte.
+
+## Überblick über verschiedene Vergütungssysteme in der EU
+
+Wie die folgende Tabelle aus [@thomson_financing_2009, pp. 42-43] zeigt, kommt zum Zeitpunkt der Studie bei der Vergütung von Grundversorgern in den meisten Ländern der EU, wie in der Schweiz, ein System mit einer Mischung aus FFS und Capitation zur Anwendung. Insbesondere einige der neueren Länder der EU haben ihr Gesundheitssystem weg von fixen Salären (welche ebenfalls weiter vorkommen) und hin zu FFS resp. Capitation reformiert, seltener auch mit zusätzlichen performance-abhängigen Zahlungen [-@thomson_financing_2009, pp. 85-86].  
+Der Reformprozess in den EU-Mitgliedsstaaten ist vielerorts noch nicht abgeschlossen, wobei hauptsächlich weiter ausdifferenzierte Vergütungssysteme, welche die erbrachte Menge an Leistungen und deren Qualität miteinbezieht, folgen sollen. Eine Verlinkung von performance-abhängigen Zahlungen mit dem gesundheitsrelevanten Ergebnis der Behandlung soll gemäss [-@thomson_financing_2009, pp. 92] weiter vorangetrieben werden.  
+
+| Land | Finanzierung Grundversorgung |
+|--------|------------------------------------------------------------------------------------------------|
+| AT | Allowances (80%) + FFS (contracted), FFS (non-contracted) |
+| BE | FFS |
+| BG | Capitation + bonuses |
+| CY | Salary (public), FFS (private) |
+| CZ | Age-weighted capitation + FFS |
+| DK | Capitation + FFS |
+| EE | Age-weighted capitation + FFS |
+| FI | Salary + FFS or a mix of salary, capitation + FFS for personal doctors (public), FFS (private) |
+| FR | FFS |
+| DE | FFS points |
+| EL | Salary + FFS (public), FFS (private) |
+| HU | Weighted capitation + adjustments based on provider characteristics |
+| IE | Weighted capitation + FFS |
+| IT | Capitation + FFS + PRP (also for paediatricians) |
+| LV | Age-weighted capitation + FFS |
+| LT | Age-weighted capitation |
+| LU | FFS |
+| NL | Salary |
+| MT | Capitation + FFS |
+| PL | Age-weighted capitation |
+| PT | Salary (NHS) + capitation + PRP |
+| RO | Age-weighted capitation + FFS (15%) |
+| SI | Age-weighted capitation + FFS |
+| SK | Capitation + FFS (50%) |
+| ES | Salary + age-weighted capitation (15%) |
+| SE | Salary or capitation + some FFS |
+| UK-ENG | Weighted capitation + FFS + PRP |
+
+Quellen: [^5fff5edb], Abkürzungen: [^df77774b]
+
+[^5fff5edb]: Quellen: European Observatory on Health Systems and Policies Health Systems in Transition series reports; Authors’ own research.
+
+[^df77774b]:
+Abkürzungen: FFS: Fee-for-service (payments); PRP: Performance-related pay.
+
+## Überlegungen zu einem optimalen Vergütungssystem aus den Niederlanden
+
+Die Grundversorger üben in den Niederlanden eine Gatekeeping-Funktion aus. Der erste Kontakt mit dem Gesundheitssystem ist zwingend bei einem Hausarzt, welcher die weitere Versorgung koordiniert. Das Vergütungssystem für Grundversoger wurde in den Niederlanden per 1.1.2006  reformiert. Die davor vorhandene Trennung zwischen öffentlich und privat versicherten Personen, mit unterschiedlichen Zahlungssystemen bei deren Behandlung, wurde aufgehoben. Neu kommt ebenfalls eine Mischung aus Capitation und FFS zur Anwendung.  
+In @smolders_optimal_2007 wird dieses neue System evaluiert, und werden Vorschläge zur Optmierung bezüglich Minimierung der (gesamten) Gesundheitsausgaben und Qualität und Zugang zum Gesundheitssystem präsentiert.  
+Das Wechsel zu einem Mischsystem aus Capitation und FFS wird als eine Verbesserung zu den vorherigen reinen Capitation- (öffentlich verischerte Personen), resp. FFS-Systeme (privat versicherte Personen) angesehen. Die unerwünschten Anreize konnten durch diesen Wechsel vemindert werden.  
+Da ein Capitationsystem Anreize zu einer Unterproduktion, und ein FFS-System die Ärzte eher zu einer Überproduktion motiviert, und ethische Grundsätze der Ärzte eine Unterproduktion nur begrenzt zulassen, soll das Vergütungssystem hauptsächlich aus einem risikoadjustierten Capitationbeitrag, und zusätzlichen FFS-Beiträgen bestehen - wie dies aktuell in den Niederlanden der Fall ist. Verbessert werden könnte das System allenfalls dadurch, dass die dokumentierte Verwendung von Protokollen und Guidelines vergütet wird.  
+Zur Einführung von Budgets für Grundversorger für weitergehende Behandlungen bei Spezialärzten oder stationären Einrichtungen, wird in @smolders_optimal_2007 aus den folgenden Gründen abgeraten:
+
+* Das zusätzliche finanzielle Risiko für Grundversorger würde dazu führen, dass diese dafür eine Risikoprämie verlangen würden. Krankenversicherungen können dieses Risiko aufgrund der grösseren Kollektivs besser tragen.
+* Durch die sich konkurrenzierenden Krankenversicherungen gibt es in den Niederlanden bereits Leistungseinkäufer, welche versuchen hohe Qualität zu günstigen Preisen einzukaufen.
+* Die Grundversorger haben eine kleinere Markmacht als Krankenversicherungen, auch wenn sie sich zusammenschliessen.
+* Budgets für weitergehende Behandlungen belasten potentiell das Verhältnis zu den Klienten.
+
+Budgets für Medikamente werden ebenfalls nicht empfohlen. Auch hier könnte Misstrauen der Klienten das Verhältnis zum Arzt beeinträchtigen. Anstelle von Anreizen für tiefe Medikamentenverschreibungen werden konkrete Einschränkungen vorgeschlagen. Beispielsweise könnte nur die jeweils günstigste Variante eines bestimmten Medikamentes vergütet werden. Auch die Verwendung von Generika kann vorausgesetzt werden, wo dies möglich ist, um Kosten zu sparen.
+
+Insgesamt wird die Mischung aus Capitation und FFS als ideal angesehen, und es stellt sich lediglich die Frage, zu welchen Teilen diese beiden Systeme zum Einkommen der Grundversorger beitragen sollen. Von stärkeren finanziellen Anreizen für Grundversorger, z.B. durch Budgets, wird abgeraten.  
+
+## Vergleich der Systeme in der Schweiz und den Niederlanden
+
+Die Vergütungssysteme der Grundversorger in der Schweiz und den Niederlanden gleichen sich insofern, als dass beide eine Mischung aus Capitation uns FFS beinhalten. Der grösste Unterschied besteht darin, dass in den Niederlanden der Capitationbeitrag den grössten Anteil am Einkommen der Ärzte hat. In der Schweiz beziehen Ärzte ihr Einkommen haupsächlich aus FFS-Beiträgen, und allfällige Capitationzahlungen (üblicherweise im Zusammenhang mit einem Budget) spielen nur eine marginale Rolle. Ärzte können sich auch völlig vom Capitationsystem fernhalten, und ihr Einkommen ausschliesslich aus FFS-Beiträgen beziehen.  
+Da Capitationsysteme Anreize zu einer Unter- und FFS-Systeme zu einer Überproduktion setzen an Gesundheitsleistungen setzen, ist anzunehmen, dass das schweizerische System mehr zu Überproduktion neigt, als dasjenige in den Niederlanden.  
+Ein weiterer Unterschied in den beiden Ländern ist, dass in den Niederlanden die Grundversorger gesetzlich vorgeschrieben eine Gatekeeping-Rolle ausüben (kein direkter Zugang zu Spezialärzten), und in der Schweiz diese Rolle über die Budgetmitverantwortung in Capitationverträgen gestärkt werden soll. Da diese Verträge wenig verbreitet sind, und die Behandlung bei Spezialärzten als teurer als bei Grundversorgern gilt, ist dies ein weiterer möglicher Grund, weshalb die Gesundheitskosten in der Schweiz höher sind als in den Niederlanden.
 
 # Schlussfolgerungen
+
+Mit dem Mischssystem aus FFS und Capitation macht die Schweiz in der Vergütung der hausärztlichen Leistungen das, was auch im benachbarten Ausland üblich ist. Allerdings ist nicht nur der Reformbedarf gross, sondern auch das Potential für Verbesserungen im heutigen System gegeben. Die Niederlande gibt hierbei durchaus ein gutes Vorbild ab, deren System zurzeit zusammen mit demjenigen in Deutschland auch tatsächlich vom Departement des Inneren EDI analysiert wird [@edi_mengenwachstum_2016].  
+Insbesondere die weitere Verbreitung und höhere Gewichtung der Capitationbeiträge könnte in der Schweiz mehrere Probleme potentiell zumindest mildern. Namentlich könnte dies einen dämpfenden Effekt auf die Menge der erbrachten Gesundheitsleistungen haben und damit auf die totalen Gesundheitskosten haben, und zudem könnten die finanziellen Anreize für junge Ärzte, sich zu Grundversorgern auszubilden und sich in ländlichen Regionen anzusiedeln, vergrössert werden. Da ein Capitationsystem weniger an Innovationen angepasst werden muss als ein FFS-System, könnte dadurch auch der Druck in den Verhandlungen des Einzelleistungstarif TARMED verringert werden.  
+Politisch kaum eine Chance dürfte in der Schweiz die Einschränkung des Zugangs zu Spezialärzten wie in den Niederlanden haben. Auch wenn dadurch die Steigerung der Gesundheitskosten durch die Stärkung der Hausarztmedizin und deren Gatekeeping-Rolle erwartet werden könnte, haben vergangene Abstimmungen in der Schweiz gezeigt, dass ein solches Anliegen beim Stimmvolk auf wenig Akzeptanz stösst.
 
 # Bibliography
