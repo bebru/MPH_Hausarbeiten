@@ -1,0 +1,616 @@
+\documentclass[ngerman,a4paper]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Vergütung von hausräztlichen Leistungen},
+            pdfauthor={Beat Brüngger},
+            pdfsubject={Die Situation in der Schweiz im Vergleich zu Ansätzen im benachbarten
+Ausland},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=ngerman]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[variant=swiss]{german}
+\fi
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Vergütung von hausräztlichen Leistungen}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+\subtitle{Die Situation in der Schweiz im Vergleich zu Ansätzen im benachbarten
+Ausland}
+  \author{Beat Brüngger}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{Sept. 8, 2016}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{Vergütung von hausräztlichen Leistungen}
+\fancyfoot[LE,RO]{\thepage}
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Das in der Schweiz bei der Vergütung von ambulanten
+Gesundheitsleistungen vewendete Tarifsystem TARMED wurde 2004
+eingeführt, und bedarf anerkannterweise einer Reform. Die darin
+aufgeführten Einzelleistungen haben aus heutiger Sicht vielfach keinen
+sachgerechten Preis mehr, was zu Fehlanreizen führt. Aufgrund der
+diametral entgegengesetzten Interessen der beiden Tarifpartner
+Ärzteschaft und Krankenversicherer sind die Verhandlungen rund um die
+Tarifrefom seit Jahren blockiert. Ausserdem steigen die
+Gesundheitsausgaben in einem so starken Ausmass, dass auf politischer
+Ebene Lösungen gefordert werden, welche das Gesundheitssystem
+langfristig finanzierbar halten. Steigende Gesundheitskosten sind auch
+in den benachbarten Ländern ein vieldiskutiertes Thema. Aus diesem Grund
+sollen die in anderern Ländern vorhandenen Lösungsansätze für dieses
+Problem auf deren Tauglichkeit für die Anwendung in der Schweiz
+überprüft werden.
+\end{abstract}
+
+
+\newpage
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\pagebreak
+
+\section{Einführung}\label{einfuhrung}
+
+Die Vergütung von ambulanten ärztlichen Leistungen wird in der Schweiz
+über das Tarifwerk TARMED (\textbf{\emph{tar}}if
+\textbf{\emph{méd}}ical) geregelt, sowohl bei Grundversorgern, als auch
+bei Spezialärzten. Der TARMED wurde per 1.1.2004 eingeführt, und ist ein
+Einzelleistungstarif (engl.: fee-for-service, FFS). Das bedeutet, dass
+anerkannte Leistungserbringer für das Erbringen jeder im TARMED
+aufgeführten Leistung einen im Voraus bekannten Preis verrechnen
+können.\\
+Wie bereits in der von der Eidgenössischen Finanzkontrolle EFK 2010
+erstellten Evaluation der Zielerreichung des TARMED (Sangra und Courbat
+2010) beschrieben, bietet die aktuelle Implementation dieses Systems
+verschiedene Schwachstellen. Insbesondere die ebenda auf Seite 92
+beschriebenen Fehlanreize durch zu tief resp. zu hoch bewerteten
+Leistungen führen in der Schweiz aktuell zu Problemen in der Vergütung
+von ambulanten Gesundheitsleistungen. Der Bericht führt unter anderen
+folgende beiden Punkte auf:
+
+\begin{itemize}
+\tightlist
+\item
+  Steigende Kosten in den Sozialversicherungen durch vermehrte
+  Abrechnung von zu hoch bewerteten Leistungen, ``obwohl sie evtl.
+  medizinisch nicht unbedingt notwendig wären.''
+\item
+  Ungleiche Einkommensentwicklung, je nach Spezialität der Ärzte, da
+  operativ tätige Ärzte mittels Verbesserung der Effizienz einen
+  grösseren Handlungsspielraum haben ihr Einkommen zu steigern, als dies
+  Grundversorger haben.
+\end{itemize}
+
+Diese beiden Punkte bedeuten, dass die vorhandenen Fehlanreize im
+Einzelleistungstarif TARMED potentiell dazu führen, dass eine
+Mengenausweitung an medizinischen Leistungen einen stärker als nötigen
+Anstieg der Gesundheitskosten zur Folge hat, teilweise medizinisch nicht
+sinnvolle Behandlungen durchgeführt werden, und dass weniger Ärzte in
+Ausbildung sich für eine Spezialisierung in Hausarztmedizin
+entschliessen, als dies für eine flächendeckende Versorgung nötig wäre.
+Indbesonderer in ländlichen Regionen der Schweiz ist die Dichte an
+Grundversorgern tiefer, als erwünscht ist.\\
+Aktuell werden steigenden Gesundheitskosten und der Mangel an Hausärzten
+im Zuge der zum wiederholten Male gescheiterten Revision des TARMED, und
+der bevorstehenden Bekanngabe der Prämien der Grundversicherung OKP für
+das kommende Jahr, auch in den Medien diskutiert (z.B. in Forster (2016)
+und Nordwestschweiz (2016)).\\
+Im Masterplan ``Gesundheit 2020'' (EDI 2013) adressiert das
+Eidgenössische Departement des Inneren (EDI) zudem die obigen Punkte im
+``Ziel 2.2: Gesundheit durch Effizienzsteigerungen bezahlbar halten''.
+Gemäss dem EDI müssen hierzu Fehlanreize im Vergütungssystem der
+ambulanten Versorgung (unter anderen: TARMED) beseitigt werden, und
+Massnahmen zur Effizienzsteigerung und Massnahmen zur
+Qualitätssteigerung sich gegenseitig unterstützen und gemeinsam geplant
+werden. Konkretisiert wird dieses Ziel mit einer dazu zugeordneten
+Massnahme: ``Stärkung der Pauschalabgeltungen gegenüber den
+Einzelleistungstarifen sowie Revision bestehender Tarife (bspw. TARMED),
+um die Anreize zur Ausdehnung des Angebotes bei den
+Leistungserbringenden einzuschränken.''
+
+\section{Vorgehensweise}\label{vorgehensweise}
+
+Die Literaturrechereche wurde nicht systematisch durchgeführt. Neben
+Dokumenten der eidg. Verwaltung und des European Observatory on Health
+Systems and Policies sind über \href{scholar.google.ch}{Google Scholar}
+gefundene Dokumente in diese Arbeit eingeflossen.
+
+\begin{itemize}
+\tightlist
+\item
+  Für die Beurteilung der aktuellen Situation in der Schweiz wird auf
+  Dokumente der eidg. Verwaltung (Sangra und Courbat (2010) und EDI
+  (2013)) zurückgegriffen.\\
+\item
+  Das European Observatory on Health Systems and Policies zeigt in
+  Thomson, Foubister, und Mossialos (2009) die Palette der in der
+  Europäischen Union in Gebrauch befindlichen Vergütungssysteme auf.\\
+\item
+  Anhand des Fallbeispiels Niederlande, beschrieben in Smolders und
+  Seinen (2007), werden die Vor- und Nachteile unterschiedlicher
+  Vergütungssysteme angeschaut, und das System in den Niederlanden
+  evaluiert.
+\end{itemize}
+
+Aufgrund dieser Auslegeordnung werden schlussendlich mögliche
+Anpassungen im in der Schweiz implementierten System diskutiert.
+
+\section{Resultate und Diskussion}\label{resultate-und-diskussion}
+
+\subsection{Vergütungssystem in der
+Schweiz}\label{vergutungssystem-in-der-schweiz}
+
+In der Schweiz kommt in der Vergütung hausärztlicher Leistungen mit dem
+Tarifwerk TARMED ein Einzelleistungstarif (FFS) zur Anwendung. Jede von
+einem anerkannten Leistungserbringer erbrachten Leistung hat einen je
+nach Kanton unterschiedlichen Preis. Dieser kann dem Patienten resp.
+dessen Krankenversicherung in Rechnung gestellt werden.\\
+Daneben kommt in einigen Versicherungsmodellen (üblicherweise unter der
+Bezeichnung Managed Care bekannt), welche Krankenversicherungen
+freiwillig anbieten können, ein Capitationsystem zur Anwendung. Hierbei
+wird mit einem Netzwerk von Ärzten aufgrund des ihm zugeordneten
+Versichertenkollektivs ein (teilleiweise risikoadjustiertes) Budget
+vereinbart. Benötigt das Ärztenetzwerk für die Behandlung des
+Versichertenkollektivs in einem Jahr weniger als das vereinbarte Budget,
+erhält es von der Versicherung einen Teil des gegenüber dem Budget
+eingesparten Betrags als Bonus ausbezahlt. Bei Überschreitung des
+Budgets muss das Netzwerk der Versicherung möglicherweise einen Malus
+zahlen. Die genauen Modalitäten dieser Vereinbarungen werden zwischen
+den Versicherungen und den Ärztenetzwerken verhandelt, und variieren
+deshalb. Die Versicherten erhalten für die Teilnahme an einem solchen
+Versicherungsmodell einen Rabatt auf ihre Versicherungsprämie.\\
+Somit kommt in der Schweiz ein gemischtes System, bestehend aus FFS und
+Capitation mit Budgetverantwortung, zur Anwendung. Gundlange für das
+Einkommen der Grundversoger bildet dabei immer der Einzelleistungstarif.
+Das Capitationsystem modifiziert über die Zahlungen des Ärztenetzwerks
+allenfalls die Einnahmen der einzelnen Ärzte.
+
+\subsection{Überblick über verschiedene Vergütungssysteme in der
+EU}\label{uberblick-uber-verschiedene-vergutungssysteme-in-der-eu}
+
+Wie die folgende Tabelle aus Thomson, Foubister, und Mossialos (2009),
+Seiten 42-43, zeigt, kommt zum Zeitpunkt der Studie bei der Vergütung
+von Grundversorgern in den meisten Ländern der EU, wie auch in der
+Schweiz, ein System mit einer Mischung aus FFS und Capitation zur
+Anwendung. Insbesondere einige der neueren Länder der EU haben ihr
+Gesundheitssystem weg von fixen Salären (welche ebenfalls weiter
+vorkommen) und hin zu FFS resp. Capitation reformiert, seltener mit
+zusätzlichen performance-abhängigen Zahlungen (Thomson, Foubister, und
+Mossialos (2009), Seiten 85-86).\\
+Der Reformprozess ist auch in vielen EU-Mitgliedsstaaten noch nicht
+abgeschlossen, wobei hauptsächlich weiter ausdifferenzierte
+Vergütungssysteme, welche die erbrachte Menge an Leistungen und deren
+Qualität miteinbezieht, folgen sollen. Eine Verlinkung von
+performance-abhängigen Zahlungen mit dem gesundheitsrelevanten Ergebnis
+der Behandlung soll gemäss Thomson, Foubister, und Mossialos (2009),
+Seite 92, weiter vorangetrieben werden.
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\raggedright\strut
+Land
+\strut\end{minipage} &
+\begin{minipage}[b]{0.86\columnwidth}\raggedright\strut
+Finanzierung Grundversorgung
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+AT
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Allowances (80\%) + FFS (contracted), FFS (non-contracted)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+BE
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+BG
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Capitation + bonuses
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+CY
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary (public), FFS (private)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+CZ
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+DK
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+EE
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+FI
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary + FFS or a mix of salary, capitation + FFS for personal doctors
+(public), FFS (private)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+FR
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+DE
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+FFS points
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+EL
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary + FFS (public), FFS (private)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+HU
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Weighted capitation + adjustments based on provider characteristics
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+IE
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Weighted capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+IT
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Capitation + FFS + PRP (also for paediatricians)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+LV
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+LT
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+LU
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+NL
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+MT
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+PL
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+PT
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary (NHS) + capitation + PRP
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+RO
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation + FFS (15\%)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+SI
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Age-weighted capitation + FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+SK
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Capitation + FFS (50\%)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+ES
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary + age-weighted capitation (15\%)
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+SE
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Salary or capitation + some FFS
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.08\columnwidth}\raggedright\strut
+UK-ENG
+\strut\end{minipage} &
+\begin{minipage}[t]{0.86\columnwidth}\raggedright\strut
+Weighted capitation + FFS + PRP
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Quellen:,\footnote{Quellen: European Observatory on Health Systems and
+  Policies Health Systems in Transition series reports.}
+Abkürzungen:\footnote{Abkürzungen: FFS: Fee-for-service (payments); PRP:
+  Performance-related pay.}
+
+\subsection{Überlegungen zu einem optimalen Vergütungssystem aus den
+Niederlanden}\label{uberlegungen-zu-einem-optimalen-vergutungssystem-aus-den-niederlanden}
+
+Die Grundversorger üben in den Niederlanden eine Gatekeeping-Funktion
+aus. Der erste Kontakt mit dem Gesundheitssystem ist zwingend bei einem
+Hausarzt, welcher die weitere Versorgung koordiniert. Das
+Vergütungssystem für Grundversoger wurde in den Niederlanden per
+1.1.2006 reformiert. Die davor vorhandene Trennung zwischen öffentlich
+und privat versicherten Personen, mit unterschiedlichen Zahlungssystemen
+bei deren Behandlung, wurde aufgehoben. Neu kommt ebenfalls eine
+Mischung aus Capitation und FFS zur Anwendung.\\
+In Smolders und Seinen (2007) wird dieses neue System evaluiert, und
+werden Vorschläge zur Optmierung bezüglich Minimierung der (gesamten)
+Gesundheitsausgaben, sowie zu Qualität und Zugang zum Gesundheitssystem
+präsentiert.\\
+Das Wechsel zu einem Mischsystem aus Capitation und FFS wird als eine
+Verbesserung zu den vorherigen reinen Capitation- (öffentlich
+verischerte Personen), resp. FFS-Systeme (privat versicherte Personen)
+angesehen. Vorher vorhandene unerwünschten Anreize konnten durch diesen
+Wechsel vemindert werden.\\
+Da ein Capitationsystem Anreize zu einer Unterproduktion mit sich
+bringt, und ein FFS-System die Ärzte eher zu einer Überproduktion
+motiviert, ethische Grundsätze der Ärzte aber eine Unterproduktion nur
+begrenzt zulassen, soll das Vergütungssystem hauptsächlich aus einem
+risikoadjustierten Capitationbeitrag, und zusätzlichen FFS-Beiträgen
+bestehen - wie dies aktuell in den Niederlanden der Fall ist. Verbessert
+werden könnte das System allenfalls dadurch, dass die dokumentierte
+Verwendung von Protokollen und Guidelines über spezifische Positionen im
+Einzelleistungstarif vergütet wird.\\
+Zur Einführung von Budgets für Grundversorger für weitergehende
+Behandlungen bei Spezialärzten oder stationären Einrichtungen, wird in
+Smolders und Seinen (2007) aus den folgenden Gründen abgeraten:
+
+\begin{itemize}
+\tightlist
+\item
+  Das zusätzliche finanzielle Risiko für Grundversorger würde dazu
+  führen, dass diese dafür eine Risikoprämie verlangen würden.
+  Krankenversicherungen können dieses Risiko aufgrund des grösseren
+  Versichertenkollektivs besser tragen.
+\item
+  Durch die sich konkurrenzierenden Krankenversicherungen gibt es in den
+  Niederlanden bereits Leistungseinkäufer, welche versuchen hohe
+  Qualität zu günstigen Preisen einzukaufen. Weiter Konkurrenz unter den
+  Ärzten würde hier keinen Nutzen bringen.
+\item
+  Die Grundversorger haben eine kleinere Markmacht als
+  Krankenversicherungen, auch wenn sie sich zusammenschliessen.
+\item
+  Budgets für weitergehende Behandlungen belasten potentiell das
+  Verhältnis zu den Klienten.
+\end{itemize}
+
+Budgets für Medikamente werden ebenfalls nicht empfohlen. Auch hier
+könnte Misstrauen der Klienten das Verhältnis zum Arzt beeinträchtigen.
+Anstelle von Anreizen für tiefe Medikamentenverschreibungen werden
+konkrete Einschränkungen vorgeschlagen. Beispielsweise könnte nur die
+jeweils günstigste Variante eines bestimmten Medikamentes vergütet
+werden. Auch die Verwendung von Generika kann vorausgesetzt werden, wo
+dies möglich ist, um Kosten zu sparen.\\
+Insgesamt wird die Mischung aus Capitation und FFS als ideal angesehen,
+und es stellt sich lediglich die Frage, zu welchen Teilen diese beiden
+Systeme zum Einkommen der Grundversorger beitragen sollen. Von stärkeren
+finanziellen Anreizen für Grundversorger, z.B. durch Budgets, wird
+abgeraten.
+
+\subsection{Vergleich der Systeme in der Schweiz und den
+Niederlanden}\label{vergleich-der-systeme-in-der-schweiz-und-den-niederlanden}
+
+Die Vergütungssysteme der Grundversorger in der Schweiz und den
+Niederlanden gleichen sich insofern, als dass beide eine Mischung aus
+Capitation uns FFS beinhalten. Der grösste Unterschied besteht darin,
+dass in den Niederlanden der Capitationbeitrag den grössten Anteil am
+Einkommen der Ärzte hat. In der Schweiz beziehen Ärzte ihr Einkommen
+haupsächlich aus FFS-Beiträgen; allfällige Capitationzahlungen
+(üblicherweise im Zusammenhang mit einem Budget) spielen nur eine
+marginale Rolle. Ärzte können sich in der Schweiz auch völlig vom
+Capitationsystem fernhalten, und ihr Einkommen ausschliesslich aus
+FFS-Beiträgen beziehen.\\
+Da Capitationsysteme Anreize zu einer Unter- und FFS-Systeme zu einer
+Überproduktion an Gesundheitsleistungen setzen, ist anzunehmen, dass das
+schweizerische System mehr zu Überproduktion neigt, als dasjenige in den
+Niederlanden.\\
+Ein weiterer Unterschied in den beiden Ländern ist, dass in den
+Niederlanden die Grundversorger gesetzlich vorgeschrieben eine
+Gatekeeping-Rolle ausüben (kein direkter Zugang zu Spezialärzten). In
+der Schweiz soll diese Rolle über die Budgetmitverantwortung in
+Capitationverträgen gestärkt werden. Da solche Verträge wenig verbreitet
+sind, und die Behandlung bei Spezialärzten als teuer gilt, ist dies ein
+weiterer möglicher Grund, weshalb die Gesundheitskosten in der Schweiz
+höher sind als in den Niederlanden.
+
+\section{Schlussfolgerungen}\label{schlussfolgerungen}
+
+Mit dem Mischssystem aus FFS und Capitation macht die Schweiz in der
+Vergütung der hausärztlichen Leistungen das, was auch im benachbarten
+Ausland üblich ist. Allerdings ist in der Schweiz nicht nur der
+Reformbedarf gross, sondern auch das Potential für Verbesserungen im
+heutigen System gegeben. Die Niederlande gibt hierbei durchaus ein
+valables Vorbild ab, deren System zurzeit zusammen mit demjenigen in
+Deutschland auch tatsächlich vom Departement des Inneren EDI analysiert
+wird (EDI 2016).\\
+Wie bereits im Masterplan ``Gesundheit 2020'' (EDI 2013) als mögliche
+Massnahme zum Ziel 2.2 angetönt wird, könnte insbesondere die weitere
+Verbreitung und höhere Gewichtung der Capitationbeiträge in der Schweiz
+die bestehenden Probleme potentiell mildern. Namentlich könnte dies
+einen dämpfenden Effekt auf die Menge der erbrachten ambulanten
+Gesundheitsleistungen, und damit auf die totalen Gesundheitskosten,
+haben. Zudem könnten dadurch die finanziellen Anreize für junge Ärzte,
+sich zu Grundversorgern auszubilden und sich in ländlichen Regionen
+anzusiedeln, vergrössert werden.\\
+Ein weiterer Vorteil von Capitationsystemen ist, dass diese weniger an
+Innovationen angepasst werden müssen, als dies bei FFS-Systemen der Fall
+ist (in welchen jede abrechenbare Behandlungsmethode einzeln aufgeführt
+werden muss). Durch eine stärkere Gewichtung der Capitation könnte so
+auch der Druck in den Tarifverhandlungen verringert werden, wenn der
+verhandlungsintensive Einzelleistungstarif einen kleineren Anteil am
+Einkommen der Ärzte hat.\\
+Politisch kaum eine Chance dürfte in der Schweiz die Einschränkung des
+Zugangs zu Spezialärzten wie in den Niederlanden haben. Auch wenn
+dadurch die Steigerung der Gesundheitskosten durch die Stärkung der
+Hausarztmedizin und deren Gatekeeping-Rolle erwartet werden könnte,
+haben vergangene Abstimmungen in der Schweiz gezeigt, dass ein solches
+Anliegen beim Stimmvolk auf wenig Akzeptanz stossen würde.
+
+\section*{Bibliography}\label{bibliography}
+\addcontentsline{toc}{section}{Bibliography}
+
+\hypertarget{refs}{}
+\hypertarget{ref-ediux5fgesundheitux5f2013}{}
+EDI. 2013. «Gesundheit 2020 - Die gesundheitspolitischen Prioritäten des
+Bundesrates». Medienbericht. Eidg. Departement des Inneren.
+\url{http://bit.ly/1orgI7g}.
+
+\hypertarget{ref-ediux5fmengenwachstumux5f2016}{}
+EDI. 2016. «Mengenwachstum im Gesundheitswesen eindämmen -- zusätzliche
+Massnahmen nötig». \emph{Medienmitteilung}, Februar. Bern.
+\url{http://bit.ly/2c5g0hg}.
+
+\hypertarget{ref-forsterux5fsteigendeux5f2016}{}
+Forster, Christof. 2016. «Steigende Gesundheitskosten: Berset will das
+Wachstum drosseln». \emph{Neue Zürcher Zeitung}, Februar.
+\url{http://bit.ly/2bUFaAY}.
+
+\hypertarget{ref-nordwestschweizux5fschweizux5f2016}{}
+Nordwestschweiz. 2016. «Der Schweiz fehlen über 2000 Hausärzte -- und es
+werden mehr». \emph{Aargauer Zeitung}, März.
+\url{http://bit.ly/2c9crUA}.
+
+\hypertarget{ref-sangraux5ftarmedux5f2010}{}
+Sangra, Emmanuel, und Claude Courbat. 2010. «TARMED - der Tarif für
+ambulant erbrachte ärztliche Leistungen». Eidgenössische Finanzkontrolle
+(EFK). \url{http://bit.ly/2c9dofG}.
+
+\hypertarget{ref-smoldersux5foptimalux5f2007}{}
+Smolders, Nicole, und Ingrid Seinen. 2007. «An optimal renumeration for
+General Practitioners». Dutch Healthcare Authority (NZa).
+\url{http://bit.ly/2ctP0Gr}.
+
+\hypertarget{ref-thomsonux5ffinancingux5f2009}{}
+Thomson, Sarah, Thomas Foubister, und Elias Mossialos. 2009.
+\emph{Financing health care in the European Union: Challenges and policy
+responses}. Observatory studies series, no. 17. Copenhagen: World Health
+Organization on behalf of the European Observatory on Health Systems;
+Policies. \url{http://bit.ly/1o5es2h}.
+
+\end{document}
