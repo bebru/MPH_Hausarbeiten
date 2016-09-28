@@ -1,28 +1,29 @@
 ---
 title: "Memo Gesundheitsförderung"
 author: "Beat Brüngger"
-classoption: a4paper
+date: "Sept. 26, 2016"
 output: pdf_document
+classoption: a4paper
+documentclass: article
 email: beat.bruengger@gmx.ch
-date: Sept. 26, 2016
-lang:  de-CH
 header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
 - \fancyhead{}
 - \renewcommand{\headrulewidth}{0pt}
-- \fancyfoot[C]{Memo Gesundheitsförderung}
+- \fancyfoot[C]{Memo GesundheitsfÃƒÂ¶rderung}
 - \fancyfoot[LE,RO]{\thepage}
-documentclass: article
-subtitle: Projektvorschlag zur Gesundheitsförderung für ein gesundes Körpergewicht von Kindern und Jugendlichen
-bibliography: bebru.bib
+lang: de-CH
 csl: international-journal-of-public-health.csl
+subtitle: Projektvorschlag zur Gesundheitsförderung für ein gesundes Körpergewicht
+  von Kindern und Jugendlichen
+bibliography: bebru.bib
 ---
 
 # Einführung
 
 Die Basis für Projekte zur Gesundheitsförderung ist im Verständnis der Weltgesundheitsorganisation (WHO) die Analyse der vorhandenen Gesundheitsressourcen, mit dem Ziel, diese mittels Massnahmen zu stärken (salutogenetischer Ansatz, von der Gesundheit ausgehend). Die Massnahmen zur Gesundheitsförderung sollen somit das individuelle und kollektive Gesundheitsverhalten verändern, und die Lebensverhältnisse verbessern.  
-Dem entsprechend soll das dem Kanton vorgeschlagene Projekt zur Gesundheitsförderung für ein gesundes Körpergewicht von Kindern und/oder Jugendlichen auf den in anderen Kantonen erarbeiteten Grundlagen aufbauen, und die vorhandnen Potentiale möglichst gut nutzen.
+Dem entsprechend soll das dem Kanton vorgeschlagene Projekt zur Gesundheitsförderung für ein gesundes Körpergewicht von Kindern und Jugendlichen auf den in anderen Kantonen erarbeiteten Grundlagen aufbauen, und die vorhandnen Potentiale möglichst gut nutzen.
 
 # Erfahrungen aus anderen Kantonen
 
@@ -37,12 +38,12 @@ Gegenüber der ersten Messung im Schuljahr 2005/2006 hat sich der Anteil an übe
 
 # Projektvorschlag zuhanden der Gesundheitsdirektion
 
-Der Projektvorschlag möchte insbesondere die Erkenntnis des BMI-Monitorings nutzen, dass bei Kindern im Kindergarten, und bei Kindern und Jugendlichen mit Migrationshintergrund, das am besten erreichbare Potential zur Verringerung von Übergewicht vorhanden ist. Um diese Zielgruppen zu erreichen, soll Müttern mit Migrationshintergrund der Zugang zu einer Ernährungsberatung ermöglicht werden.
+Der Projektvorschlag möchte insbesondere die Erkenntnis des BMI-Monitorings nutzen, dass bei Kindern im Kindergarten, und bei Kindern und Jugendlichen mit Migrationshintergrund, das am besten erreichbare Potential zur Verringerung von Übergewicht vorhanden ist. Kinder mit Migrationshintergrund sind zudem besonders stark von Übergewicht betroffen. Um diese Zielgruppen zu erreichen, soll Müttern mit Migrationshintergrund der Zugang zu einer Ernährungsberatung ermöglicht werden.
 
 ## Projekt "Ernährungsberatung für Mütter mit Migrationshintergrund"
 
-Die Organisation femmesTische ([femmestische.ch](https://femmestische.ch/)) bietet in verschiedenen Kantonen der Schweiz ein mehrfach preisgekröntes Programm an. An den durch femmesTische organiserten Diskussionsrunden treffen sich Frauen mit einer Zuwanderungsgechichte, und tauschen sich in ihrer Muttersprache oder in Deutsch, Französisch oder Englisch zu verschiedenen Themen aus.
-Dieses Konzept der kleinen und im privaten Rahmen stattfindenden Gesprächsgruppen soll im Kanton übernommen werden. An den Treffen nimmt soll immer auch eine Fachperson für Ernährungsberatung teilnehmen, und die Mütter dabei unterstützen, ihren Kindern eine gesunde Ernährung zu ermöglichen. Dabei soll sowohl das zu Hause zubereitete Essen, als auch das Essen unterwegs thematisiert werden.
+Die Organisation femmesTische ([femmestische.ch](https://femmestische.ch/)) bietet in verschiedenen Kantonen der Schweiz ein mehrfach preisgekröntes Programm an. An den durch femmesTische organiserten Diskussionsrunden treffen sich Frauen mit einer Zuwanderungsgechichte, und tauschen sich in ihrer Muttersprache oder in Deutsch, Französisch oder Englisch zu verschiedenen Themen aus.  
+Dieses Konzept der kleinen und im privaten Rahmen stattfindenden Gesprächsgruppen soll im Kanton übernommen werden. An den Treffen soll immer auch eine Fachperson für Ernährungsberatung teilnehmen, und die Mütter dabei unterstützen, ihren Kindern eine gesunde Ernährung zu ermöglichen. Dabei soll sowohl das zu Hause zubereitete Essen, als auch das Essen unterwegs thematisiert werden.
 
 ### Rolle des Kantons
 
@@ -50,8 +51,7 @@ Der Kanton soll bei der Organisation der Treffen durch das Bereitstellen einer g
 
 ### Erwartete Wirkung des Projektes
 
-Durch die Verbesserung der Ernährung in den Familien soll den Kindern und Jugendlichen aller Altersgruppen möglichst nachhaltig im vertrauten Umfeld eine gesunde Lebensweise vorgelebt werden. Durch die Fokussierung auf Familien mit Migrationshintergrund wird eine besonders stark von Übergewicht betroffene Gruppe angesprochen, wodurch eine möglichst grosse Wirkung der Massnahme erreicht werden soll.  
-Das Ziel des Projektes ist es, in 5 Jahren eine signifikante Verminderung der Prävalenz von Übergewicht im Kanton messen zu können.
+Durch die Verbesserung der Ernährung in den Familien soll den Kindern und Jugendlichen aller Altersgruppen möglichst nachhaltig im vertrauten Umfeld eine gesunde Lebensweise vorgelebt werden. Das Ziel des Projektes ist es, nach 5 Jahren Laufzeit eine signifikante Verminderung der Prävalenz von Übergewicht im Kanton messen zu können.
 
 ### Evaluation des Projektes
 
@@ -59,7 +59,12 @@ Um die Wirkung des vorgeschlagenen Projektes evaluieren zu können, ist es unerl
 
 ## Ethische Überlegungen zum Projekt
 
+### Gerechtigkeit
+
 Die Fokussierung auf Familien mit Zuwanderungsgeschichte kommt einer Ungleichbehandlung der Bevölkerung des Kantons gleich, da nicht alle Personen direkt vom Projekt profitieren können. Mit der Massnahme wird allerdings nicht zuletzt beabsichtigt die zukünftigen Gesundheitskosten aufgrund von Übergewicht zu dämpfen. Sofern dies gelingt, profitiert indirekt die gesamte Bevölkerung vom Effekt des Projektes, wenn die solidarisch finanzierten Gesundheitskosten weniger stark ansteigen. Die Fokussierung ist mit einem möglichst effizienten Mitteleinsatz begründet.  
-Dadurch, dass die Teilnahme an den Treffen freiwillig ist, wird die Autonomie der angesprochenen Zielgruppe gewahrt.
+
+### Autonomie
+
+Die Teilnahme an den Treffen ist freiwillig, ebesno was die Teilnehmerinnen daraus mitnehmen. Ihre Autonomie ist somit gewahrt, und wird durch eine Erhöhung ihrer Gesundheitskompetenz allenfalls weiter gestärkt.
 
 # Bibliography
