@@ -15,7 +15,7 @@ lang: de-CH
 bibliography: bebru.bib
 ---
 
-# Memo zur NCD-Strategie des Bundes
+# Memo zur NCD-Strategie des Bundes [^1]
 
 ## Worum es geht
 
@@ -24,9 +24,9 @@ Sie fokussiert auf die fünf häufigsten nicht-übertragbaren Krankheiten: Krebs
 
 ## Einschätzung
 
-Die NCD-Strategie wurde nach allen Regeln der Public Health-Kunst formuliert. Sie umfasst in ihren Formulierungen so ziemlich alles, was nach heutigem Wissensstand in diesem Zusammenhang als wichtig erachtet wird.  
+Die NCD-Strategie wurde nach allen Regeln der Public Health-Kunst formuliert. Sie umfasst in ihren Formulierungen vieles, was nach heutigem Wissensstand in diesem Zusammenhang als wichtig gilt.  
 
-**Positiv hervorzuheben:** gut abgestützte Problembeschreibung, der Handlungsbedarf tritt deutlich zutage, klar formulierte Ziele, evidenzbasierte Massnahmen in der Umsetzung, Miteinbezug von Monitoring und Evaluationen, und damit Beitrag zur Erweiterung der lückenhaften Evidenzlage, Aufbau auf bestehenden Strukturen, sinnvolle Fokussierung auf spezifische Zielgruppen, Einbezug der Lebenswelten der Bevölkerung, salutogenetischer Ansatz erkennbar, spricht sowohl das Verhalten, als auch die Lebensverhältnisse an, Erhöhung der Chancengleichheit.  
+**Positiv hervorzuheben:** gut abgestützte Problembeschreibung, klar formulierte Ziele, evidenzbasierte Massnahmen in der Umsetzung, Miteinbezug von Monitoring und Evaluationen, und damit Beitrag zur Erweiterung der lückenhaften Evidenzlage, Aufbau auf bestehenden Strukturen, sinnvolle Fokussierung auf spezifische Zielgruppen, Einbezug der Lebenswelten der Bevölkerung, salutogenetischer Ansatz erkennbar, spricht sowohl das Verhalten, als auch die Lebensverhältnisse an, Erhöhung der Chancengleichheit.  
 
 **Kritische Pubkte:** die konkreten Zielgössen der Ziele sind nicht ersichtlich, es sind nur wenige Policy-Massnahmen erwähnt (obowohl diese als besonders wirksam beschrieben werden), und in der Finanzierung der Umsetzung sind noch nicht alle Verantwortlichkeiten geklärt.  
 
@@ -44,3 +44,5 @@ An genau diesen Punkten möchte das vorgeschlagene Projekt ansetzen, indem beson
 Das Projekt spricht auf vier der sechs spezifischen Ziele der NCD-Strategie konkret an (in Klammern jeweils der direkte Bezug zum Projekt): die verhaltensbezogenen Risikofaktoren verringern (Ernährung), die Gesundheitskompetenz verbessern (Ernährungsberatung), die Chancengerechtigkeit beim Zugang zu Gesundheitsförderung und Prävention verbessern (Migrationshintergrund), und den Anteil der Bevölkerung mit erhöhtem Erkrankungsrisiko verringern (Übergewicht).  
 
 **Somit passt das vorgeschlagene Projekt des Kantons sehr gut zur vom Bund neu ausgearbeiteten NCD-Strategie.**
+
+[^1]: Zeitaufwand: ziemlich genau 4 h
