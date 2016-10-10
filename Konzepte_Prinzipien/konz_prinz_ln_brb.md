@@ -24,23 +24,23 @@ Sie fokussiert auf die fünf häufigsten nicht-übertragbaren Krankheiten: Krebs
 
 ## Einschätzung
 
-> Fazit: Die NCD-Strategie wurde nach allen Regeln der Public Health-Kunst formuliert. Sie umfasst in ihren Formulierungen so ziemlich alles, was nach heutigem Wissensstand in diesem Zusammenhang als wichtig erachtet wird.
+Die NCD-Strategie wurde nach allen Regeln der Public Health-Kunst formuliert. Sie umfasst in ihren Formulierungen so ziemlich alles, was nach heutigem Wissensstand in diesem Zusammenhang als wichtig erachtet wird.  
 
 **Positiv hervorzuheben:** gut abgestützte Problembeschreibung, der Handlungsbedarf tritt deutlich zutage, klar formulierte Ziele, evidenzbasierte Massnahmen in der Umsetzung, Miteinbezug von Monitoring und Evaluationen, und damit Beitrag zur Erweiterung der lückenhaften Evidenzlage, Aufbau auf bestehenden Strukturen, sinnvolle Fokussierung auf spezifische Zielgruppen, Einbezug der Lebenswelten der Bevölkerung, salutogenetischer Ansatz erkennbar, spricht sowohl das Verhalten, als auch die Lebensverhältnisse an, Erhöhung der Chancengleichheit.  
 
 **Kritische Pubkte:** die konkreten Zielgössen der Ziele sind nicht ersichtlich, es sind nur wenige Policy-Massnahmen erwähnt (obowohl diese als besonders wirksam beschrieben werden), und in der Finanzierung der Umsetzung sind noch nicht alle Verantwortlichkeiten geklärt.  
 
-# Projekt “Ernährungsberatung für Mütter mit Migrationshintergrund”
+## Projekt des Kantons
 
-In der NCD-Strategie ist beschrieben, dass die fünf häufigsten nicht-übertragbaren Krankheiten Herz-Kreislauf-Erkrankungen, Krebs, Diabetes und muskuloskelettale und Atemwegserkrankungen sind, und alleine diese fünf Krankheiten für 40% der gesamten Gesundheitskosten verantwortlich sind.  
-Ernährung gilt für vier dieser fünf Krankheiten (alle ausser Atemwegserkrankungen) als Einflussfaktor, und eine ausgewogene Ernährung als Grundlage für ein gesundes Leben. Entgegen entsprechender Empfehlungen essen die Menschen in der Schweiz zu viel Zucker, zu viel Fett und zu viel Salz – und zu wenig Früchte, Salat und Gemüse.  
+Das Projekt “Ernährungsberatung für Mütter mit Migrationshintergrund” teilt die Vision der NCD-Strategie, dass die Bevölkerung in Gesundheitsfragen gut informiert ist, eigenverantwortlich leben kann, und die Chancengleichheit in der Schweiz erhöht werden soll.
 
-# Einbettung in die NCD-Strategie
+### Anknüpfungspunkte an die NCD-Strategie
 
-Der Anteil der ernährungsbewussten Personen hat sich im Verlauf der letzten Jahre kaum verändert, zu den Gesundheitsdeterminanten gehören nach wie vor auch Aspekte sozio-ökonomische Faktoren. Genau hier möchte das vorgeschlagene Projekt mit der Ernährungsberatung für Mütter mit Migrationshintergrund ansetzen.  
-Durch das Ansprechen von Familien mit Migrationshintergrund soll die Ungleichheit in Bezug auf Gesundheit verringert werden, indem durch eine ausgewogene Ernährung das Risiko für weit verebreitete nicht-übertragbare Krankheiten verrringert werden soll.
+Ernährung gilt für vier der fünf Krankheiten, welche im Fokus der NCD-Strategie sind, als Einflussfaktor, und eine ausgewogene Ernährung als Grundlage für ein gesundes Leben. Gemäss der NCD-Strategie essen jedoch die Menschen in der Schweiz entgegen entsprechender Empfehlungen zu viel Zucker, zu viel Fett und zu viel Salz – und zu wenig Früchte, Salat und Gemüse. Der Anteil der ernährungsbewussten Personen hat sich im Verlauf der letzten Jahre kaum verändert, zu den Gesundheitsdeterminanten gehören nach wie vor auch Aspekte sozio-ökonomische Faktoren.  
+An genau diesen Punkten möchte das vorgeschlagene Projekt ansetzen, indem besonders betroffene und vulnerable Zielgruppen (Familien mit Migrationshintergrund) angesprochen werden, und die Kompetenz dieser Zielgruppe bezüglich Ernähung mit einer vielfach bewährten Massnahme erhöht weren soll.
 
-# Zeitaufwand
+### Bezug zu den Zielen der NCD-Strategie
 
-* 1 h
-* 2.5 h
+Das Projekt spricht auf vier der sechs spezifischen Ziele der NCD-Strategie konkret an (in Klammern jeweils der direkte Bezug zum Projekt): die verhaltensbezogenen Risikofaktoren verringern (Ernährung), die Gesundheitskompetenz verbessern (Ernährungsberatung), die Chancengerechtigkeit beim Zugang zu Gesundheitsförderung und Prävention verbessern (Migrationshintergrund), und den Anteil der Bevölkerung mit erhöhtem Erkrankungsrisiko verringern (Übergewicht).  
+
+**Somit passt das vorgeschlagene Projekt des Kantons sehr gut zur vom Bund neu ausgearbeiteten NCD-Strategie.**
