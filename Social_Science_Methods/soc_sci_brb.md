@@ -41,6 +41,9 @@ bibliography: bebru.bib
   * pro:
     * no in-depth knowledge of topic available
     * small number
+    * inductive/deductively:
+      * deductive: interview guide
+      * inductive: looking for new categories
   * contra:
     * difficult topic
     * hard to find physicians taking part, but medical networks are sometimes run by seperate administraton, which may be interested in answers as well
@@ -52,6 +55,7 @@ bibliography: bebru.bib
 * purposeful sampling:
   * deviant cases:
     * medical networks with high savings (3) and low savings (3), respectively
+  * have to have a specific ratio of manged care patients
   * are there differencies between those extreme groups?
   * two stage sampling:
     * 2 physicians per medical network are interviewd
