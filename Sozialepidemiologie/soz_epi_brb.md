@@ -40,6 +40,18 @@ Es wurde eine narrative Literaturrecherche zur Fragestellung durchgeführt, wobe
 
 # Schlüsselkonzepte
 
+Um die Fragestellung: "Auf welchen Pfaden kann der Beitritt zu einem Sportverein die psychische Belastung von Personen mit tiefem sozialen Status verändern?" zu beantworten, werden einige Schlüsselkonzepte verwendet, welche für die bessere Verständlichkeit anschliessend kurz definiert werden sollen.
+
+## Sozioökonomischer Status
+
+Der sozioökonomische Status (SES), wie er in der Sozialepidemiologie verwendet wird, bildet die individuelle Position in einer durch Ungleichheit gekennzeichneten Gesellschaft ab [@@richter_gesundheitliche_2009]. Die Ungleichheit bezieht sich dabei auf die Verfügbarkeit knapper und im Allgmeinen hoch bewerteter Güter wie Einkommen, Vermögen, Macht, Sozialprestige, Bildung oder Wissen.  
+Er bildet somit sowohl das Vorhandensein, als auch den möglichen Zugang für den Erwerb von ökonomischen Möglichkeiten und kognititven Fähigkeiten in einer Gesellschaft ab.  
+Operationalisiert wird der SES üblicherweise durch Bildung, Einkommen und beruflicher Status [@schweizerisches_gesundheitsobservatorium_gesundheit_2015].
+
+## Beitritt Sportverein
+
+Unter Beitritt zu einem Sportverein wird hier verstanden, dass es sich um den Beitritt mit aktiver Beteiligung am jeweiligen Sport handelt, und es sich nicht um einen Verein eines aussergewöhnlichen Sports mit kaum körperlicher Aktivität handelt (z.B. Schach).
+
 ## Psychische Gesundheit/Krankheit
 
 Um die psychische Gesundheit resp. Krankheit zu messen, stehen eine Vielzahl von Messinstrumenten zur Verfügung, welche teilweise sehr unterschiedliche Schwerpunkte setzen (z.B defizit- resp. ressourcen-orientiert). Um diesen gesamten Themenkomplex möglichst breit abzubilden, werden in der Schweizerischen Gesundheitsbefragung (SGB) verschiedene Fragenkomplexe verwendet. Wie in @ruesch_messinstrumente_2011 nachzulesen ist, konnte hierbei für das Konzept *Psychisches Wohlbefinden*, welches mehr als die Absenz von psychischen Beschwerden messen soll, bisher kein überzeugendes Konstrukt gefunden werden.  
@@ -89,16 +101,50 @@ Für die hier untersuchte Fragestellung sind insbesondere emotionale Unterstütz
 
 # Wirkungspfade zwischen den Schlüsselkonzepten
 
-## SES auf psychische Gesundheit/Krankheit | finished
+Wie die verwendete Fragestellung schon andeutet, soll die Auswirkung der Hinzunahme eines Input-Faktors, dem Beitritt zu einem Sportverein (in Abbildung 1 grün), über Zwischen-Faktoren (blau), auf einen Ouptut-Faktor (schwarz), bei Vorhandensein der Rahmenbedingung tiefer SES (rot), untersucht werden. Aus diesem Grund werden hier ausschliesslich unidirektionale Zusammenhänge untersucht, auch wenn die Schlüsselkonzepte an sich in vielfältigerer Weise miteinander verknüpft sind.  
+In Abbildung 1 sind die beschriebenen Schlüsselkonzepte und Wirkungspfade in einer Grafik zur Übersicht aufgezeichnet.
+
+![Grafik der beschriebenen Wirkungspfade](grafik.bmp)
+
+## Auswirkungen eines tiefen SES | finished
+
+Die Auswirkungen eines tiefen SES (in Abbildung 1 rot) auf die restlichen Schlüsselkonzepte sind durchgängig negativ. Ein tiefer SES erschwert den Beitritt zu einem Sportverein und die Akkumulation von kulturellen Kaptial. Ausserdem konnte gezeigt werden, dass ein tiefer SES mit tiefen Werten in der sozialen Unterstützung, körperlicher Aktivität, Kohärenzsinn und psychischer Gesundheit einhergeht.  
+Auf welchen Pfaden, und welche Evidenz dafür vorhanden ist, ist in den folgenden Kapiteln dargestellt.
+
+### SES und Beitritt Sportverein | finished
+
+Ein tiefer SES, welcher per Definition mit tiefen ökonomischen Ressourcen verbunden ist, stellt eine Hürde für den Beitritt zu einem Sportverein dar. Einerseits, da im Sportverein üblicherweise ein Mitgliederbeitrag bezahlt werden muss, und andererseits, weil für die die Ausübung eines Sports je nach Sportart mehr oder weniger viel Geld in die benötigte Ausrüstung investiert werden muss.
+
+### SES und kulturelles Kapital | finished
+
+Tiefe ökonomische Ressourcen, als Ausprägung eines tiefen SES, erschweren den Erwerb von kulturellem Kapital, insbesondere von objektivierten kulturellen Kapital. @abel_kulturelles_2006 schreiben hierzu, dass für den Erwerb von kulturellem Kapital alle Kapitalsorten direkt oder indirekt beteiligt sind, indem sowohl zeitliche als auch finanzielle Resesourcen, sowie soziale Unterstützung dafür notwendig sind.
+
+### SES und Soziale Unterstützung | finished
+
+Neben Eignschaften wie Alter, Geschlecht, soziale Kompetenz und Persönlichkeitseigenschaften, hat auch der sozio-ökonomische Status einen Einfluss auf die Verfügbarkeit von sozialer Unterstützung [@bachmann_soziale_2014, S. 29]. Personen mit hohem SES sind oftmals sozial besser vernetzt und erhalten mehr Hilfe. Dies kann daran liegen, dass von Armut betroffene Personen sich aus Scham aus ihrem sozialen Umfeld zurückziehen und zunehmend isoliert sind.
+
+### SES und körperliche Aktivität | finished
+
+@boes_soziookonomische_2016 zeigen in einer Zusammenstellung der verfügbaren Studien den Zusammenhang von SES und körperlicher Aktivität auf. In dieser Zusammenstellung lässt sich zwar kein eindeuteiger Einfluss des SES auf die körperliche Aktivit ablesen, jedoch wurde in verschiedenen Studien (inkl. einem systematischen Review) gefunden, dass ein hoher SES mit vermehrter körperlicher Aktivität in der Freizeit, und verminderter körperlicher Aktivit im Beruf verbunden ist. Auch wenn die Resultate hierzu je nach Land unterschiedlich sind, scheint die Tendenz nach heutigem Wissensstand so, dass ein tiefer SES mit tieferer körperlicher Aktivität einhergeht.
+
+### SES und Kohärenzsinn | finished
+
+Ein Zusammenhang zwischen SES und Kohärenzsinn konnte zwar in einigen Studien nachgewiesen werden, allerdings sind die Resultate insgesamt bisher schwer zu interpretieren [@bengel_was_2001]. Tendenziell haben Personen mit einem hohen SES einen höheren Kohärenzsinn.
+
+### SES und psychische Belastung | finished
 
 Der SES hat keinen direkten Einfluss auf den Gesundheitszustand [@richter_gesundheitliche_2009: 22]. Vielmehr wirkt sich der SES durch verschieden verteilte materielle, verhaltensbezogene und psychosoziale Faktoren auf die Gesundheit aus. Der Einfluss des SES auf psychosoziale Faktoren wird hier als gesichert beschrieben, und dieser Erklärungsansatz (psychosozial) als *Klassiker* für die Wirkung des SES auf den Gesundheitszustand bezeichnet.  
 In @schuler_psychische_2012 wird anhand Daten der Schweizerischen Gesundheitsbefragung der Einfluss der Bildung (als Teil des SES) auf Kennzahlen wie psychische Belastung, Optimismus und Depressivität dargestellt. Darin ist klar erkennbar, dass insbesondere zwischen Personen mit und ohne nach-obligatorischem Abschluss ein grosser Unterschied besteht (Personen ohne nach-obligatorischem Abschluss antworten negativer auf Fragen zu ihrem psychischen Befinden).
 
-## SES auf Soziale Unterstützung |finished
+## Auswirkungen der Zwischen-Faktoren auf die psychische Belastung | finished
 
-Neben Eignschaften wie Alter, Geschlecht, soziale Kompetenz und Persönlichkeitseigenschaften, hat auch der sozio-ökonomische Status einen Einfluss auf die Verfügbarkeit von sozialer Unterstützung [@bachmann_soziale_2014, S. 29]. Personen mit hohem SES sind oftmals sozial besser vernetzt und erhalten mehr Hilfe. Dies kann daran liegen, dass von Armut betroffene Personen sich aus Scham aus ihrem sozialen Umfeld zurückziehen und zunehmend isoliert sind.
+Nicht für alle der Zwischen-Faktoren gibt es gute Evidenz, dass sie die psychische Belastung direkt beinflussen (kulturelles Kapital), für andere ist der Zusammenhang gut nachgewiesen (z.B. Kohärenzsinn). Nachfolgend ein Überblick, wie diesr Einfluss aussehen könnte (blaue Wirkungspfade in Abbildung 1).
 
-## Soziale Unterstützung auf psychische Belastung |finished
+### Kulturelles Kapital und psychische Belastung | finished
+
+Gemäss @abel_kulturelles_2006 gibt es aufgrund der noch jungen Forschung in diesem Bereich noch keine gezielten Studien, welche die Auswirkungen von kulturellem Kapital auf die gesundheitliche Differenzierung untersucht haben. Allerdings werden ebenda mehrere Studien aufgelistet, welche die mittelfristige Bedeutung des kulturellen Kapitals für spätere Gesundheitschancen aufgezeigt haben.
+
+### Soziale Unterstützung und psychische Belastung | finished
 
 Es gibt gute empirische Evidenz (Prospektivstudien) dafür, dass sich soziale Ressourcen auf die Gesundheit auswirken. Gute soziale Integration wirkt sich insbesondere positiv auf die Lebenserwartung, Krankheitsrisiken und Genensungschancen aus, erwiesenermassen bei Herz-Kreislaufkrankheiten, Krebserkrankungen und Infektionskrankheiten.  
 Ein konzeptuelles Modell, auf welchen Wirkungspfaden soziale Ressourcen die Gesundheit beeinflussen, ist in  @berkman_social_2000 zu finden. Es werden drei Pfade vorgeschlagen, die eine Wirkung zwischen Individuum und dessen Gesundheit ausüben, wobei hier insbesondere der zweite Punkt von Interesse ist:
@@ -109,22 +155,41 @@ Ein konzeptuelles Modell, auf welchen Wirkungspfaden soziale Ressourcen die Gesu
 
 In  @rappaport_social_2000, @uchino_social_2006 und @uchino_psychological_2012 wird beschrieben, dass soziale Unterstützung durch die Beeinflussung von psychischen Prozessen wie Angst, Freude, Depression, Stresswahrnehmung, etc. biologische Prozesse auslösen oder beeinflussen. Es konnte in diesen Arbeiten also ein direkter Zusammenhang zwischen sozialer Unterstützung und psychischen Belastungen festgestellt werden, welche mit dem hier angewendeten Messinstrument MHI-5 gemssen werden.  
 
-## Kulturelles Kapital auf psychische Belastung | finished
+### Körperliche Aktivität und Kohärenzsinn | finished
 
-Gemäss @abel_kulturelles_2006 gibt es aufgrund der noch jungen Forschung in diesem Bereich noch keine gezielten Studien, welche die Auswirkungen von kulturellem Kapital auf die gesundheitliche Differenzierung untersucht haben. Allerdings werden ebenda mehrere Studien aufgelistet, welche die mittelfristige Bedeutung des kulturellen Kapitals für spätere Gesundheitschancen aufgezeigt haben.
+Die Komponente des Gefühls der Handhabbarkeit des Kohärenzsinns kann bei körperlicher Aktivität beim Sport vielfältig erprobt werden, indem dort Aufgaben gestellt wird, welche es zu bewältigen gibt. Bei einem Erfolg, allenfalls auch bei einem Misserfolg, kann auch ein Gefühl der Sinnhaftigkeit entstehen, indem Aufgaben als lohnenswert angegangen zu werden erlebt werden.  
+Antonovsky hat sich zwar nicht explizit zum Thema körperlicher Aktivität resp. Sport geäussert [@goring_quo_2009]. Dennoch lassen sich die Wirkung körperlicher Aktivität auf die Gesundheit gut über das Modell der Salutogenese erklären. Aus ihren hier angestellten Überlegungen folgern @goring_quo_2009, "dass regelmäßige sportliche Aktivität den Kohärenzsinn durch die langfristige Stärkung von Widerstandsressourcen, eine Verringerung des Spannungszustandes und somit einer Erhöhung des Wohlbefindens ebenfalls indirekt stärkt".
 
-## Sportverein auf kulturelles Kapital | finished
+### Kohärenzsinn und psychische Gesundheit/Krankheit | finished
+
+Auch wenn sich Antonovsky selber sehr zurückhaltend über den Zusammenhang des Kohärenzsinns und psychischer Gesundheit/Krankheit geäussert hat, kann aufgrund der vorhandenen Studien als gesichert angesehen werden, dass ein hoher Kohärenzsinn sich positiv auf die psychische Gesundheit auswirkt [@bengel_was_2001]. So konnte beispielsweise in einer Studie in Schweden gezeigt werden, dass Personen mit hohem Kohärenzsinn 3.5-fach geringere psychische Beschwerden aufwiesen, als solche mit einem tiefen Kohärenzsinn (unabhängig von Alter und Geschlecht).
+
+## Auswirkung des Beitritts zu einem Sportverein auf die Zwischen-Faktoren
+
+Mit der Fragestellung soll untersucht werden, inwiefern der Beitritt zu einem Sportverein die Zwischen-Faktoren so modifizieren kann, dass die negativen Einflüsse eines tiefen SES in eine positive Richtung beeinflusst werden können (in Abbildung 1 grün).
+
+### Sportverein und kulturelles Kapital | finished
 
 Kulturell Kapital wird ale Teil der Sozialisation erworben [@abel_kulturelles_2006], beispielsweise in der Familie. Sportvereine können beim Erwerb von kulturellem Kapital als Institution der Sekundärsozialisation (neben z.B. Schule und Berufswelt) ebenfalls eine Rolle spielen.
 
-## Soziale Unterstützung auf Gesundheitskompetenz |finished
-
-Dieser Pfad ist redundant zum Pfad *Sportverein auf kulturelles Kapital* (siehe selbiges Kapital), sowie Kapitel *Soziale Unterstützung auf psychische Belastung*, Punkt *Gesundheitsverhalten*
-
-## Sportverein auf soziale Untestützung
+### Sportverein und soziale Untestützung | finished
 
 Wie bereits im Kapitel *Sportverein auf kulturelles Kapital* erwähnt, sind Sportvereine Institutionen der Sekundärsozialisation, und dadurch eine mögliche Quelle sozialer Unterstützung.
 
+### Sportverein und körperliche Aktivität | finished
+
+Bei einem Beitritt zu einem Sportverein, wie er im Kapitel *Beitritt Sportverein* beschrieben ist, ist davon auszugehen, dass sich mit dem Beititt die körperliche Aktivität erhöht.
+
+### Soziale Unterstützung und Gesundheitskompetenz | finished
+
+Dieser Pfad ist redundant zum Pfad *Sportverein auf kulturelles Kapital* (siehe selbiges Kapital), sowie Kapitel *Soziale Unterstützung auf psychische Belastung*, Punkt *Gesundheitsverhalten*, und ist deshalb in Abbildung 1 nicht eingezeichnet.
+
 # Relevanz für Public Health
+
+biopsychosozial
+
+# Limitationen
+
+Die hier zitierten Studien haben in der Regel ausschliesslich Korrelationen zwischen den verwendeten Schlüsselkonzepten aufgezeigt, und keine kausalen Zusammenhänge. Vielfach wäre ein für kausale Zusammenhänge nötiges Experiment entweder nicht ethisch, gar nicht durchführbar, oder beides (z.B. randomisierte Zuweisung eines bestimmten SES in der untersuchten Population).
 
 # Bibliography
