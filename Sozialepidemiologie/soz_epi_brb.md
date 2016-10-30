@@ -20,7 +20,7 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhead{}
 - \renewcommand{\headrulewidth}{0pt}
-- \fancyfoot[C]{Sportverein und Gesundheit/Krankheit}
+- \fancyfoot[C]{Sportverein und psychische Gesundheit/Krankheit}
 - \fancyfoot[LE,RO]{\thepage}
 documentclass: article
 subtitle: Auf welchen Pfaden kann der Beitritt zu einem Sportverein die psychische Belastung von Personen mit tiefem sozialen Status verändern?
@@ -33,6 +33,10 @@ csl: international-journal-of-public-health.csl
 # Einführung
 
 *
+
+# Methoden
+
+Es wurde eine narrative Literaturrecherche zur Fragestellung durchgeführt, wobei als Startpunkte für die Suche die für das Modul erhaltenen Unterlagen, und die darin zitierten Quellen verwendet wurden. Lücken wurden mit zusätzlichen Suchen bei [Google](http://www.google.ch) resp. [Google Scholar](http://scholar.google.ch) geschlossen.
 
 # Schlüsselkonzepte
 
@@ -63,11 +67,32 @@ Komponenten des Kohärenzsinns:
 
 * **Gefühl von Sinnhaftigkeit:** Motivation, dass Schwierigkeiten lohnenswert sind angegangen zu werden.
 
-## Soziale Unterstützung
+## Kulturelles Kapital | finished
 
-Soziale Unterstützung kann als eine Dimension der sozialen Ressourcen verstanden werden [@bachmann_soziale_2014], in Form von Vermittlung von Hilfe (z.B. praktische Hilfe, Wertschätzung oder Information).
+Kulturelles Kapital, wie es in @abel_kulturelles_2006 definiert ist, ist das *"Gesamt aller nicht-ökonomischen, wertbesetzten Objekte, wertegebundenen Merkmale, Fähigkeiten und Fertigkeiten,  die sich im Besitz des Individuums für seine eigene soziale Positionierung wirksam sind"*. In Bezug zu Gesundheit lassen sich drei Gundformen davon unterscheiden:
+
+* *Inkorporiertes Kulturkapital:* Summe des verinnerlichten Wissens und von sozialen, kulturellen und technischen Fertigkeiten. Es wird durch Lernprozesse erworben. Beipiele aus dem Gesundheitsbereich sind: wissensbasierte Gesundheitskompetenzen, Kommunikation in der Arzt-Patienten Beziehung.
+* *Objektiviertes Kulturkapital:* Objekte, im Gesundheitsbereich zum Beispiel Bücher mit gesundheitsrelevanten Informationen, oder Sportartikel. Der Erwerb davon ist oft abhängig vom ökonomischen Kapital.
+* *Institutionalisiertes Kulturkapital:* Beschreibt Bildungstitel und anerkannte Qualifikationen. Diese können im Gesundheitsbereich dabei helfen, gesundheitsrelevante Initiativen umzusetzen.
+
+## Soziale Unterstützung | finished
+
+Soziale Unterstützung ist eine Funktion des sozialen Netzes, kann somit als eine Dimension der sozialen Ressourcen verstanden werden, und wird in Form von Vermittlung von Hilfe (z.B. praktische Hilfe, Wertschätzung oder Information) aktiv [@bachmann_soziale_2014].
+Gemäss @rohrle_soziale_1994 sind die am meisten genannten Arten sozialer Uterstützung:
+
+* Emotionale Unterstützung
+* Instrumentelle Unterstürtung
+* Informationelle Unterstützung
+* Evaulative Unterstützung
+
+Für die hier untersuchte Fragestellung sind insbesondere emotionale Unterstützung und informationelle Unterstützung wichtig, und geben einen Hinweis auf eine direkte Wirkung der sozialen Unterstützung auf die psychische Gesundheit/Krankheit (emotionale Unterstützung), resp. das kulturelle Kapital (informationelle Unterstützug).
 
 # Wirkungspfade zwischen den Schlüsselkonzepten
+
+## SES auf psychische Gesundheit/Krankheit | finished
+
+Der SES hat keinen direkten Einfluss auf den Gesundheitszustand [@richter_gesundheitliche_2009: 22]. Vielmehr wirkt sich der SES durch verschieden verteilte materielle, verhaltensbezogene und psychosoziale Faktoren auf die Gesundheit aus. Der Einfluss des SES auf psychosoziale Faktoren wird hier als gesichert beschrieben, und dieser Erklärungsansatz (psychosozial) als *Klassiker* für die Wirkung des SES auf den Gesundheitszustand bezeichnet.  
+In @schuler_psychische_2012 wird anhand Daten der Schweizerischen Gesundheitsbefragung der Einfluss der Bildung (als Teil des SES) auf Kennzahlen wie psychische Belastung, Optimismus und Depressivität dargestellt. Darin ist klar erkennbar, dass insbesondere zwischen Personen mit und ohne nach-obligatorischem Abschluss ein grosser Unterschied besteht (Personen ohne nach-obligatorischem Abschluss antworten negativer auf Fragen zu ihrem psychischen Befinden).
 
 ## SES auf Soziale Unterstützung |finished
 
@@ -82,10 +107,24 @@ Ein konzeptuelles Modell, auf welchen Wirkungspfaden soziale Ressourcen die Gesu
 * **Pschologische Prozesse:** Soziale Ressourcen z.B. die Selbstwirksamkeit, den Selbstwert, und den Umgang mit Stress.
 * **Physiologische Prozesse:** Soziale Kontakte haben einen direkten Einfluss auf das Immunsystem, kardiovaskuläre Reaktionen, aber auch die Übertragung von ansteckenden Erregern.
 
-In  @rappaport_social_2000, @uchino_social_2006 und @uchino_psychological_2012 wird beschrieben, dass soziale Unterstützung durch die Beeinflussung von psychischen Prozessen wie Angst, Freude, Depression, Stresswahrnehmung, etc. biologische Prozesse auslösen oder beeinflussen. Es konnte in diesen Arbeiten also ein direkter Zusammenhang zwischen sozialer Unterstützung und psychischen Belastungen festgestellt werden, welche mutmasslich mit dem hier angewendeten Messinstrument MHI-5 gemssen werden.  
+In  @rappaport_social_2000, @uchino_social_2006 und @uchino_psychological_2012 wird beschrieben, dass soziale Unterstützung durch die Beeinflussung von psychischen Prozessen wie Angst, Freude, Depression, Stresswahrnehmung, etc. biologische Prozesse auslösen oder beeinflussen. Es konnte in diesen Arbeiten also ein direkter Zusammenhang zwischen sozialer Unterstützung und psychischen Belastungen festgestellt werden, welche mit dem hier angewendeten Messinstrument MHI-5 gemssen werden.  
+
+## Kulturelles Kapital auf psychische Belastung | finished
+
+Gemäss @abel_kulturelles_2006 gibt es aufgrund der noch jungen Forschung in diesem Bereich noch keine gezielten Studien, welche die Auswirkungen von kulturellem Kapital auf die gesundheitliche Differenzierung untersucht haben. Allerdings werden ebenda mehrere Studien aufgelistet, welche die mittelfristige Bedeutung des kulturellen Kapitals für spätere Gesundheitschancen aufgezeigt haben.
+
+## Sportverein auf kulturelles Kapital | finished
+
+Kulturell Kapital wird ale Teil der Sozialisation erworben [@abel_kulturelles_2006], beispielsweise in der Familie. Sportvereine können beim Erwerb von kulturellem Kapital als Institution der Sekundärsozialisation (neben z.B. Schule und Berufswelt) ebenfalls eine Rolle spielen.
 
 ## Soziale Unterstützung auf Gesundheitskompetenz |finished
 
-Siehe Kapitel *Soziale Unterstützung auf psychische Belastung*, Punkt *Gesundheitsverhalten*
+Dieser Pfad ist redundant zum Pfad *Sportverein auf kulturelles Kapital* (siehe selbiges Kapital), sowie Kapitel *Soziale Unterstützung auf psychische Belastung*, Punkt *Gesundheitsverhalten*
+
+## Sportverein auf soziale Untestützung
+
+Wie bereits im Kapitel *Sportverein auf kulturelles Kapital* erwähnt, sind Sportvereine Institutionen der Sekundärsozialisation, und dadurch eine mögliche Quelle sozialer Unterstützung.
+
+# Relevanz für Public Health
 
 # Bibliography
