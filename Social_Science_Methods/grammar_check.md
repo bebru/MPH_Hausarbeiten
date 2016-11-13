@@ -2,30 +2,24 @@
 title: "Cost saving in managed care plans, from the physician's perspective"
 author: "Beat Brüngger"
 date: "11 Nov. 2016"
-output: pdf_document
+output: word_document
 classoption: a4paper
 documentclass: article
 email: beat.bruengger@gmx.ch
-header-includes:
-- \usepackage{fancyhdr}
-- \pagestyle{fancy}
-- \fancyhead{}
-- \renewcommand{\headrulewidth}{0pt}
-- \fancyfoot[C]{Cost saving in managed care plans, from the physicians perspective}
-- \fancyfoot[LE,RO]{\thepage}
 csl: international-journal-of-public-health.csl
-subtitle: Research proposal for a master's thesis
+subtitle: How do general practitioners interpret their role as gatekeepers in managed
+  care plans?
 bibliography: bebru.bib
 ---
 
 # Introduction
 
-Managed care plans can be seen as a reaction to market failures in health care systems, e.g. supplier-induced demand in fee-for-service reimbursement systems [@shmueli_managed_2015]. They emerged in the United States in the 1980s. Ten years later, with growing pressure due to reforms, they were introduced in Europe as well.  
+Managed care plans can be seen as a reaction to market failures in health care systems, e.g. supplier-induced demand in fee-for-service reimbursement systems [@shmueli_managed_2015]. They emerged in the United States in the 1980s, and 10 years later, with growing pressure due to reforms, in Europe.  
 In Switzerland insurers are allowed to offer managed care plans with a limited choice of providers since 1990. Around 62% of the population were enrolled in a restricted contract in the year 2014, 24% chose a plan involving a Health Maintenance Organization (HMO).
 
-The cost containing effect of managed care plans in Switzerland was shown in observational studies. @reich_empirical_2012 report differentiated results of a so called selection effect (costs are lower because the health of the population in the managed care plan is better than in unrestricted plans) and the desired efficiency effect (the population in the managed care  plan is treated more efficiently). In contracted capitated models, where a medical network is incentivized to meet budget goals, 21.2% cost savings could be measured (compared to the standard model without any restrictions).
+The cost containing effect of managed care plans in Switzerland was shown in observational studies. @reich_empirical_2012 report differentiated results of a so called selection effect (costs are lower because the health of the population in the managed care plan is better than in unrestricted plans) and an efficiency effect (the population in the managed care  plan is treated more efficiently). In contracted capitated models, where a medical network is incentivized to meet budget goals, 21.2% cost savings could be measured (compared to the standard model without any restrictions).
 
-In a most recent study, by observing people over the course of ten years, @kauer_long-term_2016 showed that cost savings in managed care plans are both substantial and sustainable. A suspected under-provision of care according to the financial incentives, could not be observed.
+In a most recent study, by observing people over the course of 10 years, @kauer_long-term_2016 showed that cost savings in managed care plans are both substantial and sustainable. A suspected under-provision of care according to the financial incentives, could not be observed.
 
 However, little is known about the reasons for the measured cost containment. Evidence from empirical studies shows, that cost saving can be attributed to lower costs from specialists and medication, and a lower probability of an inpatient treatment [@trottmann_supply-side_2012].  
 In their literature review, @berchtold_evidenz_2006 can find cost savings as a result of lower costs per consultation and a lower application of instrument-based medicine, as well as lower number of consultations and referrals.
@@ -41,9 +35,9 @@ The research question of the study reads:
 
 > "How do general practitioners interpret their role as gatekeepers in managed care plans?"
 
-In the Swiss health care system general practitioners (GP) usually act as first contact points. They do this informally for large parts of the population, and formally as designated gatekeepers in managed care plans. The decisions general practitioners take therefore have a large influence on the course of treatment.  
+In the Swiss health care system general practitioners (GP) usually act as first contact point. They do this informally for large parts of the population, and formally as designated gatekeepers in managed care plans. The decisions general practitioners take therefore have a large influence on the course of treatment.  
 
-As the research question implies, the physician's perspective (general practitioner's respectively) is investigated. Furthermore, the goal is to make sense of the gathered information on the basis of what managed care plans are meant for (saving costs and increasing the quality of care), and results of empirical studies on the subject (e.g. @trottmann_supply-side_2012).  
+As the research question implies, the physician's perspective (general practitioners respectively) is investigated. Furthermore, the goal is to make sense of the gathered information on the basis of what managed care plans are meant for (saving costs and increasing the quality of care), and results of empirical studies on the subject (e.g. @trottmann_supply-side_2012).  
 
 Secondary research questions are:
 
@@ -63,10 +57,10 @@ Since no study covering the reasons for the cost containing effect of managed ca
 ## Data collection
 
 Data is collected by conducting semi-structured interviews with GPs. This method is not ideal. GPs may feel intimidated by sharing their way of working with an interviewer personally, and an anonymous survey would take account of this aspect more appropriately. Although, due to the lack of knowledge about GPs opportunities in altering the course of treatment, a survey does not seem feasible.  
-The discussion in a focus group together with peers would possibly lead to richer results than single interviews. But the chance to find enough GPs willing to talk openly with other GPs about how they take decisions during their work, seems very low.  
+The discussion in a focus group together with peers would possibly lead to richer results than single interviews. But the chance to find enough GPs willing to talk openly with other GPs about how they take desicions during their work, seems very low.  
 Therefore, interviews suit the given situation best, giving the GPs the possibility to elaborate on their work process without strict provisions, in an environment making it possible to talk about even delicate topics which may arise.  
 
-An interview guide will be used to make sure certain topics will be covered in every interview. The results of available observational studies like @trottmann_supply-side_2012 on efficiency effects in managed care plans act as underpinnings of the interview guide. Nevertheless, enough room should be given to let the physicians talk about their strategies in working efficiently. The interviews will be recorded, so that they can be transcribed for further analysis.
+An interview guide will be used to make sure certain topics will be covered in every interview. The results of available studies like @trottmann_supply-side_2012 on efficiency effects in managed care plans give the direction, in which the interview guide shows. Nevertheless, enough room should be given to let the physicians talk about their strategies in working efficiently. The interviews will be recorded, so that they can be transcribed for further analysis.
 
 ## Sampling
 
