@@ -3,11 +3,11 @@ title: "Kantonales Programm zur Erhöhung der HPV-Impfrate"
 author: "Beat Brügger, Simone Christen, Rosmarie Neeser, Meret Ricklin, Irene Scholz"
 date: "18 Dez. 2016"
 output:
+  word_document: default
   pdf_document:
     keep_tex: yes
     number_sections: yes
     toc: yes
-  word_document: default
 classoption: a4paper
 documentclass: article
 header-includes:
@@ -15,7 +15,7 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhead{}
 - \renewcommand{\headrulewidth}{0pt}
-- \fancyfoot[C]{Kantonales Programm zur Erhöhung der HPV-Impfrate}
+- \fancyfoot[C]{Kantonales Programm zur ErhÃ¶hung der HPV-Impfrate}
 - \fancyfoot[LE,RO]{\thepage}
 lang: de-CH
 csl: international-journal-of-public-health.csl
@@ -145,7 +145,7 @@ Informiert werden sollen alle über:
 
 *	die Folgen einen HPV-Infektion (Zervixkarzinom, Genitalwarzen, Analkarzinom und Oropharyngeale Karzinome) inklusive Klinik, Prognose, Prävalenz und Inzidenz in der Schweiz
 *	Art der Ansteckung/Übertragung
-*	Allgemeiner Nutzen von Impfungen im Kampf gegen Infektionskrankheiten und insbesondere über den Nutzen der HPV Impfung in Bezug auf ersten Punkt
+*	Allgemeiner Nutzen von Impfungen im Kampf gegen Infektionskrankheiten und insbesondere über den Nutzen der HPV Impfung in Bezug auf Punkt a)
 *	Erklären der Herdimmunität und deren Nutzen und Wichtigkeit für die Gesellschaft
 *	Sicherheit der Impfung (Art und Frequenz von Nebenwirkungen) und Vorkommen von Impfdurchbrüchen. Dies in Bezug setzen zu Gefahren bei Nicht-Impfung
 *	Situation in der Schweiz: aktuelle und angestrebte Durchimpfungsrate. Anzahl der zu Impfenden. Kosten der Impfkampagne versus Krankheitskosten, die ohne Impfung entstehen
