@@ -3,8 +3,9 @@ title: "Fragebogen zur Wahl der Franchise in der Grundversicherung"
 author: "Beat Brüngger"
 date: "18 Dez. 2016"
 output:
+  word_document: default
   pdf_document:
-    keep_tex: true
+    keep_tex: yes
     number_sections: yes
     toc: yes
   html_document:
@@ -12,7 +13,6 @@ output:
 classoption: a4paper
 documentclass: article
 email: beat.bruengger@gmx.ch
-lang:  de-CH
 header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
@@ -20,8 +20,10 @@ header-includes:
 - \renewcommand{\headrulewidth}{0pt}
 - \fancyfoot[C]{Fragebogen zur Wahl der Franchise in der Grundversicherung}
 - \fancyfoot[LE,RO]{\thepage}
+lang: de-CH
 csl: international-journal-of-public-health.csl
-subtitle: "Leistungsnachweis für das Modul \"Fragebogen: Konstruktion - Auswertung - Interpretation\" (B203.20.16)"
+subtitle: 'Leistungsnachweis für das Modul "Fragebogen: Konstruktion - Auswertung
+  - Interpretation" (B203.20.16)'
 bibliography: bebru.bib
 ---
 
@@ -55,7 +57,7 @@ Die Alterskategorien wurden so gewählt, dass die tiefste Kategorie der in der G
 
 ### Gesundheitliches Risikoverhalten
 
-Nach dem gesundheitlichen Risikoverhalten, resp. die Auswirkung der Wahl der Franchise darauf, wird einerseits direkt gefragt, andererseits wird auch der Rauchstatus abgefragt (da Rauchen ein klar risikoreiches Verhalten darstellt).
+Nach dem gesundheitlichen Risikoverhalten, resp. die Auswirkung der Wahl der Franchise darauf, wird einerseits direkt gefragt, andererseits wird auch der Rauchstatus abgefragt (da Rauchen ein klar riskoreiches Verhalten darstellt).
 
 # Überarbeitung des Fragebogens
 
@@ -87,7 +89,7 @@ Zudem wurde die Reihenfolge der Fragen detailliert besprochen. Da es sich hier u
 
 * **Einleitung erweitert:** Die Einleitung enthält neu zwei Sätze zur Absicht des Fragebogens, um die Sinnhaftigkeit von diesem zu verdeutlichen.
 * **Ausrichtung Skalen:** Die Skalen wurden in der überarbeiteten Version alle in dieselbe Richtung gedreht. Bei langen Fragebogen wird teilweise die Richtung der Skala absichtlich umgedreht, damit nicht bspw. ein Bias in die eine oder andere Richtung entsteht. Dies ist bei einem so kurzen Fragebogen wie in diesem Beispiel allerdings nicht angebracht.
-* **Antwortkategorien:**  Die beeinflusst bei nominalen Skalen sollen die häufigsten Antwortmöglichkeiten möglichst gut abdecken. Die Skala soll erschöpfend und disjunkt sein. Bei der Frage danach, wer die Wahl der Franchise beeinflusst hat, ist diese mit der Kategorie "Andere" auf einfache Weise erschöpfend gemacht. Auf ein Freitextfeld für eine Spezifizierung von "Andere" wird verzichtet, auch wenn dies teilweise sinnvoll sein kann, wenn den Befragten die Möglichkeit gegeben werden soll, ihre individuelle Antwort abgeben zu können.
+* **Antwortkategorien:**  Die beeinflusst bei nominalen Skalen sollen die häufigsten Antwortmöglichkeiten möglichst gut abdecken. Die Skala soll erschöpfend und disjunkt sein. Bei der Frage danach, wer die Wahl der Franchise beinflusst hat, ist diese mit der Kategorie "Andere" auf einfache Weise erschöpfend gemacht. Auf ein Freitextfeld für eine Spezifizierung von "Andere" wird verzichtet, auch wenn dies teilweise sinnvoll sein kann, wenn den Befragten die Möglichkeit gegeben werden soll, ihre individuelle Antwort abgeben zu können.
 * **Dank an die Befragten:** Zum Abschluss der Befragung ist es höflich, für die Beantwortung der Fragen Danke zu sagen.
 
 # Fazit
