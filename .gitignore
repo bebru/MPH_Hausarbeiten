@@ -6,5 +6,6 @@ Unterlagen
 *.PNG
 *.xlsx
 *.bmp
+*.csv
 .Rhistory
 .Rproj.user
