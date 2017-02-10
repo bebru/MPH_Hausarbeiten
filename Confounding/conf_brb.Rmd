@@ -1,0 +1,53 @@
+---
+output:
+  word_document:
+    reference_docx: word_template.docx
+---
+
+```{r setup, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+source("init.R")
+```
+
+
+```{r init, include=FALSE, autodep=TRUE}
+source("data.R")
+```
+
+# Arztbesuche und Managed Care
+
+## Einleitung
+
+Die steigneden Kosten im Gesundheitswesen der Schweiz bereiten sowohl der Bevölkerung als auch der Regierung Sorgen. Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon sind sogenannte Managed Care Modelle für die obligatorische Grundversicherung (OKP). Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen.  
+
+## Fragestellung
+
+In dieser Analyse soll nun untersucht werden, wie sich die Restriktionen auf einen anderen Aspekt der Inanspruchnahme des Gesundheitswesens, die Anzahl Arztbesuche in einem Jahr, auswirken.
+
+### Population und Stichprobe
+
+Die Grundpopulation dieser Analyse sind die bei der Krankenversicherung Helsana in der OKP versicherten Personen. Da die Helsana-Gruppe ca. 15% der gesamten Schweizer Bevölkerung in ihrem Versichertenkollektiv aufweist, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung, haben die Resultate auch für die ganze Bevölkerung eine Relevanz. Aufgrund von Unterschieden z.B. in den Managed Care Modellen im Vergleich zu anderen Krankenversicherern können die Resultate allerdings nicht ohne weiteres generalisiert werden.  
+
+#### Ausschlüsse
+
+Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Somit werden Personen ausgeschlossen, welche im Jahr 2015 verstorben sind.
+
+#### Stichprobe
+
+Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ads.1), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Grösse des Datensatzes wurde gemacht, um eineseits einen keine Probleme mit der Grösse des Datensatzes zu haben, und damit die Resulate keine zu genauen Rückschlüsse auf das Versichertenkollektiv von Helsana zulassen (aus Rücksicht auf die Sensibilität der Daten). Der Datensatz enthält zudem keine Informationen, welche eine Identifikation der individuellen Personen zulassen.  
+Jede der Beobachtungen beschreibt Stammdaten und aggregierte Kennzahlen für das Kalenderjahr 2015.
+
+## Operationalisierung und Hypothese
+
+Die zu untersuchende Hypothese lautet:
+
+> Versicherte in einem Managed Care-Modell weisen weniger Arztbesuche auf als solche im Standard-Modell.
+
+
+
+## Beschreibung der Daten
+
+```{r}
+glimpse(ads.1)
+```
+
