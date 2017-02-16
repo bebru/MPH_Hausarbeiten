@@ -1,7 +1,15 @@
 ---
-output:
-  word_document:
-    reference_docx: word_template.docx
+output: pdf_document
+classoption: a4paper
+lang:  de-CH
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead{}
+- \renewcommand{\headrulewidth}{0pt}
+- \fancyfoot[C]{Arztbesuche und Managed Care}
+- \fancyfoot[LE,RO]{\thepage}
+documentclass: article
 ---
 
 ```{r setup, echo=FALSE, include=FALSE}
@@ -47,7 +55,20 @@ Die zu untersuchende Hypothese lautet:
 
 ## Beschreibung der Daten
 
-```{r}
-glimpse(ads.1)
+In Tabelle \ref{tab:tab.abstract} ist eine Beschreibung der im Datensatzes enthaltenen Variablen zu finden.
+
+```{r tbl.abstract}
+Abstract(ads.1) %>% 
+  pander(caption = "\\label{tab:tab.abstract}Beschreibung der Variablen")
+```
+
+## Beschreibung der Baseline-Charakteristika
+
+```{r tbl.baseline, results=asis}
+tbl.1 <- TOne(ads.1 %>% select(-mc_fg), grp = ads.1$mc_fg) %>% 
+  ftable() %>% 
+  xtableFtable() %>% 
+  latex()
+print(tbl.1)
 ```
 
