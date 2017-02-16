@@ -19,6 +19,6 @@ fmt.count <- as.fmt(digits=0, big.mark="'")
 set.alignment('left')
 panderOptions('table.split.table', Inf)
 
-lable_ja_nein <- function(x) {
+label_ja_nein <- function(x) {
   fct_recode(x, ja = "1", nein = "0")
 }

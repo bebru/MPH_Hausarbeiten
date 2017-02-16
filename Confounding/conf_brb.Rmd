@@ -1,4 +1,5 @@
 ---
+title: Arztbesuche und Managed Care
 output: pdf_document
 classoption: a4paper
 lang:  de-CH
@@ -22,30 +23,28 @@ source("init.R")
 source("data.R")
 ```
 
-# Arztbesuche und Managed Care
-
-## Einleitung
+# Einleitung
 
 Die steigneden Kosten im Gesundheitswesen der Schweiz bereiten sowohl der Bevölkerung als auch der Regierung Sorgen. Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon sind sogenannte Managed Care Modelle für die obligatorische Grundversicherung (OKP). Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen.  
 
-## Fragestellung
+# Fragestellung
 
 In dieser Analyse soll nun untersucht werden, wie sich die Restriktionen auf einen anderen Aspekt der Inanspruchnahme des Gesundheitswesens, die Anzahl Arztbesuche in einem Jahr, auswirken.
 
-### Population und Stichprobe
+## Population und Stichprobe
 
 Die Grundpopulation dieser Analyse sind die bei der Krankenversicherung Helsana in der OKP versicherten Personen. Da die Helsana-Gruppe ca. 15% der gesamten Schweizer Bevölkerung in ihrem Versichertenkollektiv aufweist, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung, haben die Resultate auch für die ganze Bevölkerung eine Relevanz. Aufgrund von Unterschieden z.B. in den Managed Care Modellen im Vergleich zu anderen Krankenversicherern können die Resultate allerdings nicht ohne weiteres generalisiert werden.  
 
-#### Ausschlüsse
+### Ausschlüsse
 
 Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Somit werden Personen ausgeschlossen, welche im Jahr 2015 verstorben sind.
 
-#### Stichprobe
+### Stichprobe
 
 Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ads.1), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Grösse des Datensatzes wurde gemacht, um eineseits einen keine Probleme mit der Grösse des Datensatzes zu haben, und damit die Resulate keine zu genauen Rückschlüsse auf das Versichertenkollektiv von Helsana zulassen (aus Rücksicht auf die Sensibilität der Daten). Der Datensatz enthält zudem keine Informationen, welche eine Identifikation der individuellen Personen zulassen.  
 Jede der Beobachtungen beschreibt Stammdaten und aggregierte Kennzahlen für das Kalenderjahr 2015.
 
-## Operationalisierung und Hypothese
+# Operationalisierung und Hypothese
 
 Die zu untersuchende Hypothese lautet:
 
@@ -53,22 +52,78 @@ Die zu untersuchende Hypothese lautet:
 
 
 
-## Beschreibung der Daten
+# Beschreibung der Daten
 
 In Tabelle \ref{tab:tab.abstract} ist eine Beschreibung der im Datensatzes enthaltenen Variablen zu finden.
 
-```{r tbl.abstract}
+```{r tbl.abstract, echo=FALSE}
 Abstract(ads.1) %>% 
   pander(caption = "\\label{tab:tab.abstract}Beschreibung der Variablen")
 ```
 
-## Beschreibung der Baseline-Charakteristika
-
-```{r tbl.baseline, results=asis}
-tbl.1 <- TOne(ads.1 %>% select(-mc_fg), grp = ads.1$mc_fg) %>% 
-  ftable() %>% 
-  xtableFtable() %>% 
-  latex()
-print(tbl.1)
+```{r tbl.summary.num, echo=FALSE}
+summary(ads.1 %>% select(valter_n, kons_n, pcg_n)) %>% 
+  pander(caption = "Univariate Statistik der numerischen Variablen")
 ```
 
+```{r tbl.summary2, echo=FALSE}
+summary(ads.1 %>% select(sex_x, franch_elig_fg, okp_unfall_fg, mc_fg)) %>% 
+  pander(caption = "Univariate Statistik der dichotomen Variablen")
+```
+
+```{r tbl.summary3, echo=FALSE}
+summary(ads.1 %>% select(sprgeb_red_x, stadtland_red_x, greg_x), maxsum = 10) %>% 
+  pander(caption = "Univariate Statistik der restlichen kategorialen Variablen")
+```
+
+
+# Beschreibung der Baseline-Charakteristika
+
+```{r tbl.baseline ,echo=FALSE}
+tbl.1 <- TOne(ads.1 %>% select(-mc_fg, -e_vp_id), grp = ads.1$mc_fg)
+
+tbl.1[,1] <- gsub(" ", "&nbsp;", tbl.1[,1], fixed=TRUE) # damit leading spaces bleiben!
+kable(tbl.1, caption = "Baseline-Charakteristika")
+```
+
+Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
+P-Werte: 
+[0, 0.001] = \***, 
+(0.001, 0.01] = \**, 
+(0.01, 0.05] = \*, 
+(0.05, 0.1] = \., 
+(0.1,1] =  
+  
+# Modell
+
+## Poisson Modell
+
+```{r coef.poisson}
+glm.poisson <- glm(formula = kons_n ~ ., data = ads.1.mod, family = "poisson")
+coef.poisson <- tidy(glm.poisson)
+kable(coef.poisson)
+```
+
+
+```{r sum.poisson}
+sum.poisson <- glance(glm.poisson)
+kable(sum.poisson)
+```
+
+## negativ-binomiales Modell
+
+```{r coef.negbin}
+glm.negbin <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
+coef.poisson <- tidy(glm.negbin)
+kable(coef.poisson)
+```
+
+
+```{r sum.negbin}
+sum.poisson <- glance(glm.negbin)
+kable(sum.poisson)
+```
+
+
+Autor: Beat Brüngger  
+Datum: 16.2.2016

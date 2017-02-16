@@ -43,6 +43,15 @@ table(ds$okp_mod_kat_x)
 
 Abstract(ads.1)
 
+tic <- Desc(ads.1$sex_x)
+tic[freq]
+
+toe <- summary(ads.1 %>% select(-e_vp_id))
+
+summary(ads.1$greg_x)
+
+class(toe)
+
 tac <- TOne(ads.1 %>% select(-mc_fg), grp = ads.1$mc_fg) %>% ftable()
 
 

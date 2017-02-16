@@ -1,0 +1,4 @@
+# Fragen
+
+* was tun mit fehlenden Werten?
+* wie werden die Paraameter eines Poisson- resp. neg.-binomialen Modells interpretiert?
