@@ -13,6 +13,8 @@ library(pander)
 library(forcats)
 library(xtable)
 library(Hmisc)
+library(stringr)
+library(GGally)
 
 options(scipen = 7)
 fmt.count <- as.fmt(digits=0, big.mark="'")

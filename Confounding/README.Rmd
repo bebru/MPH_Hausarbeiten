@@ -2,3 +2,30 @@
 
 * was tun mit fehlenden Werten?
 * wie werden die Paraameter eines Poisson- resp. neg.-binomialen Modells interpretiert?
+    * Intercept: durchschnittliche Anzahl Konsultationen der referenzkategorie
+    * Koeffizienten: Faktoren auf Intercept
+* soll die Zielvariable logarhythmiert werden? wohl eher nicht, da Poisson-Verteilung. 
+Allerdings ist der Test in der Tabelle mit den Baseline-Charakteristika fraglich.
+    * die Link-Funktion ist der Logarhythmus! Koeffizienten exponentieren!
+* Bibliographie erstellen?:
+    * ja
+
+# Gut zu wissen
+
+* **Koeffizienten der Poisson-Regression müssen exponentiert werden!**
+* Abgabetermin: 5. März 2017
+* überall Konfidenzintervalle!
+* die Frage nach Confounding muss anhand der Literatur bestimmt werden, es gibt keinen statistischen Test dafür
+* die Frage nach Effektmodifikation wird anhand der Interaktionen bestimmt werden (mindestens eine Interaktion überprüfen)
+* Interaktion und Effektmodifikation bezeichnen dasselbe
+* Effektmodifikation:
+    * Stratifikation nach Effektmodifikator
+    * Regressionsmodell mit Interaktionsterm zwischen Effektmodifikator und der interessierenden Variablen
+    * Überprüfen, ob die Effektmodifikation insgesamt signifikant ist: anova zweier Modelle mit resp. ohne die Interaktion (in STATA mit Likelihood-Ratio Test)
+    * um die Resultate der Interaktione zu überprüfen kann auch noch nach dem Effektmodifikator stratifiziert werden, z.B.:
+        * weisen Frauen mit MC tatsächlich mehr Konsultationen auf?
+        * bewirkt mc_fg tatsächlich nichts bei Personen mit tiefer Franchise?
+        * der Interaktionseffekt mc_fg\*sex_x gibt vergleicht multipliziert mit dem Haupteffekt von mc_fg (nicht aber sex_x)
+        * Vergleich der Koeffizienten in Männer- und Frauenmodell miteinander vergleichen. Wo grosse Unterschiede sind die Interaktion dieses Prädiktors mit sex_x ebenfalls ins Modell nehmen. Allenfalls ein Modell mit allen Interaktionen mit sex_x erstellen.
+* Struktur: Einführung, Methoden, Resultate, Diskussion (inkl. Limitationen), Schlussfolgerung
+* ev. Korrelationsmatrix für Erkennung der Confounder?

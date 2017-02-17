@@ -1,5 +1,6 @@
 ---
 title: Arztbesuche und Managed Care
+subtitle: Eine Analyse anhand von Administrativdaten.
 output: pdf_document
 classoption: a4paper
 lang:  de-CH
@@ -11,6 +12,8 @@ header-includes:
 - \fancyfoot[C]{Arztbesuche und Managed Care}
 - \fancyfoot[LE,RO]{\thepage}
 documentclass: article
+csl: international-journal-of-public-health.csl
+bibliography: bebru.bib
 ---
 
 ```{r setup, echo=FALSE, include=FALSE}
@@ -33,18 +36,20 @@ In dieser Analyse soll nun untersucht werden, wie sich die Restriktionen auf ein
 
 ## Population und Stichprobe
 
-Die Grundpopulation dieser Analyse sind die bei der Krankenversicherung Helsana in der OKP versicherten Personen. Da die Helsana-Gruppe ca. 15% der gesamten Schweizer Bevölkerung in ihrem Versichertenkollektiv aufweist, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung, haben die Resultate auch für die ganze Bevölkerung eine Relevanz. Aufgrund von Unterschieden z.B. in den Managed Care Modellen im Vergleich zu anderen Krankenversicherern können die Resultate allerdings nicht ohne weiteres generalisiert werden.  
+Die Grundpopulation dieser Analyse sind die bei der Krankenversicherung Helsana in der OKP versicherten Personen. Die Helsana-Gruppe weist ca. 15% der gesamten Schweizer Bevölkerung in ihrem Versichertenkollektiv auf, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung. Dieser hohe Anteil und die landesweite Verteilung der Versicherten sprechen dafür, dass die hier erzeugten Resultate auf die gesamte Schweizer Bevölkerung verallgemeinert werden können. Dagegen spricht, dass hier sehr unterschiedliche Managed Care Modelle mit unterschiedlichen Einschränkungen gemeinsam untersucht werden, und weil sich die genaue Ausgestaltung dieser Modelle je anch Krankenversicherer unterscheidet.  
 
 ### Ausschlüsse
 
-Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Somit werden Personen ausgeschlossen, welche im Jahr 2015 verstorben sind.
+Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Somit werden Personen ausgeschlossen, welche im Jahr 2015 verstorben sind. Die Resultate können somit nicht auf die Situtation am Ende des Lebens übertragen werden.
 
 ### Stichprobe
 
-Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ads.1), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Grösse des Datensatzes wurde gemacht, um eineseits einen keine Probleme mit der Grösse des Datensatzes zu haben, und damit die Resulate keine zu genauen Rückschlüsse auf das Versichertenkollektiv von Helsana zulassen (aus Rücksicht auf die Sensibilität der Daten). Der Datensatz enthält zudem keine Informationen, welche eine Identifikation der individuellen Personen zulassen.  
+Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ads.1.mod), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Anzahl Personen in der Analyse wurde vorgenommen, um bezüglich des Treatments gleich grosse Gruppen aufzuweisen, udn aus praktischen Gründen (grösse des Datensatzes), und aus praktischen Gründen, um keine Probleme mit der Grösse des Datensatzes zu haben. Der Datensatz enthält zudem keine Informationen, welche eine Identifikation der individuellen Personen zulassen.  
 Jede der Beobachtungen beschreibt Stammdaten und aggregierte Kennzahlen für das Kalenderjahr 2015.
 
 # Operationalisierung und Hypothese
+
+Bisherige Untersuchungen mit einem Daten aus derselben Datenbank haben gezeigt, dass Personen in einem Managed Care-Modell im Vergleich zu einem Standard-Modell geringereGesamt-Kosten aufweisen [@reich_empirical_2012].
 
 Die zu untersuchende Hypothese lautet:
 
@@ -54,7 +59,7 @@ Die zu untersuchende Hypothese lautet:
 
 # Beschreibung der Daten
 
-In Tabelle \ref{tab:tab.abstract} ist eine Beschreibung der im Datensatzes enthaltenen Variablen zu finden.
+In Tabelle \ref{tab:tab.abstract} ist eine Beschreibung der im Datensatz enthaltenen Variablen zu finden.
 
 ```{r tbl.abstract, echo=FALSE}
 Abstract(ads.1) %>% 
@@ -65,6 +70,12 @@ Abstract(ads.1) %>%
 summary(ads.1 %>% select(valter_n, kons_n, pcg_n)) %>% 
   pander(caption = "Univariate Statistik der numerischen Variablen")
 ```
+
+<!-- ```{r fig.kons, echo=FALSE, fig.cap="\\label{fig:fig.kons}Verteilung der Zielvariablen kons_n (Anzahl Kosultationen)"} -->
+<!-- ads.1 %>%  -->
+<!--   ggplot(aes(kons_n)) + geom_histogram() + theme_minimal() + labs(y = "Anzahl Konsultationen") -->
+<!-- ``` -->
+
 
 ```{r tbl.summary2, echo=FALSE}
 summary(ads.1 %>% select(sex_x, franch_elig_fg, okp_unfall_fg, mc_fg)) %>% 
@@ -80,50 +91,109 @@ summary(ads.1 %>% select(sprgeb_red_x, stadtland_red_x, greg_x), maxsum = 10) %>
 # Beschreibung der Baseline-Charakteristika
 
 ```{r tbl.baseline ,echo=FALSE}
-tbl.1 <- TOne(ads.1 %>% select(-mc_fg, -e_vp_id), grp = ads.1$mc_fg)
+tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg), grp = ads.1.mod$mc_fg,
+              FUN = function(x) gettextf("%s / %s", Format(median(x, na.rm=TRUE), digits=1),
+                                         Format(IQR(x, na.rm=TRUE), digits=1)))
 
 tbl.1[,1] <- gsub(" ", "&nbsp;", tbl.1[,1], fixed=TRUE) # damit leading spaces bleiben!
 kable(tbl.1, caption = "Baseline-Charakteristika")
 ```
 
 Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
-P-Werte: 
-[0, 0.001] = \***, 
-(0.001, 0.01] = \**, 
-(0.01, 0.05] = \*, 
-(0.05, 0.1] = \., 
-(0.1,1] =  
+P-Werte: [0, 0.001] = \***, (0.001, 0.01] = \**, (0.01, 0.05] = \*, (0.05, 0.1] = \., (0.1,1] =  
   
-# Modell
+# Modelle
 
 ## Poisson Modell
 
+Als erstes wird ein Poisson-Model erstellt, welches sämtliche zur Verfügung stehenden Prädiktoren beinhaltet.
+
 ```{r coef.poisson}
 glm.poisson <- glm(formula = kons_n ~ ., data = ads.1.mod, family = "poisson")
-coef.poisson <- tidy(glm.poisson)
-kable(coef.poisson)
+# coef.poisson <- tidy(glm.poisson, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
+# pander(coef.poisson, caption = "Koeffizienten aus dem Poisson Modell", justify = c("left"))
 ```
-
 
 ```{r sum.poisson}
 sum.poisson <- glance(glm.poisson)
-kable(sum.poisson)
+pander(sum.poisson, caption = "Modell-Parameter aus dem Poisson Modell")
+```
+  
+Ein Test auf over-dispersion zeigt, dass das Poisson-Modell schlecht an die Daten angepasst ist (Tabelle \ref{tab:test.over.dispersion}), der entsprechende $Chi^2$-Test weist einen p-Wert von 0 auf.  
+
+```{r test.over.dispersion}
+test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
+  p = pchisq(deviance, df.residual, lower.tail=FALSE)))
+kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
 ```
 
-## negativ-binomiales Modell
+Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)` verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen dispersion-Parameter schätzt.
+
+## Negativ-binomiale Modelle
+
+### Variablenselektion
+
+In Tabelle \ref{tab:lrt.negbin.crude} wird pro Prädiktor das Ergebnis eines Likelihood-Ratio Tests aufgezeigt, von Modellen, in welchen jeweils nur ein Prädiktor vorhanden ist. Der Test ist abgesehen von `sprgeb_red_x` für alle Prädiktoren signifikant.  
+
+```{r lrt.negbin.crude, echo=FALSE}
+glm.mc <- glm.nb(formula = kons_n ~ mc_fg, data = ads.1.mod)
+p.all <- anova(glm.mc, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL")
+glm.sex <- glm.nb(formula = kons_n ~ sex_x, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.sex, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.age, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.franch <- glm.nb(formula = kons_n ~ franch_elig_fg, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.franch, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.unfall <- glm.nb(formula = kons_n ~ okp_unfall_fg, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.unfall, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.spr <- glm.nb(formula = kons_n ~ sprgeb_red_x, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.spr, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.stadt <- glm.nb(formula = kons_n ~ stadtland_red_x, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.stadt, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.greg <- glm.nb(formula = kons_n ~ greg_x, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.greg, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+glm.pcg <- glm.nb(formula = kons_n ~ pcg_n, data = ads.1.mod)
+p.all <- rbind(p.all, p.all <- anova(glm.pcg, test = "LRT") %>% rownames_to_column() %>% filter(rowname != "NULL"))
+
+pander(p.all, caption = "\\label{tab:lrt.negbin.crude}Likelihood-Ratio Test für alle Prädiktoren einzeln", justify = c("left"))
+```
+
+Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle nicht signifikant voneinander unterscheiden und der Prädiktor `sprgeb_red_x` somit weggelassen werden kann.
+
+```{r lrt.negbin.spr, echo=FALSE}
+glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
+glm.negbin.red <- update(glm.negbin.all, . ~ . - sprgeb_red_x)
+pander(anova(glm.negbin.all, glm.negbin.red), caption = "\\label{tab:lrt.negbin.spr}Likelihood-Ratio Test mit resp. ohne den Prädiktor `sprgeb_red_x`")
+```
+
+### Berücksichtigung numerischer Variablen
+
+Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erkrankungen (`pcg_n`) haben gemäss dem Likelihood-Ratio Test einen signifikanten Einfluss auf die Zielvariable Anzahl Konsultationen (`kons_n`). Bei numerischen Variablen ist allerdings fraglich, ob die Annahme eines linearen Zusammenhangs korrekt ist. Deshalb werden nacheinander für beide dieser Prädiktoren getestet, ob die Hinzunahme der quadrierten Terme dieser Prädiktoren das Modell besser macht.
+
+#### Quadratsicher Term für Alter
+
+```{r lrt.negbin.age, echo=FALSE}
+glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
+glm.negbin.age <- update(glm.negbin.all, . ~ . + I(valter_n^2))
+pander(anova(glm.negbin.all, glm.negbin.age), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `valter_n`")
+```
+
+
 
 ```{r coef.negbin}
 glm.negbin <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
-coef.poisson <- tidy(glm.negbin)
-kable(coef.poisson)
+coef.poisson <- tidy(glm.negbin, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
+pander(coef.poisson, caption = "Koeffizienten aus dem negativ-binomialen Modell")
 ```
 
 
 ```{r sum.negbin}
 sum.poisson <- glance(glm.negbin)
-kable(sum.poisson)
+pander(sum.poisson, caption = "Modell-Parameter aus dem negativ-binomialen Modell")
 ```
-
 
 Autor: Beat Brüngger  
 Datum: 16.2.2016
+
+# Bibliographie
+
