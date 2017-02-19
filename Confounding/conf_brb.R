@@ -165,14 +165,61 @@ tidy(glm.negbin.all, exponentiate = TRUE)
 ## Stratifikation
 
 # Geschlecht
-glm.negbin.all.strat <- glm.nb(formula = kons_n ~ mc_fg + ak_2_x + franch_elig_fg + okp_unfall_fg + 
-                           stadtland_red_x + greg_x + pcg_n, data = ads.1.mod %>% filter(sex_x == "w"))
-tidy(glm.negbin.all.strat, exponentiate = TRUE)
+glm.negbin.sex.w <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
+                           stadtland_red_x + greg_x + pcg_n + okp_unfall_fg*valter_n, data = ads.1.mod %>% filter(sex_x == "w"))
+glm.negbin.sex.m <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
+                             stadtland_red_x + greg_x + pcg_n + okp_unfall_fg*valter_n, data = ads.1.mod %>% filter(sex_x == "m"))
+res.w <- tidy(glm.negbin.sex.w, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+res.m <- tidy(glm.negbin.sex.m, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+
+res.both <- data.frame(strata = rep("w", nrow(res.w)), res.w)
+res.both <- rbind(res.both, data.frame(strata = rep("m", nrow(res.m)), res.m))
+
+res.both %>% 
+  filter(term != "(Intercept)") %>% 
+  ggplot(aes(x = as.factor(term), y = estimate, color = strata)) + geom_point() + 
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high)) + coord_flip()
+
+table(ads.1.mod$greg_x, ads.1.mod$sex_x)
+
+glm.negbin.int1 <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
+                             stadtland_red_x + greg_x + pcg_n + sex_x + I(pcg_n^2), data = ads.1.mod)
+
+glm.negbin.int2 <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
+                           stadtland_red_x + greg_x + pcg_n + sex_x + I(pcg_n^2) + okp_unfall_fg*sex_x + pcg_n*sex_x, data = ads.1.mod)
+
+tidy(glm.negbin.int1, exponentiate = TRUE)
+tidy(glm.negbin.int2, exponentiate = TRUE)
+
+anova(glm.negbin.int1, glm.negbin.int2)
+
 
 # Franchise
-glm.negbin.all.strat <- glm.nb(formula = kons_n ~ mc_fg + sex_x + ak_2_x + okp_unfall_fg + 
-                                 stadtland_red_x + greg_x + pcg_n, data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
-tidy(glm.negbin.all.strat, exponentiate = TRUE)
+
+glm.negbin.franch.nein <- glm.nb(formula = kons_n ~ mc_fg + greg_x + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n + I(pcg_n^2) + sex_x*franch_elig_fg,
+                                 data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
+glm.negbin.franch.ja <- glm.nb(formula = kons_n ~ mc_fg + greg_x + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n + I(pcg_n^2) + sex_x*franch_elig_fg,
+                               data = ads.1.mod %>% filter(franch_elig_fg == "ja"))
+
+glm.negbin.test <- glm.nb(formula = kons_n ~ mc_fg + greg_x + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n,
+                          data = ads.1.mod)
+tidy(glm.negbin.test, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+res.nein <- tidy(glm.negbin.franch.nein, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+res.ja <- tidy(glm.negbin.franch.ja, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+
+res.both <- data.frame(strata = rep("ja", nrow(res.ja)), res.ja)
+res.both <- rbind(res.both, data.frame(strata = rep("nein", nrow(res.ja)), res.nein))
+
+res.both %>% 
+  filter(term != "(Intercept)") %>% 
+  ggplot(aes(x = as.factor(term), y = estimate, color = strata)) + geom_point() + coord_flip()
+
+glm.negbin.test2 <- glm.nb(formula = kons_n ~ greg_x + stadtland_red_x, data = ads.1.mod)
+tidy(glm.negbin.test2, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+
+table(ads.1.mod$greg_x, ads.1.mod$stadtland_red_x)
+
+Desc(greg_x ~ kons_n + mc_fg + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n, data = ads.1.mod)
 
 ## div. Interaktionen
 glm.negbin.all.sex <- glm.nb(formula = kons_n ~ mc_fg*sex_x + sex_x + ak_2_x + franch_elig_fg + okp_unfall_fg + 
@@ -182,7 +229,7 @@ anova(glm.negbin.all, glm.negbin.all.sex)
 tic %>% filter(term %like any% c("%mc_fg%","%sex_x%","%(Intercept)%")) %>% select(term, estimate)
 
 
-glm.negbin.all.franch <- glm.nb(formula = kons_n ~ mc_fg*franch_elig_fg + sex_x + ak_2_x + franch_elig_fg + okp_unfall_fg + 
+glm.negbin.all.franch <- glm.nb(formula = kons_n ~ mc_fg*franch_elig_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
                                stadtland_red_x + greg_x + pcg_n, data = ads.1.mod)
 tidy(glm.negbin.all.franch, exponentiate = TRUE)
 anova(glm.negbin.all, glm.negbin.all.franch)
@@ -191,5 +238,22 @@ glm.negbin.all.sex.franch <- glm.nb(formula = kons_n ~ mc_fg*franch_elig_fg + mc
                                   stadtland_red_x + greg_x + pcg_n, data = ads.1.mod)
 tidy(glm.negbin.all.sex.franch, exponentiate = TRUE)
 anova(glm.negbin.all, glm.negbin.all.sex.franch)
+
+
+# numersiche Variablen ----------------------------------------------------
+
+glm.negbin.all <- glm.nb(formula = kons_n ~ pcg_n, data = ads.1.mod)
+glm.negbin.pcg <- update(glm.negbin.all, . ~ . + I(pcg_n^2))
+pander(anova(glm.negbin.all, glm.negbin.pcg), caption = "\\label{tab:lrt.negbin.pcg}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `pcg_n`")
+
+ads.1.mod.pred.all <- 
+  ads.1.mod %>% 
+  add_predictions(glm.negbin.all) %>% 
+  add_residuals(glm.negbin.all)
+
+ads.1.mod.pred.pcg <- 
+  ads.1.mod %>% 
+  add_predictions(glm.negbin.pcg) %>% 
+  add_residuals(glm.negbin.pcg)
 
 

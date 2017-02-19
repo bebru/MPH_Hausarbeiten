@@ -11,9 +11,9 @@ ads.1 <-
 
 ads.1.mod <- 
   ds %>% 
-  filter(!is.na(pcg_n)) %>% 
-  mutate(stadtland_red_x = if_else(is.na(stadtland_red_x),"missing", stadtland_red_x)) %>% 
-  mutate(greg_x = if_else(is.na(greg_x),"missing", greg_x)) %>% 
+  filter(!is.na(pcg_n), !is.na(stadtland_red_x), !is.na(greg_x)) %>% 
+  # mutate(stadtland_red_x = if_else(is.na(stadtland_red_x),"missing", stadtland_red_x)) %>% 
+  # mutate(greg_x = if_else(is.na(greg_x),"missing", greg_x)) %>% 
   mutate_each(funs(as.factor), ends_with("_fg"), ends_with("_x")) %>% 
   mutate_each(funs(label_ja_nein), ends_with("_fg")) %>% 
   select(mc_fg, sex_x, valter_n, franch_elig_fg, okp_unfall_fg, sprgeb_red_x, stadtland_red_x,

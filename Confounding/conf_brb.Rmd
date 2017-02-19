@@ -4,6 +4,7 @@ subtitle: Eine Analyse anhand von Administrativdaten.
 output: pdf_document
 classoption: a4paper
 lang:  de-CH
+toc: true
 header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
@@ -12,7 +13,7 @@ header-includes:
 - \fancyfoot[C]{Arztbesuche und Managed Care}
 - \fancyfoot[LE,RO]{\thepage}
 documentclass: article
-csl: international-journal-of-public-health.csl
+csl: american-journal-of-public-health.csl
 bibliography: bebru.bib
 ---
 
@@ -127,7 +128,7 @@ test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
 kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
 ```
 
-Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)` verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen dispersion-Parameter schätzt.
+Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)`, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen dispersion-Parameter schätzt.
 
 ## Negativ-binomiale Modelle
 
@@ -158,7 +159,7 @@ p.all <- rbind(p.all, p.all <- anova(glm.pcg, test = "LRT") %>% rownames_to_colu
 pander(p.all, caption = "\\label{tab:lrt.negbin.crude}Likelihood-Ratio Test für alle Prädiktoren einzeln", justify = c("left"))
 ```
 
-Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle nicht signifikant voneinander unterscheiden und der Prädiktor `sprgeb_red_x` somit weggelassen werden kann.
+Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle nicht signifikant voneinander unterscheiden. Als Folge wird auf den Prädiktor `sprgeb_red_x` verzeichtet.
 
 ```{r lrt.negbin.spr, echo=FALSE}
 glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
@@ -168,17 +169,38 @@ pander(anova(glm.negbin.all, glm.negbin.red), caption = "\\label{tab:lrt.negbin.
 
 ### Berücksichtigung numerischer Variablen
 
-Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erkrankungen (`pcg_n`) haben gemäss dem Likelihood-Ratio Test einen signifikanten Einfluss auf die Zielvariable Anzahl Konsultationen (`kons_n`). Bei numerischen Variablen ist allerdings fraglich, ob die Annahme eines linearen Zusammenhangs korrekt ist. Deshalb werden nacheinander für beide dieser Prädiktoren getestet, ob die Hinzunahme der quadrierten Terme dieser Prädiktoren das Modell besser macht.
+Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erkrankungen (`pcg_n`) haben gemäss dem Likelihood-Ratio Test einen signifikanten Einfluss auf die Zielvariable Anzahl Konsultationen (`kons_n`). Bei numerischen Variablen ist allerdings fraglich, ob die Annahme eines linearen Zusammenhangs korrekt ist. Deshalb wird nacheinander für beide dieser Prädiktoren getestet, ob die Hinzunahme der quadrierten Terme dieser Prädiktoren das Modell besser macht.
 
-#### Quadratsicher Term für Alter
+#### Quadratischer Term für Alter
+
+In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der quadratische Term für den Prädiktor Alter das Modell verbessert.
 
 ```{r lrt.negbin.age, echo=FALSE}
-glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
-glm.negbin.age <- update(glm.negbin.all, . ~ . + I(valter_n^2))
+glm.negbin.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
+glm.negbin.age2 <- update(glm.negbin.all, . ~ . + I(valter_n^2))
 pander(anova(glm.negbin.all, glm.negbin.age), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `valter_n`")
 ```
 
+#### Quadratischer Term für Anzahl chronischer Erkrankungen
 
+In Tabelle \ref{tab:lrt.negbin.pcg} ist ersichtlich, dass der quadratische Term für den Prädiktor Anzahl chronischer Erkrankungen das Modell verbessert.
+
+```{r lrt.negbin.pcg, echo=FALSE}
+glm.negbin.pcg <- glm.nb(formula = kons_n ~ pcg_n, data = ads.1.mod)
+glm.negbin.pcg2 <- update(glm.negbin.all, . ~ . + I(pcg_n^2))
+pander(anova(glm.negbin.all, glm.negbin.pcg), caption = "\\label{tab:lrt.negbin.pcg}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `pcg_n`")
+```
+
+### Effektmodifikation/Interaktionen
+
+Als potentieller Effektmodifikator wird die Farnchisestufe verwendet. Es soll untersucht werden, ob die Restriktionen zu einem Managed-Care Modell sowohl bei tiefen, als auch bei hohen Franchisen einen Effekt zur Folge haben.
+
+```{r }
+
+```
+
+
+## Verwendetes Modell
 
 ```{r coef.negbin}
 glm.negbin <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
