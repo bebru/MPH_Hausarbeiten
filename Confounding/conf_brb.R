@@ -44,6 +44,8 @@ ds %>%
 
 table(ds$okp_mod_kat_x)
 
+table(ads.1.mod$valter_n, ads.1.mod$age_grp_x)
+
 Abstract(ads.1)
 
 tic <- Desc(ads.1$sex_x)
@@ -158,19 +160,18 @@ pander(coef.all, caption = "\\label{tab:coef.negbin.crude}Koeffizient für mc_fg
 
 # Interaktionen -----------------------------------------------------------
 
-glm.negbin.all <- glm.nb(formula = kons_n ~ mc_fg + sex_x + ak_2_x + franch_elig_fg + okp_unfall_fg + 
-                         stadtland_red_x + greg_x + pcg_n, data = ads.1.mod)
+glm.negbin.all <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
+                         stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod)
 tidy(glm.negbin.all, exponentiate = TRUE)
 
 ## Stratifikation
 
 # Geschlecht
-glm.negbin.sex.w <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
-                           stadtland_red_x + greg_x + pcg_n + okp_unfall_fg*valter_n, data = ads.1.mod %>% filter(sex_x == "w"))
-glm.negbin.sex.m <- glm.nb(formula = kons_n ~ mc_fg + valter_n + franch_elig_fg + okp_unfall_fg + 
-                             stadtland_red_x + greg_x + pcg_n + okp_unfall_fg*valter_n, data = ads.1.mod %>% filter(sex_x == "m"))
-res.w <- tidy(glm.negbin.sex.w, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
-res.m <- tidy(glm.negbin.sex.m, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+glm.negbin.all.w <- glm.nb(formula = update(formula(glm.negbin.all), . ~ . - sex_x + mc_fg*pcg_n), data = ads.1.mod %>% filter(sex_x == "w"))
+glm.negbin.all.m <- glm.nb(formula = update(formula(glm.negbin.all), . ~ . - sex_x + mc_fg*pcg_n), data = ads.1.mod %>% filter(sex_x == "m"))
+
+res.w <- tidy(glm.negbin.all.w, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+res.m <- tidy(glm.negbin.all.m, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
 
 res.both <- data.frame(strata = rep("w", nrow(res.w)), res.w)
 res.both <- rbind(res.both, data.frame(strata = rep("m", nrow(res.m)), res.m))
@@ -195,6 +196,17 @@ anova(glm.negbin.int1, glm.negbin.int2)
 
 
 # Franchise
+
+glm.negbin.all.franch <- glm.nb(formula = update(formula(glm.negbin.all), . ~ . + mc_fg*franch_elig_fg), data = ads.1.mod)
+glm.negbin.all.nein <- glm.nb(formula = update(formula(glm.negbin.all), . ~ . - franch_elig_fg), data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
+glm.negbin.all.ja <- glm.nb(formula = update(formula(glm.negbin.all), . ~ . - franch_elig_fg), data = ads.1.mod %>% filter(franch_elig_fg == "ja"))
+
+anova(glm.negbin.all, glm.negbin.all.franch)
+
+tidy(glm.negbin.all.franch, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+tidy(glm.negbin.all.nein, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+tidy(glm.negbin.all.ja, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+
 
 glm.negbin.franch.nein <- glm.nb(formula = kons_n ~ mc_fg + greg_x + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n + I(pcg_n^2) + sex_x*franch_elig_fg,
                                  data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
@@ -222,8 +234,7 @@ table(ads.1.mod$greg_x, ads.1.mod$stadtland_red_x)
 Desc(greg_x ~ kons_n + mc_fg + sex_x + valter_n + okp_unfall_fg + stadtland_red_x + pcg_n, data = ads.1.mod)
 
 ## div. Interaktionen
-glm.negbin.all.sex <- glm.nb(formula = kons_n ~ mc_fg*sex_x + sex_x + ak_2_x + franch_elig_fg + okp_unfall_fg + 
-                           stadtland_red_x + greg_x + pcg_n, data = ads.1.mod)
+glm.negbin.all.sex <-  update(glm.negbin.all, . ~ . + mc_fg*sex_x)
 tic <- tidy(glm.negbin.all.sex, exponentiate = TRUE)
 anova(glm.negbin.all, glm.negbin.all.sex)
 tic %>% filter(term %like any% c("%mc_fg%","%sex_x%","%(Intercept)%")) %>% select(term, estimate)

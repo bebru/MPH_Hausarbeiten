@@ -128,13 +128,13 @@ test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
 kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
 ```
 
-Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)`, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen dispersion-Parameter schätzt.
+Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)`, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen Parameter für die Dispersion schätzt.
 
 ## Negativ-binomiale Modelle
 
 ### Variablenselektion
 
-In Tabelle \ref{tab:lrt.negbin.crude} wird pro Prädiktor das Ergebnis eines Likelihood-Ratio Tests aufgezeigt, von Modellen, in welchen jeweils nur ein Prädiktor vorhanden ist. Der Test ist abgesehen von `sprgeb_red_x` für alle Prädiktoren signifikant.  
+In Tabelle \ref{tab:lrt.negbin.crude} wird pro Prädiktor das Ergebnis eines Likelihood-Ratio Tests von Modellen mit jeweils nur diesem Prädiktor angezeigt. Der Test ist abgesehen von `sprgeb_red_x` für alle Prädiktoren signifikant.  
 
 ```{r lrt.negbin.crude, echo=FALSE}
 glm.mc <- glm.nb(formula = kons_n ~ mc_fg, data = ads.1.mod)
@@ -159,7 +159,7 @@ p.all <- rbind(p.all, p.all <- anova(glm.pcg, test = "LRT") %>% rownames_to_colu
 pander(p.all, caption = "\\label{tab:lrt.negbin.crude}Likelihood-Ratio Test für alle Prädiktoren einzeln", justify = c("left"))
 ```
 
-Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle nicht signifikant voneinander unterscheiden. Als Folge wird auf den Prädiktor `sprgeb_red_x` verzeichtet.
+Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle (mit resp. ohne `sprgeb_red_x`) nicht signifikant voneinander unterscheiden. Als Folge wird auf den Prädiktor `sprgeb_red_x` verzichtet.
 
 ```{r lrt.negbin.spr, echo=FALSE}
 glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
@@ -173,12 +173,13 @@ Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erk
 
 #### Quadratischer Term für Alter
 
-In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der quadratische Term für den Prädiktor Alter das Modell verbessert.
+In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der kategoriale Term für den Prädiktor Altersgruppe das Modell nicht verbessert.
 
 ```{r lrt.negbin.age, echo=FALSE}
 glm.negbin.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
-glm.negbin.age2 <- update(glm.negbin.all, . ~ . + I(valter_n^2))
-pander(anova(glm.negbin.all, glm.negbin.age), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `valter_n`")
+# glm.negbin.age2 <- update(glm.negbin.age, . ~ . + I(valter_n^2))
+glm.negbin.agegrp <- glm.nb(formula = kons_n ~ age_grp_x, data = ads.1.mod)
+pander(anova(glm.negbin.age, glm.negbin.agegrp), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit kontinuierlicher Variable Alter resp. kategorialem Term für die Altersgruppe")
 ```
 
 #### Quadratischer Term für Anzahl chronischer Erkrankungen
@@ -187,31 +188,40 @@ In Tabelle \ref{tab:lrt.negbin.pcg} ist ersichtlich, dass der quadratische Term 
 
 ```{r lrt.negbin.pcg, echo=FALSE}
 glm.negbin.pcg <- glm.nb(formula = kons_n ~ pcg_n, data = ads.1.mod)
-glm.negbin.pcg2 <- update(glm.negbin.all, . ~ . + I(pcg_n^2))
-pander(anova(glm.negbin.all, glm.negbin.pcg), caption = "\\label{tab:lrt.negbin.pcg}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `pcg_n`")
+glm.negbin.pcg2 <- update(glm.negbin.pcg, . ~ . + I(pcg_n^2))
+pander(anova(glm.negbin.pcg, glm.negbin.pcg2), caption = "\\label{tab:lrt.negbin.pcg}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `pcg_n`")
 ```
 
 ### Effektmodifikation/Interaktionen
 
-Als potentieller Effektmodifikator wird die Farnchisestufe verwendet. Es soll untersucht werden, ob die Restriktionen zu einem Managed-Care Modell sowohl bei tiefen, als auch bei hohen Franchisen einen Effekt zur Folge haben.
+Als potentieller Effektmodifikator wird die Farnchisestufe verwendet. Es soll untersucht werden, ob die Restriktionen in einem Managed-Care Modell sowohl bei tiefen als auch bei hohen Franchisen einen Effekt zur Folge haben. Hierzu wird die Modellformel um den Interaktionsterm `mc_fg*franch_elig_fg` erweitert.
 
-```{r }
-
+```{r, eval=FALSE}
+glm.nb(formula = update(formula(glm.negbin.all), . ~ . + mc_fg*franch_elig_fg), data = ads.1.mod)
 ```
 
+Mit Hilfe eines Likelyhood-Ratio Tests wird überprüft, ob der Interaktionsterm `mc_fg*franch_elig_fg` zu einem signifikant unterschiedlichen Modell führt, und der Term somit im Modell verbleiben soll.
+
+```{r lrt.negbin.int, echo=FALSE}
+glm.negbin.noint <-glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
+                            stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod)
+glm.negbin.int <- update(glm.negbin.all, . ~ . - mc_fg*franch_elig_fg)
+pander(anova(glm.negbin.noint, glm.negbin.int), caption = "\\label{tab:lrt.negbin.spr}Likelihood-Ratio Test mit resp. Interaktionsterm `mc_fg*frach_elig_fg`")
+```
 
 ## Verwendetes Modell
 
-```{r coef.negbin}
-glm.negbin <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
-coef.poisson <- tidy(glm.negbin, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
-pander(coef.poisson, caption = "Koeffizienten aus dem negativ-binomialen Modell")
+```{r coef.nb.final}
+glm.negbin.final <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + age_grp_x + franch_elig_fg + okp_unfall_fg + 
+                            stadtland_red_x + greg_x + pcg_n + I(pcg_n^2) + mc_fg*franch_elig_fg, data = ads.1.mod)
+coef.nb.final <- tidy(glm.negbin.final, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
+pander(coef.nb.final, caption = "Koeffizienten aus dem finalen Modell")
 ```
 
 
-```{r sum.negbin}
-sum.poisson <- glance(glm.negbin)
-pander(sum.poisson, caption = "Modell-Parameter aus dem negativ-binomialen Modell")
+```{r sum.nb.final}
+sum.nb.final <- glance(glm.negbin.final)
+pander(sum.nb.final, caption = "Modell-Parameter aus dem negativ-binomialen Modell")
 ```
 
 Autor: Beat Brüngger  
