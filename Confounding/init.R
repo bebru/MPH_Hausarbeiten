@@ -16,7 +16,7 @@ library(Hmisc)
 library(stringr)
 library(GGally)
 
-options(scipen = 7)
+options(scipen = 5)
 fmt.count <- as.fmt(digits=0, big.mark="'")
 set.alignment('left')
 panderOptions('table.split.table', Inf)

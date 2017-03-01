@@ -88,7 +88,7 @@ Dadurch enthält der verwendete Datensatz insgesamt `r Format(nrow(ads.1.mod), f
 
 ## Beschreibung der Daten
 
-In Tabelle \ref{tab:tab.abstract} ist eine kurze Beschreibung der im Datensatz enthaltenen Variablen zu finden, welche auch Informationen über fehlende Werte enthält. Wie bereits im Abschnitt "Ausschlüsse" erwähnt, wurden für alle weiteren Auswertungen die Beobachtungen mit fehlenden Wertden in mindestens einer Variablen ausgeschlossen.  
+In Tabelle \ref{tab:tab.abstract} ist eine kurze Beschreibung der im Datensatz enthaltenen Variablen zu finden, welche auch Informationen über fehlende Werte enthält. Wie bereits im Abschnitt "Ausschlüsse" erwähnt, wurden für alle weiteren Auswertungen die Beobachtungen mit fehlenden Werten in mindestens einer Variablen ausgeschlossen.  
 Die hier aufgeführten Variablen, sowie allfällige Ableitungen davon, stehen im Anschluss für die Modellierung zur Verfügung.
 
 ```{r tbl.abstract, echo=FALSE}
@@ -97,38 +97,9 @@ tbl.abstract <- Abstract(ads.1)
 pander(tbl.abstract, caption = "\\label{tab:tab.abstract}Beschreibung der Variablen", justify = rep("left", ncol(tbl.abstract)))
 ```
 
-Um einen ersten Überblick über die Daten zu erhalten, sind in univariate Analysen der einzelnen Variablen erstellt worden: numerische Variablen in Tabelle \ref{tbl.summary.num},  dichotome Variablen in Tabelle \ref{tbl.summary.2}, und die restlichen kategorialen Variablen in Tabelle \ref{tbl.summary.cat}.
+Für einen ersten Überblick über die Daten sind in Tabelle \ref{tbl.baseline} die Verteilungen innerhalb der einzelnen Variablen insgesamt sowie in den beiden Gruppen **mit** (Treatmentgruppe) resp. **ohne** (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
 
-```{r tbl.summary.num, echo=FALSE}
-tbl.summary.num <- summary(ads.1.mod %>% select(valter_n, kons_n, pcg_n))
-
-pander(tbl.summary.num, caption = "\\label{tbl.summary.num}Univariate Statistik der numerischen Variablen", justify = rep("left", ncol(tbl.summary.num)))
-```
-
-<!-- ```{r fig.kons, echo=FALSE, fig.cap="\\label{fig:fig.kons}Verteilung der Zielvariablen kons_n (Anzahl Kosultationen)"} -->
-<!-- ads.1 %>%  -->
-<!--   ggplot(aes(kons_n)) + geom_histogram() + theme_minimal() + labs(y = "Anzahl Konsultationen") -->
-<!-- ``` -->
-
-
-```{r tbl.summary.2, echo=FALSE}
-tbl.summary.2 <- summary(ads.1.mod %>% select(sex_x, franch_elig_fg, okp_unfall_fg, mc_fg))
-
-pander(tbl.summary.2, caption = "\\label{tbl.summary.2}Univariate Statistik der dichotomen Variablen", justify = rep("left", ncol(tbl.summary.2)))
-```
-
-```{r tbl.summary.cat, echo=FALSE}
-tbl.summary.cat <- summary(ads.1.mod %>% select(sprgeb_red_x, stadtland_red_x, greg_x), maxsum = 10)
-
-pander(tbl.summary.cat, caption = "\\label{tbl.summary.cat}Univariate Statistik der restlichen kategorialen Variablen", justify = rep("left", ncol(tbl.summary.cat)))
-```
-
-
-## Beschreibung der Baseline-Charakteristika
-
-In Tabelle \ref{tbl.baseline} ist die Verteilung innerhalb der einzelnen Variablen in den beiden Gruppen mit (Treatmentgruppe) resp. ohne (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
-
-```{r tbl.baseline ,echo=FALSE}
+```{r tbl.baseline, echo=FALSE}
 tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg, -age_grp_x), grp = ads.1.mod$mc_fg,
               FUN = function(x) gettextf("%s / %s", Format(median(x, na.rm=TRUE), digits=1),
                                          Format(IQR(x, na.rm=TRUE), digits=1)))
@@ -141,24 +112,25 @@ kable(tbl.1, caption = "\\label{tbl.baseline}Baseline-Charakteristika, insgesamt
 Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
 P-Werte: [0, 0.001] = \***, (0.001, 0.01] = \**, (0.01, 0.05] = \*, (0.05, 0.1] = \., (0.1,1] =  
   
-# Modelle
+## Modelle
 
-## Poisson Modell
+Bei der Zielvariablen Anzahl Arztbesuche handelt es sich um Zähldaten. Aus diesem Grund wird als erstes ein Poission Modell an die Daten angepasst.
 
-Als erstes wird ein Poisson-Model erstellt, welches sämtliche zur Verfügung stehenden Prädiktoren beinhaltet.
+### Poisson Modell
 
-```{r coef.poisson}
+Das Poisson Modell enthält sämtliche zur Verfügung stehenden Confounder (siehe Tabelle \ref{tbl.baseline}).
+
+```{r coef.poisson, echo=FALSE}
 glm.poisson <- glm(formula = kons_n ~ ., data = ads.1.mod, family = "poisson")
-# coef.poisson <- tidy(glm.poisson, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
-# pander(coef.poisson, caption = "Koeffizienten aus dem Poisson Modell", justify = c("left"))
+print(formula(glm.poisson))
 ```
 
-```{r sum.poisson}
+```{r sum.poisson, echo=FALSE}
 sum.poisson <- glance(glm.poisson)
 pander(sum.poisson, caption = "Modell-Parameter aus dem Poisson Modell")
 ```
   
-Ein Test auf over-dispersion zeigt, dass das Poisson-Modell schlecht an die Daten angepasst ist (Tabelle \ref{tab:test.over.dispersion}), der entsprechende $Chi^2$-Test weist einen p-Wert von 0 auf.  
+Ein entsprechender $\chi^2$-Test zeigt, dass dieses Poisson Modell over-dispersion aufweist (Tabelle \ref{tab:test.over.dispersion}, p-Wert = 0):
 
 ```{r test.over.dispersion}
 test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
@@ -166,13 +138,13 @@ test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
 kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
 ```
 
-Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson-Modells, dass `Var(Y) = E(Y)`, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson-Models das negativ-binomiale Modell verwendet, welches einen Parameter für die Dispersion schätzt.
+Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson Modells, dass $Var(Y) = E(Y)$, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson Modells das negativ-binomiale Modell verwendet, welches einen Parameter für die Dispersion schätzt.
 
-## Negativ-binomiale Modelle
+### Negativ-binomiale Modelle
 
-### Variablenselektion
+#### Variablenselektion
 
-In Tabelle \ref{tab:lrt.negbin.crude} wird pro Prädiktor das Ergebnis eines Likelihood-Ratio Tests von Modellen mit jeweils nur diesem Prädiktor angezeigt. Der Test ist abgesehen von `sprgeb_red_x` für alle Prädiktoren signifikant.  
+In Tabelle \ref{tab:lrt.negbin.crude} wird pro potentiellem und verfügbaren Confounder das Ergebnis eines Likelihood-Ratio Tests von Modellen mit jeweils nur diesem Prädiktor angezeigt. Der Test ist abgesehen von `sprgeb_red_x` für alle Variablen signifikant.  
 
 ```{r lrt.negbin.crude, echo=FALSE}
 glm.mc <- glm.nb(formula = kons_n ~ mc_fg, data = ads.1.mod)
@@ -197,7 +169,7 @@ p.all <- rbind(p.all, p.all <- anova(glm.pcg, test = "LRT") %>% rownames_to_colu
 pander(p.all, caption = "\\label{tab:lrt.negbin.crude}Likelihood-Ratio Test für alle Prädiktoren einzeln", justify = c("left"))
 ```
 
-Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diesem Prädiktor unterscheidet, falls alle anderen Prädiktoren im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle (mit resp. ohne `sprgeb_red_x`) nicht signifikant voneinander unterscheiden. Als Folge wird auf den Prädiktor `sprgeb_red_x` verzichtet.
+Aus diesem Grund wird getestet, ob ein Modell mit `sprgeb_red_x` sich signifikant von einem ohne diese Variable unterscheidet, falls alle anderen Confounder im Modell sind (Tabelle \ref{tab:lrt.negbin.spr}). Der Test zeigt, dass sich die beiden Modelle (mit resp. ohne `sprgeb_red_x`) nicht signifikant voneinander unterscheiden. Als Folge wird auf den Prädiktor `sprgeb_red_x` verzichtet.
 
 ```{r lrt.negbin.spr, echo=FALSE}
 glm.negbin.all <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
@@ -205,13 +177,13 @@ glm.negbin.red <- update(glm.negbin.all, . ~ . - sprgeb_red_x)
 pander(anova(glm.negbin.all, glm.negbin.red), caption = "\\label{tab:lrt.negbin.spr}Likelihood-Ratio Test mit resp. ohne den Prädiktor `sprgeb_red_x`")
 ```
 
-### Berücksichtigung numerischer Variablen
+#### Berücksichtigung numerischer Variablen
 
-Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erkrankungen (`pcg_n`) haben gemäss dem Likelihood-Ratio Test einen signifikanten Einfluss auf die Zielvariable Anzahl Konsultationen (`kons_n`). Bei numerischen Variablen ist allerdings fraglich, ob die Annahme eines linearen Zusammenhangs korrekt ist. Deshalb wird nacheinander für beide dieser Prädiktoren getestet, ob die Hinzunahme der quadrierten Terme dieser Prädiktoren das Modell besser macht.
+Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erkrankungen (`pcg_n`) haben gemäss dem Likelihood-Ratio Test einen signifikanten Einfluss auf die Zielvariable Anzahl Konsultationen (`kons_n`). Bei numerischen Variablen ist allerdings fraglich, ob die Annahme eines linearen Zusammenhangs zwischen Zielvariable und Prädiktor korrekt ist. Deshalb wird nacheinander für beide dieser Prädiktoren getestet, ob eine Einteilung in Gruppen (Alter) resp. die Hinzunahme eines quadrierten Terms (Anzahl chronische Erkrankungen) das Modell besser macht.
 
-#### Quadratischer Term für Alter
+##### Alterskategorien anstelle von Alter
 
-In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der kategoriale Term für den Prädiktor Altersgruppe das Modell nicht verbessert.
+In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der kategoriale Term für den Prädiktor Altersgruppe das Modell nicht verbessert. Das Alter wird deshalb weiterhin ausschliesslich als kontinuierliche Variable berücksichtigt.  
 
 ```{r lrt.negbin.age, echo=FALSE}
 glm.negbin.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
@@ -220,9 +192,11 @@ glm.negbin.agegrp <- glm.nb(formula = kons_n ~ age_grp_x, data = ads.1.mod)
 pander(anova(glm.negbin.age, glm.negbin.agegrp), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit kontinuierlicher Variable Alter resp. kategorialem Term für die Altersgruppe")
 ```
 
-#### Quadratischer Term für Anzahl chronischer Erkrankungen
+Auch die Hinzunahme eines quadrierten Terms für das Alter verbessert das Modell nicht (hier nicht gezeigt).
 
-In Tabelle \ref{tab:lrt.negbin.pcg} ist ersichtlich, dass der quadratische Term für den Prädiktor Anzahl chronischer Erkrankungen das Modell verbessert.
+##### Quadratischer Term für Anzahl chronischer Erkrankungen
+
+In Tabelle \ref{tab:lrt.negbin.pcg} ist ersichtlich, dass der quadratische Term für den Prädiktor Anzahl chronischer Erkrankungen das Modell verbessert. Dieser quadrierte Term wird deshalb hinzugenommen.
 
 ```{r lrt.negbin.pcg, echo=FALSE}
 glm.negbin.pcg <- glm.nb(formula = kons_n ~ pcg_n, data = ads.1.mod)
@@ -230,37 +204,52 @@ glm.negbin.pcg2 <- update(glm.negbin.pcg, . ~ . + I(pcg_n^2))
 pander(anova(glm.negbin.pcg, glm.negbin.pcg2), caption = "\\label{tab:lrt.negbin.pcg}Likelihood-Ratio Test mit resp. ohne quadratischem Term für den Prädiktor `pcg_n`")
 ```
 
-### Effektmodifikation/Interaktionen
+#### Effektmodifikation/Interaktionen
 
-Als potentieller Effektmodifikator wird die Farnchisestufe verwendet. Es soll untersucht werden, ob die Restriktionen in einem Managed-Care Modell sowohl bei tiefen als auch bei hohen Franchisen einen Effekt zur Folge haben. Hierzu wird die Modellformel um den Interaktionsterm `mc_fg*franch_elig_fg` erweitert.
+Als potentieller Effektmodifikator wird die Franchisestufe analysiert. Es soll untersucht werden, ob die Restriktionen in einem Managed-Care Modell sowohl bei tiefen als auch bei hohen Franchisen einen Effekt zur Folge haben. Hierzu wird die Modellformel um den Interaktionsterm `mc_fg*franch_elig_fg` erweitert.  
 
-```{r, eval=FALSE}
-glm.nb(formula = update(formula(glm.negbin.all), . ~ . + mc_fg*franch_elig_fg), data = ads.1.mod)
-```
-
-Mit Hilfe eines Likelyhood-Ratio Tests wird überprüft, ob der Interaktionsterm `mc_fg*franch_elig_fg` zu einem signifikant unterschiedlichen Modell führt, und der Term somit im Modell verbleiben soll.
+Mit Hilfe eines Likelyhood-Ratio Tests wird überprüft, ob der Interaktionsterm `mc_fg*franch_elig_fg` zu einem signifikant unterschiedlichen Modell führt, und der Term somit im Modell verbleiben soll. Das Resultat in Tabelle \ref{tab:lrt.negbin.int} zeigt, dass das Modell mit dem Interaktionsterm sich signifikant von einem ohne unterscheidet, und der Interaktionsterm wird deshalb weiter verwendet.
 
 ```{r lrt.negbin.int, echo=FALSE}
 glm.negbin.noint <-glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
                             stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod)
-glm.negbin.int <- update(glm.negbin.all, . ~ . - mc_fg*franch_elig_fg)
-pander(anova(glm.negbin.noint, glm.negbin.int), caption = "\\label{tab:lrt.negbin.spr}Likelihood-Ratio Test mit resp. Interaktionsterm `mc_fg*frach_elig_fg`")
+glm.negbin.int <- update(glm.negbin.noint, . ~ . + mc_fg*franch_elig_fg)
+pander(anova(glm.negbin.noint, glm.negbin.int), caption = "\\label{tab:lrt.negbin.int}Likelihood-Ratio Test mit resp. ohne Interaktionsterm `mc_fg*frach_elig_fg`")
 ```
 
-## Verwendetes Modell
+## Resultate
 
-```{r coef.nb.final}
-glm.negbin.final <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + age_grp_x + franch_elig_fg + okp_unfall_fg + 
+Aufgrund der oben beschriebenen Analysen sieht das schlussendlich verwendete Modell wir folgt aus:
+
+```{r mod.final, echo=FALSE}
+glm.negbin.final <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
                             stadtland_red_x + greg_x + pcg_n + I(pcg_n^2) + mc_fg*franch_elig_fg, data = ads.1.mod)
-coef.nb.final <- tidy(glm.negbin.final, exponentiate = TRUE, conf.int = FALSE, method = "Wald")
-pander(coef.nb.final, caption = "Koeffizienten aus dem finalen Modell")
+print(formula(glm.negbin.final))
 ```
 
+In Tabelle \ref{tbl:coef.nb.final} sind für das verwendete Modell die geschätzten Koeffizienten mit Vertrauensintervall aufgeführt, in Tabelle \ref{tbl:sum.nb.final} eine Zusammenfassung auf der Ebene des Modells sichtbar.  
+Die Schätzungen der Koeffizienten sind zudem in Abbildung \ref{fig:coef.nb.final.fig} grafisch dargestellt (für die bessere Übersicht ohne Schätzung für den Achsenabschnitt).
 
-```{r sum.nb.final}
+```{r coef.nb.final, echo=FALSE}
+coef.nb.final <- tidy(glm.negbin.final, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+pander(coef.nb.final, caption = "\\label{tbl:coef.nb.final}Koeffizienten aus dem finalen Modell")
+```
+
+```{r sum.nb.final, echo=FALSE}
 sum.nb.final <- glance(glm.negbin.final)
-pander(sum.nb.final, caption = "Modell-Parameter aus dem negativ-binomialen Modell")
+pander(sum.nb.final, caption = "\\label{tbl:sum.nb.final}Zusammenfassung des verwendeten Modells auf Ebene Modell")
 ```
+
+```{r coef.nb.final.fig, echo=FALSE, fig.cap= "\\label{fig:coef.nb.final.fig}Koeffizienten aus dem finalen Modell"}
+coef.nb.final %>% 
+  filter(term != "(Intercept)") %>% 
+  ggplot(aes(x = term, y = estimate, ymin = conf.low, ymax = conf.high)) + geom_pointrange() +
+  coord_flip() + theme_minimal()
+```
+
+Von Interesse sind insbesondere die Koeffizienten für das Treatment (MC Modell), und da der Effekt dieses Treatments durch die Höhe der Franchisr modifiziert ist, auch der Interaktionsterm zwischen dem Treatment und dem Effektmodifikator (Höhe der Franchise).
+
+
 
 Autor: Beat Brüngger  
 Datum: 16.2.2016
