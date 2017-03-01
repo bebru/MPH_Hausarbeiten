@@ -112,6 +112,14 @@ kable(tbl.1, caption = "\\label{tbl.baseline}Baseline-Charakteristika, insgesamt
 Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
 P-Werte: [0, 0.001] = \***, (0.001, 0.01] = \**, (0.01, 0.05] = \*, (0.05, 0.1] = \., (0.1,1] =  
   
+Für die numerischen Variablen ist in Tabelle \ref{tbl:tbl.summary.num} ein "five-number summary" dargestellt um sicherzugehen, dass darin keine unplausiblen Extremwerte vorkommen. Alle drei numersischen Variablen sind nach unten begrenzt durch 0, nach oben mit ca. 120 (Alter), ca. 400 (Anzahl Konsultationen pro Jahr, theoretisch mehr als eine Konsultation zulässig, aber nicht regelmässig denkbar), sowie 22 (soviele PCG sind in @huber_identifying_2013 definiert, welche in der Datenaufbereitung verwendet wurden). Die Daten zeigen keine besorgniserregenden Werte.
+
+```{r tbl.summary.num, echo=FALSE}
+summary(ads.1.mod %>% select(valter_n, kons_n, pcg_n)) %>% 
+  pander(caption = "\\label{tbl:tbl.summary.num}Univariate Statistik der numerischen Variablen")
+```
+
+
 ## Modelle
 
 Bei der Zielvariablen Anzahl Arztbesuche handelt es sich um Zähldaten. Aus diesem Grund wird als erstes ein Poission Modell an die Daten angepasst.
@@ -132,7 +140,7 @@ pander(sum.poisson, caption = "Modell-Parameter aus dem Poisson Modell")
   
 Ein entsprechender $\chi^2$-Test zeigt, dass dieses Poisson Modell over-dispersion aufweist (Tabelle \ref{tab:test.over.dispersion}, p-Wert = 0):
 
-```{r test.over.dispersion}
+```{r test.over.dispersion, echo=FALSE}
 test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
   p = pchisq(deviance, df.residual, lower.tail=FALSE)))
 kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
@@ -217,7 +225,7 @@ glm.negbin.int <- update(glm.negbin.noint, . ~ . + mc_fg*franch_elig_fg)
 pander(anova(glm.negbin.noint, glm.negbin.int), caption = "\\label{tab:lrt.negbin.int}Likelihood-Ratio Test mit resp. ohne Interaktionsterm `mc_fg*frach_elig_fg`")
 ```
 
-## Resultate
+# Resultate
 
 Aufgrund der oben beschriebenen Analysen sieht das schlussendlich verwendete Modell wir folgt aus:
 
@@ -249,7 +257,7 @@ coef.nb.final %>%
 
 Von Interesse sind insbesondere die Koeffizienten für das Treatment (MC Modell), und da der Effekt dieses Treatments durch die Höhe der Franchisr modifiziert ist, auch der Interaktionsterm zwischen dem Treatment und dem Effektmodifikator (Höhe der Franchise).
 
-
+# Zusammenfassung
 
 Autor: Beat Brüngger  
 Datum: 16.2.2016
