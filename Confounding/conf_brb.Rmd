@@ -13,7 +13,6 @@ header-includes:
 - \fancyfoot[C]{Arztbesuche und Managed Care}
 - \fancyfoot[LE,RO]{\thepage}
 documentclass: article
-csl: american-journal-of-public-health.csl
 bibliography: bebru.bib
 ---
 
@@ -27,49 +26,83 @@ source("init.R")
 source("data.R")
 ```
 
-# Einleitung
+# Einführung
 
-Die steigneden Kosten im Gesundheitswesen der Schweiz bereiten sowohl der Bevölkerung als auch der Regierung Sorgen. Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon sind sogenannte Managed Care Modelle für die obligatorische Grundversicherung (OKP). Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen.  
+Die steigenden Kosten im Gesundheitswesen bereiten sowohl national als auch international Sorgen (@edi_gesundheit_2013, @thomson_financing_2009). Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon ist eine verbesserte Koordination der Patienten durch Gatekeeper (z.B. Hausärzte). In der Schweiz fördern sogenannte Managed Care (MC) Modelle in der obligatorischen Grundversicherung (OKP) diese Koordination durch finanzielle Anreize. Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungsprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen (z.B. @reich_empirical_2012, @kauer_long-term_2016).  
 
-# Fragestellung
+## Fragestellung
 
-In dieser Analyse soll nun untersucht werden, wie sich die Restriktionen auf einen anderen Aspekt der Inanspruchnahme des Gesundheitswesens, die Anzahl Arztbesuche in einem Jahr, auswirken.
+In dieser Analyse soll untersucht werden, wie sich die Restriktionen von MC auf die Inanspruchnahme des Gesundheitswesens auswirken. Eine solche Senkung der Inanspruchnahme ist eine mögliche Erklärung für die festgestellten Kosteneinsparungen (eine andere sind beisüielsweise effizientere Behandlungen).  
 
-## Population und Stichprobe
+## Operationalisierung
 
-Die Grundpopulation dieser Analyse sind die bei der Krankenversicherung Helsana in der OKP versicherten Personen. Die Helsana-Gruppe weist ca. 15% der gesamten Schweizer Bevölkerung in ihrem Versichertenkollektiv auf, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung. Dieser hohe Anteil und die landesweite Verteilung der Versicherten sprechen dafür, dass die hier erzeugten Resultate auf die gesamte Schweizer Bevölkerung verallgemeinert werden können. Dagegen spricht, dass hier sehr unterschiedliche Managed Care Modelle mit unterschiedlichen Einschränkungen gemeinsam untersucht werden, und weil sich die genaue Ausgestaltung dieser Modelle je anch Krankenversicherer unterscheidet.  
+### Zielgrösse
 
-### Ausschlüsse
+@berchtold_evidenz_2006 haben in einer Literaturanalyse festgestellt, dass die Kosteneinsparungen in MC möglicherweise mit einer tieferen Anzahl an Arztbesuchen zusammenhängen. In dieser Analyse soll deshalb als Messgrösse für die Inanspruchnahme des Gesundheitswesens die Anzahl Arztbesuche verwendet werden.    
+Die Anzahl Arztbesuche decken nur einen Teil der Inanspruchnahme des Gesundheitswesens ab. Allerdings einen gewichtigen, welcher beispielsweise durch Zuweisungen zu weiteren Ärzten oder Verschreibungen von Medikamenten zu weiteren Kosten führen kann.
 
-Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Somit werden Personen ausgeschlossen, welche im Jahr 2015 verstorben sind. Die Resultate können somit nicht auf die Situtation am Ende des Lebens übertragen werden.
+> **Hypothese:** Versicherte in Managed Care Modellen weisen eine reduzierte Anzahl Arztbesuche pro Jahr auf.
+
+### Einflussgrössen
+
+Die Zielgrösse wird durch verschiedene Einflussgrössen beeinflusst, welche in der Analyse mitberücksichtigt werden sollen. Die hier aufgeführten Einflussgrössen werden auch in @reich_empirical_2012 und @kauer_long-term_2016 verwendet (Tabelle \ref{tab:tbl.predictors}). Detailierte Begründungen dafür sind dort verfügbar.
+
+```{r tbl.predictors, echo=FALSE}
+tbl.predictors <- 
+  tribble(
+    ~"Einflussgrösse", ~Operationalisierung,
+    "Gesundheitszustand", "Alter, Franchisestufe, Unfall-Deckung in der OKP, Anzahl chronische Erkrankungen",
+    "Persönliche Einstellung", "Geschlecht, Alter, Franchisestufe",
+    "Kulturelle Einstellung", "Sprachgebiet, Wohnumgebung (Stadt/Land), Wohnregion"
+  )
+pander(tbl.predictors, caption="\\label{tbl:tbl.predictors}Operationalisierung der Einflussgrössen")
+```
+
+
+# Methoden
+
+## Datenbasis
+
+Die Datenbasis besteht aus zur administrativen Verwendung erhobenen Daten der Krankenversicherungsgruppe Helsana. Versicherte von Helsana schicken ihre Rechnungen der Leistungserbringer zur Vergütung ein, wo sie zur elektronischen Verarbeitung in einer Datenbank gespeichert werden. Diese Datenbank beinhaltet jede eingesandte Rechnung bis zur Granularität der einzelnen Rechnungspositionen. Die Daten dürfen für wissenschaftliche Zwecke verwendet werden, da Krankenversicherer bundesnahe Betriebe sind. Voraussetzung ist, dass die Daten nur in anonymisierter Form analysiert werden, und die Resultate nur aggregiert kommuniziert werden, damit keine Rückschlüsse sowohl auf einzelne Versicherte, als auch auf Leistungserbringer möglich sind.
+Der Datensatz enthält keine Informationen, welche eine Identifikation der individuellen Personen und Leistungserbringer zulassen. Jede der Beobachtungen beschreibt Stammdaten der Versicherten und aggregierte Kennzahlen für das Kalenderjahr 2015.
+
+## Grundpopulation
+
+Die Grundpopulation dieser Analyse sind die bei der Helsana-Gruppe in der OKP versicherten Personen. Das Versichertenkollektiv der Helsana-Gruppe weist ca. 15% der gesamten Schweizer Bevölkerung auf, in allen Regionen des Landes, und mit einer ähnlichen Verteilung bezüglich Alter und Geschlecht wie die gesamte Bevölkerung. Dieser hohe Anteil und die landesweite Verteilung der Versicherten sprechen dafür, dass die hier erzeugten Resultate auf die gesamte Schweizer Bevölkerung verallgemeinert werden können. Dagegen spricht, dass in dieser Analyse sehr unterschiedliche MC Modelle mit unterschiedlichen Einschränkungen gemeinsam untersucht werden, und weil sich die genaue Ausgestaltung dieser Modelle je nach Krankenversicherer unterscheidet.  
+Zusätzlich ist zu beachten, dass die Resultate nicht auf die im Abschnitt "Ausschlüsse" beschriebenen Gruppen übertragbar sind.
 
 ### Stichprobe
 
-Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ads.1.mod), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Anzahl Personen in der Analyse wurde vorgenommen, um bezüglich des Treatments gleich grosse Gruppen aufzuweisen, udn aus praktischen Gründen (grösse des Datensatzes), und aus praktischen Gründen, um keine Probleme mit der Grösse des Datensatzes zu haben. Der Datensatz enthält zudem keine Informationen, welche eine Identifikation der individuellen Personen zulassen.  
-Jede der Beobachtungen beschreibt Stammdaten und aggregierte Kennzahlen für das Kalenderjahr 2015.
+Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ds), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Anzahl Personen in der Analyse wurde vorgenommen, um bezüglich des Treatments gleich grosse Gruppen aufzuweisen, und aus praktischen Gründen (Grösse des Datensatzes).   
 
-# Operationalisierung und Hypothese
+### Ausschlüsse
 
-Bisherige Untersuchungen mit einem Daten aus derselben Datenbank haben gezeigt, dass Personen in einem Managed Care-Modell im Vergleich zu einem Standard-Modell geringereGesamt-Kosten aufweisen [@reich_empirical_2012].
+Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Personen, welche im Jahr 2015 verstorben sind, werden dadurch ausgeschlossen. Die Resultate können somit nicht auf die Situtation am Ende des Lebens übertragen werden.  
 
-Die zu untersuchende Hypothese lautet:
+Nach einer ersten Analyse der Daten(Tabelle \ref{tab:tab.abstract}) wurden zudem Datensätze ausgeschlossen, welche fehlende Werte in den Variablen für die Anzahl chronische Erkranungen und/oder zu den Stammdaten ihres Wohnorts aufwiesen.  
+Bei den Personen ohne die Angabe der Anzahl chronischer Erkrankungen handelt es sich um Bewohner von Langzeitpflegeeinrichtungen, bei denen der Medikamentenkonsum pauschal abgerechnet wird. Diese spezielle Untergruppe der Versicherten weist mutmasslich auch ein deutlich unterschiedliches Verhalten bezüglich der Zielgrösse Anzahl Arztbesuche auf, und ein Ausschluss ist damit sinnvoll, auch wenn die Resultate dann nicht auf diese Gruppe übertragen werden kann.  
 
-> Versicherte in einem Managed Care-Modell weisen weniger Arztbesuche auf als solche im Standard-Modell.
+Für den Umgang mit den fehlenden Werten zu den Stammdaten des Wohnorts (Stadt/Land und Grossregion) gäbe es andere Möglichkeiten, als den Ausschluss der Beobachtungen. Beispiele hierfür sind Einführung neuer Kategorien, oder Vorhersagemodelle für diese Grössen aufgrund der bekannten Einflussgrössen. Allerdings führte das Einführen neuer Kategorien in diesen beiden Variablen zu einem Kollaps in der Schätzfunktion des Regressionsmodells (aufrund von Kollinearität?) welcher nicht gelöst werden konnte, und ein separates Modell für diese Variablen hätte den Rahmen dieser Arbeit gesprengt. Da es sich nur um einen sehr geringen Prozentsatz der Beobachtungen handelt, kann ein Ausschluss dieser hingenommen werden.
 
+Dadurch enthält der verwendete Datensatz insgesamt `r Format(nrow(ads.1.mod), fmt = fmt.count)` Beobachtungen.
 
+## Beschreibung der Daten
 
-# Beschreibung der Daten
-
-In Tabelle \ref{tab:tab.abstract} ist eine Beschreibung der im Datensatz enthaltenen Variablen zu finden.
+In Tabelle \ref{tab:tab.abstract} ist eine kurze Beschreibung der im Datensatz enthaltenen Variablen zu finden, welche auch Informationen über fehlende Werte enthält. Wie bereits im Abschnitt "Ausschlüsse" erwähnt, wurden für alle weiteren Auswertungen die Beobachtungen mit fehlenden Wertden in mindestens einer Variablen ausgeschlossen.  
+Die hier aufgeführten Variablen, sowie allfällige Ableitungen davon, stehen im Anschluss für die Modellierung zur Verfügung.
 
 ```{r tbl.abstract, echo=FALSE}
-Abstract(ads.1) %>% 
-  pander(caption = "\\label{tab:tab.abstract}Beschreibung der Variablen")
+tbl.abstract <- Abstract(ads.1)
+
+pander(tbl.abstract, caption = "\\label{tab:tab.abstract}Beschreibung der Variablen", justify = rep("left", ncol(tbl.abstract)))
 ```
 
+Um einen ersten Überblick über die Daten zu erhalten, sind in univariate Analysen der einzelnen Variablen erstellt worden: numerische Variablen in Tabelle \ref{tbl.summary.num},  dichotome Variablen in Tabelle \ref{tbl.summary.2}, und die restlichen kategorialen Variablen in Tabelle \ref{tbl.summary.cat}.
+
 ```{r tbl.summary.num, echo=FALSE}
-summary(ads.1 %>% select(valter_n, kons_n, pcg_n)) %>% 
-  pander(caption = "Univariate Statistik der numerischen Variablen")
+tbl.summary.num <- summary(ads.1.mod %>% select(valter_n, kons_n, pcg_n))
+
+pander(tbl.summary.num, caption = "\\label{tbl.summary.num}Univariate Statistik der numerischen Variablen", justify = rep("left", ncol(tbl.summary.num)))
 ```
 
 <!-- ```{r fig.kons, echo=FALSE, fig.cap="\\label{fig:fig.kons}Verteilung der Zielvariablen kons_n (Anzahl Kosultationen)"} -->
@@ -78,26 +111,31 @@ summary(ads.1 %>% select(valter_n, kons_n, pcg_n)) %>%
 <!-- ``` -->
 
 
-```{r tbl.summary2, echo=FALSE}
-summary(ads.1 %>% select(sex_x, franch_elig_fg, okp_unfall_fg, mc_fg)) %>% 
-  pander(caption = "Univariate Statistik der dichotomen Variablen")
+```{r tbl.summary.2, echo=FALSE}
+tbl.summary.2 <- summary(ads.1.mod %>% select(sex_x, franch_elig_fg, okp_unfall_fg, mc_fg))
+
+pander(tbl.summary.2, caption = "\\label{tbl.summary.2}Univariate Statistik der dichotomen Variablen", justify = rep("left", ncol(tbl.summary.2)))
 ```
 
-```{r tbl.summary3, echo=FALSE}
-summary(ads.1 %>% select(sprgeb_red_x, stadtland_red_x, greg_x), maxsum = 10) %>% 
-  pander(caption = "Univariate Statistik der restlichen kategorialen Variablen")
+```{r tbl.summary.cat, echo=FALSE}
+tbl.summary.cat <- summary(ads.1.mod %>% select(sprgeb_red_x, stadtland_red_x, greg_x), maxsum = 10)
+
+pander(tbl.summary.cat, caption = "\\label{tbl.summary.cat}Univariate Statistik der restlichen kategorialen Variablen", justify = rep("left", ncol(tbl.summary.cat)))
 ```
 
 
-# Beschreibung der Baseline-Charakteristika
+## Beschreibung der Baseline-Charakteristika
+
+In Tabelle \ref{tbl.baseline} ist die Verteilung innerhalb der einzelnen Variablen in den beiden Gruppen mit (Treatmentgruppe) resp. ohne (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
 
 ```{r tbl.baseline ,echo=FALSE}
-tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg), grp = ads.1.mod$mc_fg,
+tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg, -age_grp_x), grp = ads.1.mod$mc_fg,
               FUN = function(x) gettextf("%s / %s", Format(median(x, na.rm=TRUE), digits=1),
                                          Format(IQR(x, na.rm=TRUE), digits=1)))
 
 tbl.1[,1] <- gsub(" ", "&nbsp;", tbl.1[,1], fixed=TRUE) # damit leading spaces bleiben!
-kable(tbl.1, caption = "Baseline-Charakteristika")
+
+kable(tbl.1, caption = "\\label{tbl.baseline}Baseline-Charakteristika, insgesamt und unterteilt in Treatment- resp. Kontrollgruppe (\"ja\" resp. \"nein\")")
 ```
 
 Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
