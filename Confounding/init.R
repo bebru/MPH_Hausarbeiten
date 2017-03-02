@@ -15,6 +15,7 @@ library(xtable)
 library(Hmisc)
 library(stringr)
 library(GGally)
+library(purrr)
 
 options(scipen = 5)
 fmt.count <- as.fmt(digits=0, big.mark="'")

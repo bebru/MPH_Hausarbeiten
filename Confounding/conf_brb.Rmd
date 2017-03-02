@@ -1,6 +1,8 @@
 ---
 title: Arztbesuche und Managed Care
 subtitle: Eine Analyse anhand von Administrativdaten.
+author: Beat Brüngger
+date: 2 März 2017
 output: pdf_document
 classoption: a4paper
 lang:  de-CH
@@ -32,7 +34,7 @@ Die steigenden Kosten im Gesundheitswesen bereiten sowohl national als auch inte
 
 ## Fragestellung
 
-In dieser Analyse soll untersucht werden, wie sich die Restriktionen von MC auf die Inanspruchnahme des Gesundheitswesens auswirken. Eine solche Senkung der Inanspruchnahme ist eine mögliche Erklärung für die festgestellten Kosteneinsparungen (eine andere sind beisüielsweise effizientere Behandlungen).  
+In dieser Analyse soll untersucht werden, wie sich die Restriktionen von MC auf die Inanspruchnahme des Gesundheitswesens auswirken. Eine solche Senkung der Inanspruchnahme ist eine mögliche Erklärung für die festgestellten Kosteneinsparungen (eine andere sind beispielsweise effizientere Behandlungen).  
 
 ## Operationalisierung
 
@@ -45,7 +47,7 @@ Die Anzahl Arztbesuche decken nur einen Teil der Inanspruchnahme des Gesundheits
 
 ### Einflussgrössen
 
-Die Zielgrösse wird durch verschiedene Einflussgrössen beeinflusst, welche in der Analyse mitberücksichtigt werden sollen. Die hier aufgeführten Einflussgrössen werden auch in @reich_empirical_2012 und @kauer_long-term_2016 verwendet (Tabelle \ref{tab:tbl.predictors}). Detailierte Begründungen dafür sind dort verfügbar.
+Die Zielgrösse wird durch verschiedene Einflussgrössen beeinflusst, welche in der Analyse mitberücksichtigt werden sollen. Die hier aufgeführten Einflussgrössen werden auch in @reich_empirical_2012 und @kauer_long-term_2016 verwendet (Tabelle \ref{tbl:tbl.predictors}). Detaillierte Begründungen dafür sind dort verfügbar.
 
 ```{r tbl.predictors, echo=FALSE}
 tbl.predictors <- 
@@ -77,27 +79,28 @@ Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ds), fmt = fmt.count
 
 ### Ausschlüsse
 
-Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Personen, welche im Jahr 2015 verstorben sind, werden dadurch ausgeschlossen. Die Resultate können somit nicht auf die Situtation am Ende des Lebens übertragen werden.  
+Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Personen, welche im Jahr 2015 verstorben sind, werden dadurch ausgeschlossen. Die Resultate können somit nicht auf die Situation am Ende des Lebens übertragen werden.  
+Personen < 19 Jahren wurden aus dem Kollektiv ausgeschlossen, da diese unterschiedliche Franchisestufen aufweisen, und die Anzahl der chronischen Erkrankungen nicht mit der verwendeten Methode bestimmen lassen.  
 
-Nach einer ersten Analyse der Daten(Tabelle \ref{tab:tab.abstract}) wurden zudem Datensätze ausgeschlossen, welche fehlende Werte in den Variablen für die Anzahl chronische Erkranungen und/oder zu den Stammdaten ihres Wohnorts aufwiesen.  
+Nach einer ersten Analyse der Daten (Tabelle \ref{tbl:tbl.abstract}) wurden zudem Datensätze ausgeschlossen, welche fehlende Werte in den Variablen für die Anzahl chronische Erkrankungen und/oder zu den Stammdaten ihres Wohnorts aufwiesen.  
 Bei den Personen ohne die Angabe der Anzahl chronischer Erkrankungen handelt es sich um Bewohner von Langzeitpflegeeinrichtungen, bei denen der Medikamentenkonsum pauschal abgerechnet wird. Diese spezielle Untergruppe der Versicherten weist mutmasslich auch ein deutlich unterschiedliches Verhalten bezüglich der Zielgrösse Anzahl Arztbesuche auf, und ein Ausschluss ist damit sinnvoll, auch wenn die Resultate dann nicht auf diese Gruppe übertragen werden kann.  
 
-Für den Umgang mit den fehlenden Werten zu den Stammdaten des Wohnorts (Stadt/Land und Grossregion) gäbe es andere Möglichkeiten, als den Ausschluss der Beobachtungen. Beispiele hierfür sind Einführung neuer Kategorien, oder Vorhersagemodelle für diese Grössen aufgrund der bekannten Einflussgrössen. Allerdings führte das Einführen neuer Kategorien in diesen beiden Variablen zu einem Kollaps in der Schätzfunktion des Regressionsmodells (aufrund von Kollinearität?) welcher nicht gelöst werden konnte, und ein separates Modell für diese Variablen hätte den Rahmen dieser Arbeit gesprengt. Da es sich nur um einen sehr geringen Prozentsatz der Beobachtungen handelt, kann ein Ausschluss dieser hingenommen werden.
+Für den Umgang mit den fehlenden Werten zu den Stammdaten des Wohnorts (Stadt/Land und Grossregion) gäbe es andere Möglichkeiten, als den Ausschluss der Beobachtungen. Beispiele hierfür sind Einführung neuer Kategorien, oder Vorhersagemodelle für diese Grössen aufgrund der bekannten Einflussgrössen. Allerdings führte das Einführen neuer Kategorien in diesen beiden Variablen zu einem Kollaps in der Schätzfunktion des Regressionsmodells welcher nicht gelöst werden konnte, und ein separates Modell für diese Variablen hätte den Rahmen dieser Arbeit gesprengt. Da es sich nur um einen sehr geringen Prozentsatz der Beobachtungen handelt, kann ein Ausschluss dieser hingenommen werden.
 
 Dadurch enthält der verwendete Datensatz insgesamt `r Format(nrow(ads.1.mod), fmt = fmt.count)` Beobachtungen.
 
 ## Beschreibung der Daten
 
-In Tabelle \ref{tab:tab.abstract} ist eine kurze Beschreibung der im Datensatz enthaltenen Variablen zu finden, welche auch Informationen über fehlende Werte enthält. Wie bereits im Abschnitt "Ausschlüsse" erwähnt, wurden für alle weiteren Auswertungen die Beobachtungen mit fehlenden Werten in mindestens einer Variablen ausgeschlossen.  
+In Tabelle \ref{tbl:tbl.abstract} ist eine kurze Beschreibung der im Datensatz enthaltenen Variablen zu finden, welche auch Informationen über fehlende Werte enthält. Wie bereits im Abschnitt "Ausschlüsse" erwähnt, wurden für alle weiteren Auswertungen die Beobachtungen mit fehlenden Werten in mindestens einer Variablen ausgeschlossen.  
 Die hier aufgeführten Variablen, sowie allfällige Ableitungen davon, stehen im Anschluss für die Modellierung zur Verfügung.
 
 ```{r tbl.abstract, echo=FALSE}
 tbl.abstract <- Abstract(ads.1)
 
-pander(tbl.abstract, caption = "\\label{tab:tab.abstract}Beschreibung der Variablen", justify = rep("left", ncol(tbl.abstract)))
+pander(tbl.abstract, caption = "\\label{tbl:tbl.abstract}Beschreibung der Variablen", justify = rep("left", ncol(tbl.abstract)))
 ```
 
-Für einen ersten Überblick über die Daten sind in Tabelle \ref{tbl.baseline} die Verteilungen innerhalb der einzelnen Variablen insgesamt sowie in den beiden Gruppen **mit** (Treatmentgruppe) resp. **ohne** (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
+Für einen ersten Überblick über die Daten sind in Tabelle \ref{tbl:tbl.baseline} die Verteilungen innerhalb der einzelnen Variablen insgesamt sowie in den beiden Gruppen **mit** (Treatmentgruppe) resp. **ohne** (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
 
 ```{r tbl.baseline, echo=FALSE}
 tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg, -age_grp_x), grp = ads.1.mod$mc_fg,
@@ -106,7 +109,7 @@ tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg, -age_grp_x), grp = ads.1.mod$mc_fg,
 
 tbl.1[,1] <- gsub(" ", "&nbsp;", tbl.1[,1], fixed=TRUE) # damit leading spaces bleiben!
 
-kable(tbl.1, caption = "\\label{tbl.baseline}Baseline-Charakteristika, insgesamt und unterteilt in Treatment- resp. Kontrollgruppe (\"ja\" resp. \"nein\")")
+kable(tbl.1, caption = "\\label{tbl:tbl.baseline}Baseline-Charakteristika, insgesamt und unterteilt in Treatment- resp. Kontrollgruppe (\"ja\" resp. \"nein\")")
 ```
 
 Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
@@ -126,7 +129,7 @@ Bei der Zielvariablen Anzahl Arztbesuche handelt es sich um Zähldaten. Aus dies
 
 ### Poisson Modell
 
-Das Poisson Modell enthält sämtliche zur Verfügung stehenden Confounder (siehe Tabelle \ref{tbl.baseline}).
+Das Poisson Modell enthält sämtliche zur Verfügung stehenden Confounder (siehe Tabelle \ref{tbl:tbl.baseline}).
 
 ```{r coef.poisson, echo=FALSE}
 glm.poisson <- glm(formula = kons_n ~ ., data = ads.1.mod, family = "poisson")
@@ -138,12 +141,12 @@ sum.poisson <- glance(glm.poisson)
 pander(sum.poisson, caption = "Modell-Parameter aus dem Poisson Modell")
 ```
   
-Ein entsprechender $\chi^2$-Test zeigt, dass dieses Poisson Modell over-dispersion aufweist (Tabelle \ref{tab:test.over.dispersion}, p-Wert = 0):
+Ein entsprechender $\chi^2$-Test zeigt, dass dieses Poisson Modell over-dispersion aufweist (Tabelle \ref{tbl:test.over.dispersion}, p-Wert = 0):
 
 ```{r test.over.dispersion, echo=FALSE}
 test.disp <- with(glm.poisson, cbind(res.deviance = deviance, df = df.residual,
   p = pchisq(deviance, df.residual, lower.tail=FALSE)))
-kable(test.disp, caption = "\\label{tab:test.over.dispersion}Test auf over-dispersion")
+kable(test.disp, caption = "\\label{tbl:test.over.dispersion}Test auf over-dispersion")
 ```
 
 Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stufen der Prädiktoren stark streut. Dadurch wird die Annahme des Poisson Modells, dass $Var(Y) = E(Y)$, verletzt. Aus diesem Grund wird in der Folge anstelle eines Poisson Modells das negativ-binomiale Modell verwendet, welches einen Parameter für die Dispersion schätzt.
@@ -216,7 +219,7 @@ pander(anova(glm.negbin.pcg, glm.negbin.pcg2), caption = "\\label{tab:lrt.negbin
 
 Als potentieller Effektmodifikator wird die Franchisestufe analysiert. Es soll untersucht werden, ob die Restriktionen in einem Managed-Care Modell sowohl bei tiefen als auch bei hohen Franchisen einen Effekt zur Folge haben. Hierzu wird die Modellformel um den Interaktionsterm `mc_fg*franch_elig_fg` erweitert.  
 
-Mit Hilfe eines Likelyhood-Ratio Tests wird überprüft, ob der Interaktionsterm `mc_fg*franch_elig_fg` zu einem signifikant unterschiedlichen Modell führt, und der Term somit im Modell verbleiben soll. Das Resultat in Tabelle \ref{tab:lrt.negbin.int} zeigt, dass das Modell mit dem Interaktionsterm sich signifikant von einem ohne unterscheidet, und der Interaktionsterm wird deshalb weiter verwendet.
+Mit Hilfe eines Likelihood-Ratio Tests wird überprüft, ob der Interaktionsterm `mc_fg*franch_elig_fg` zu einem signifikant unterschiedlichen Modell führt, und der Term somit im Modell verbleiben soll. Das Resultat in Tabelle \ref{tab:lrt.negbin.int} zeigt, dass das Modell mit dem Interaktionsterm sich signifikant von einem ohne unterscheidet, und der Interaktionsterm wird deshalb weiter verwendet.
 
 ```{r lrt.negbin.int, echo=FALSE}
 glm.negbin.noint <-glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
@@ -227,7 +230,7 @@ pander(anova(glm.negbin.noint, glm.negbin.int), caption = "\\label{tab:lrt.negbi
 
 # Resultate
 
-Aufgrund der oben beschriebenen Analysen sieht das schlussendlich verwendete Modell wir folgt aus:
+Aufgrund der oben beschriebenen Analysen sieht das schlussendlich verwendete Modell wie folgt aus:
 
 ```{r mod.final, echo=FALSE}
 glm.negbin.final <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
@@ -240,7 +243,7 @@ Die Schätzungen der Koeffizienten sind zudem in Abbildung \ref{fig:coef.nb.fina
 
 ```{r coef.nb.final, echo=FALSE}
 coef.nb.final <- tidy(glm.negbin.final, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
-pander(coef.nb.final, caption = "\\label{tbl:coef.nb.final}Koeffizienten aus dem finalen Modell")
+pander(coef.nb.final, justify = rep("left", ncol(coef.nb.final)), caption = "\\label{tbl:coef.nb.final}Koeffizienten aus dem finalen Modell")
 ```
 
 ```{r sum.nb.final, echo=FALSE}
@@ -251,16 +254,71 @@ pander(sum.nb.final, caption = "\\label{tbl:sum.nb.final}Zusammenfassung des ver
 ```{r coef.nb.final.fig, echo=FALSE, fig.cap= "\\label{fig:coef.nb.final.fig}Koeffizienten aus dem finalen Modell"}
 coef.nb.final %>% 
   filter(term != "(Intercept)") %>% 
-  ggplot(aes(x = term, y = estimate, ymin = conf.low, ymax = conf.high)) + geom_pointrange() +
+  ggplot(aes(x = term, y = estimate, ymin = conf.low, ymax = conf.high)) + geom_pointrange(size = 0.1) +
   coord_flip() + theme_minimal()
 ```
 
-Von Interesse sind insbesondere die Koeffizienten für das Treatment (MC Modell), und da der Effekt dieses Treatments durch die Höhe der Franchisr modifiziert ist, auch der Interaktionsterm zwischen dem Treatment und dem Effektmodifikator (Höhe der Franchise).
+Von Interesse sind insbesondere die Koeffizienten für das Treatment (MC Modell), und da der Effekt dieses Treatments durch die Höhe der Franchise modifiziert ist, auch der Interaktionsterm zwischen dem Treatment und dem Effektmodifikator (Höhe der Franchise).  
 
-# Zusammenfassung
+```{r est.nb.final, echo=FALSE}
+est.nein <- Format(coef.nb.final[coef.nb.final$term=="mc_fgja","estimate"], digits = 3)
+conf.low.nein <- Format(coef.nb.final[coef.nb.final$term=="mc_fgja","conf.low"], digits = 3)
+conf.high.nein <- Format(coef.nb.final[coef.nb.final$term=="mc_fgja","conf.high"], digits = 3)
+est.ja <- Format(coef.nb.final[coef.nb.final$term=="mc_fgja","estimate"] * coef.nb.final[coef.nb.final$term=="mc_fgja:franch_elig_fgja","estimate"], digits = 3)
+```
 
-Autor: Beat Brüngger  
-Datum: 16.2.2016
+Der Effekt eines MC Modells ist somit bei Personen mit tiefer Franchise `r est.nein` (95%-CI: `r conf.low.nein`, `r conf.high.nein`). Für Personen mit hoher Franchise ist der Effekt eines MC Modells `r est.ja`. Doch wie gross ist das Vertrauensintervall für diesen Schätzwert (dem Produkt aus Haupteffekt für das MC Modell und dem Interaktionseffekt zwischen dem MC Modell und einer hohen Franchise)? Aus den Koeffizienten in Tabelle \ref{tbl:coef.nb.final} lässt sich dieses nicht berechnen.  
+
+```{r mod.final.strat, echo=FALSE}
+glm.negbin.final.nein <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + okp_unfall_fg + 
+                            stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
+
+glm.negbin.final.ja <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + okp_unfall_fg + 
+                            stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod %>% filter(franch_elig_fg == "ja"))
+```
+
+```{r coef.nb.final.strat, echo=FALSE}
+coef.nb.final.nein <- tidy(glm.negbin.final.nein, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+coef.nb.final.ja <- tidy(glm.negbin.final.ja, exponentiate = TRUE, conf.int = TRUE, method = "Wald")
+```
+
+```{r est.nb.final.strat, echo=FALSE}
+est.nein2 <- Format(coef.nb.final.nein[coef.nb.final.nein$term=="mc_fgja","estimate"], digits = 3)
+conf.low.nein2 <- Format(coef.nb.final.nein[coef.nb.final.nein$term=="mc_fgja","conf.low"], digits = 3)
+conf.high.nein2 <- Format(coef.nb.final.nein[coef.nb.final.nein$term=="mc_fgja","conf.high"], digits = 3)
+
+est.ja2 <- Format(coef.nb.final.ja[coef.nb.final.ja$term=="mc_fgja","estimate"], digits = 3)
+conf.low.ja2 <- Format(coef.nb.final.ja[coef.nb.final.ja$term=="mc_fgja","conf.low"], digits = 3)
+conf.high.ja2 <- Format(coef.nb.final.ja[coef.nb.final.ja$term=="mc_fgja","conf.high"], digits = 3)
+```
+
+Eine Möglichkeit, um dieses zu bestimmen, ist die Stratifikation nach den Stufen der Franchise (eine andere, hier nicht gezeigte, wäre die Bootstrap-Methode). Dadurch ergeben sich Schätzungen für den Effekt eines MC Modells bei Personen mit tiefer Franchise von `r est.nein2` (95%-CI: `r conf.low.nein2`, `r conf.high.nein2`). Bei Personen mit hoher Franchise von `r est.ja2` (95%-CI: `r conf.low.ja2`, `r conf.high.ja2`).  
+Die Schätzung bei Personen mit tiefer Franchise verändert sich durch die Stratifikation nur wenig, und bleibt weiterhin nicht signifikant. Die Schätzung bei Personen mit hoher Franchise ist nach der Stratifikation allerdings ein deutlich anderer Schätzwert berechnet worden, welcher ebenfalls nicht signifikant ist.  
+
+Um die Veränderung im Schätzwert der beiden stratifizierten Modelle anzuschauen, sind in \ref{fig:fig.strat} beider Modelle aufgezeichnet. Dadurch, dass für einige Koeffizienten in den beiden Modellen sehr unterschiedliche Koeffizienten geschätzt werden (insbesondere für die Anzahl chronischer Erkrankungen und das Geschlecht), kann angenommen werden, dass auch noch zwischen dem Effektmodifikator Höhe der Franchise und einigen Confoundern bestehen.
+
+```{r fig.strat, echo=FALSE, fig.cap="\\label{fig:fig.strat}Schätzungen der beiden stratifizierten Modelle"}
+coef.strat <- rbind(cbind(Franchise = rep("tiefe Franchise", nrow(coef.nb.final.nein)), coef.nb.final.nein),
+                    cbind(Franchise = rep("hohe Franchise", nrow(coef.nb.final.ja)), coef.nb.final.ja))
+
+coef.strat %>% 
+  filter(term != "(Intercept)") %>% 
+  ggplot(aes(x = term, y = estimate, ymin = conf.low, ymax = conf.high, color = Franchise)) + 
+  geom_pointrange(size = 0.1, position = position_dodge(0.4)) + coord_flip() + theme_minimal()
+```
+
+
+# Diskussion
+
+Für die Beantwortung der Frage, ob MC Modelle zu weniger Arztbesuchen führen, standen nur wenige Confounder zur Verfügung, welche im Rahmen der obligatorischen Grundversicherung zu administrativen Zwecken erhoben werden (und auch schon in der bestehenden Literatur zu Kosteneinsparungen mit MC Modellen verwendet wurden). Die Resultate dieser Analyse lassen sich nicht auf die gesamte Bevölkerung verallgemeinern, da einzelne Gruppen ausgeschlossen wurden (Personen < 19 Jahren, Personen im Pflegeheim, Personen welche im Beobachtungszeitraum von einem Jahr verstorben sind).  
+Die Validität der Daten ist hoch, da sie für Abrechnungszwecke automatisiert erhoben wurden. Probleme mit einem systematischen Bias in den Daten sind aufgrund dieser automatisierten Erhebung, sowie dem flächendeckenden Versichertenkollektiv in der Datenbasis, ebenfalls nicht zu erwarten. Einzig der Ausschluss der Beobachtungen mit fehlenden Werten kann potentiell zu einem Bias geführt haben. Da dieser Ausschluss nur 0.5% der Beobachtungen betroffen hat, ist der Einfluss davon allerdings als gering einzuschätzen.  
+
+Die Stufe der Franchise konnte als Effektmodifikator identifiziert werden. Bei Personen mit tiefer Franchise konnte keine signifikante Änderung der Anzahl Arztbesuche durch das MC Modell festgestellt werden (`r est.nein2` (95%-CI: `r conf.low.nein2`, `r conf.high.nein2`)).  
+Bei Personen mit hoher Franchise wurde im nicht stratifizierten Modell eine relevante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja`), allerdings ohne Vertrauensintervall. In einem stratifizierten Modell bei Personen mit hoher Franchise wurde dann eine nicht signifikante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja2` (95%-CI: `r conf.low.ja2`, `r conf.high.ja2`)).  
+
+Somit lässt sich sagen, dass MC Modelle bei Personen mit tiefer Franchise kaum zu weniger Arztbesuchen führen. Bei Personen mit hoher Franchise ist für die Beantwortung der Frage eine Erweiterung des verwendeten Modells nötig, da die Resultate keinen eindeutigen Schluss zulassen.  
+
+Die Hypothese, dass MC Modelle zu weniger Arztbesuchen führen, erhält durch diese Analyse kaum Unterstützung.
 
 # Bibliographie
 

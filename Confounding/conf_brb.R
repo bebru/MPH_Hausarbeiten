@@ -112,6 +112,45 @@ summary(glm.negbin.mc)
 glm.negbin <- glm.nb(formula = kons_n ~ ., data = ads.1.mod)
 summary(glm.negbin)
 
+# finales Modell
+glm.negbin.final <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + franch_elig_fg + okp_unfall_fg + 
+                             stadtland_red_x + greg_x + pcg_n + I(pcg_n^2) + mc_fg*franch_elig_fg, data = ads.1.mod)
+
+v.typ <- ads.1.mod %>% map_df(typical)
+v.mcja.franchnein <- v.typ
+v.mcnein.franchnein <- v.typ %>% mutate(mc_fg = "nein")
+v.mcja.franchja <- v.typ %>% mutate(franch_elig_fg = "ja")
+v.mcnein.franchja <- v.typ %>% mutate(mc_fg = "nein", franch_elig_fg = "ja")
+
+df.pred <- rbind(v.mcja.franchnein, v.mcnein.franchnein, v.mcja.franchja, v.mcnein.franchja)
+
+v.pred <- predict(glm.negbin.final, newdata = df.pred, type = "response")
+
+v.pred[1]/v.pred[2]
+v.pred[3]/v.pred[4]
+
+df.coef <- tidy(glm.negbin.final, exponentiate = TRUE)
+df.coef[df.coef$term=="mc_fgja","estimate"]*df.coef[df.coef$term=="mc_fgja:franch_elig_fgja","estimate"]
+
+glm.negbin.final2 <- glm.nb(formula = kons_n ~ sex_x + valter_n + okp_unfall_fg + 
+                             stadtland_red_x + greg_x + pcg_n + I(pcg_n^2) + franch_elig_fg:I(mc_fg == "nein"), data = ads.1.mod)
+
+tidy(glm.negbin.final2, exponentiate = TRUE)
+
+glm.negbin.final3 <- glm.nb(formula = kons_n ~ -1 + sex_x + valter_n + okp_unfall_fg + 
+                              stadtland_red_x + greg_x + pcg_n + I(pcg_n^2) + franch_elig_fg:I(mc_fg == "nein"), data = ads.1.mod)
+
+glm.negbin.nein <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + okp_unfall_fg + 
+                             stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod %>% filter(franch_elig_fg == "nein"))
+
+tidy(glm.negbin.nein, exponentiate = TRUE)
+
+glm.negbin.ja <- glm.nb(formula = kons_n ~ mc_fg + sex_x + valter_n + okp_unfall_fg + 
+                            stadtland_red_x + greg_x + pcg_n + I(pcg_n^2), data = ads.1.mod %>% filter(franch_elig_fg == "ja"))
+
+tidy(glm.negbin.ja, exponentiate = TRUE)
+
+
 # Confounder --------------------------------------------------------------
 
 glm.negbin.1 <- glm.nb(formula = kons_n ~ 1, data = ads.1.mod)
