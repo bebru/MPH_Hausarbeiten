@@ -67,6 +67,14 @@ plt.1 <- ggpairs(ads.1 %>% select(mc_fg, everything(), -e_vp_id))
 
 ggduo(ads.1.mod, 2:10, 1) # wenig sinnvoll bei dichotomer Zielvariable
 
+ggpairs(ads.1.mod, 1:4)
+
+ads.1.mod %>% ggplot(aes(x = mc_fg, y = kons_n)) + geom_boxplot()
+ads.1.mod %>% ggplot(aes(x = sex_x, y = kons_n)) + geom_boxplot()
+ads.1.mod %>% ggplot(aes(x = age_grp_x, y = kons_n)) + geom_boxplot()
+ads.1.mod %>% ggplot(aes(x = franch_elig_fg, y = kons_n)) + geom_boxplot()
+ads.1.mod %>% ggplot(aes(x = okp_unfall_fg, y = kons_n)) + geom_boxplot()
+
 # models ------------------------------------------------------------------
 
 lm.1 <- glm(formula = kons_n ~ mc_fg, data = ads.1, family = "poisson")

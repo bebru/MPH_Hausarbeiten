@@ -2,7 +2,7 @@
 title: Arztbesuche und Managed Care
 subtitle: Eine Analyse anhand von Administrativdaten.
 author: Beat Brüngger
-date: 2 März 2017
+date: 4 März 2017
 output: pdf_document
 classoption: a4paper
 lang:  de-CH
@@ -28,9 +28,12 @@ source("init.R")
 source("data.R")
 ```
 
+\newpage
+
 # Einführung
 
-Die steigenden Kosten im Gesundheitswesen bereiten sowohl national als auch international Sorgen (@edi_gesundheit_2013, @thomson_financing_2009). Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon ist eine verbesserte Koordination der Patienten durch Gatekeeper (z.B. Hausärzte). In der Schweiz fördern sogenannte Managed Care (MC) Modelle in der obligatorischen Grundversicherung (OKP) diese Koordination durch finanzielle Anreize. Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungsprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen (z.B. @reich_empirical_2012, @kauer_long-term_2016).  
+Die steigenden Kosten im Gesundheitswesen bereiten sowohl national als auch international Sorgen (@edi_gesundheit_2013, @thomson_financing_2009). Vorschläge für Möglichkeiten, um diesen Anstieg zumindest zu dämpfen, gibt es wenige. Einer davon ist eine verbesserte Koordination der Patienten durch Gatekeeper (z.B. Hausärzte).  
+In der Schweiz fördern sogenannte Managed Care (MC) Modelle in der obligatorischen Grundversicherung (OKP) diese Koordination durch finanzielle Anreize. Dabei nehmen die Versicherten in Kauf, dass die Auswahl an Leistungserbringern von ihren Krankenversicherungen eingeschränkt wird. Im Gegenzug erhalten sie einen Rabatt auf ihre Krankenversicherungsprämien, da bisherige Studien davon ausgehen, dass diese Restriktionen zu tieferen Kosten führen (z.B. @reich_empirical_2012, @kauer_long-term_2016).  
 
 ## Fragestellung
 
@@ -40,8 +43,8 @@ In dieser Analyse soll untersucht werden, wie sich die Restriktionen von MC auf 
 
 ### Zielgrösse
 
-@berchtold_evidenz_2006 haben in einer Literaturanalyse festgestellt, dass die Kosteneinsparungen in MC möglicherweise mit einer tieferen Anzahl an Arztbesuchen zusammenhängen. In dieser Analyse soll deshalb als Messgrösse für die Inanspruchnahme des Gesundheitswesens die Anzahl Arztbesuche verwendet werden.    
-Die Anzahl Arztbesuche decken nur einen Teil der Inanspruchnahme des Gesundheitswesens ab. Allerdings einen gewichtigen, welcher beispielsweise durch Zuweisungen zu weiteren Ärzten oder Verschreibungen von Medikamenten zu weiteren Kosten führen kann.
+@berchtold_evidenz_2006 haben in einer Literaturanalyse festgestellt, dass die Kosteneinsparungen in MC möglicherweise mit einer tieferen Anzahl an Arztbesuchen zusammenhängen. In dieser Analyse soll deshalb als Messgrösse für die Inanspruchnahme des Gesundheitswesens die Anzahl Arztbesuche pro Versichertem in einem Jahr verwendet werden.    
+Die Anzahl Arztbesuche decken nur einen Teil der Inanspruchnahme des Gesundheitswesens ab. Allerdings einen gewichtigen, welcher beispielsweise durch Zuweisungen zu weiteren Ärzten oder Verschreibungen von Medikamenten zu weiteren Kosten führen kann. Die Messzeitraum von einem Jahr bietet sich an, da die Versicherungsdeckung der OKP, und damit die mögliche Wahl eines MC Modells, pro Kalenderjahr geschieht.  
 
 > **Hypothese:** Versicherte in Managed Care Modellen weisen eine reduzierte Anzahl Arztbesuche pro Jahr auf.
 
@@ -65,7 +68,8 @@ pander(tbl.predictors, caption="\\label{tbl:tbl.predictors}Operationalisierung d
 
 ## Datenbasis
 
-Die Datenbasis besteht aus zur administrativen Verwendung erhobenen Daten der Krankenversicherungsgruppe Helsana. Versicherte von Helsana schicken ihre Rechnungen der Leistungserbringer zur Vergütung ein, wo sie zur elektronischen Verarbeitung in einer Datenbank gespeichert werden. Diese Datenbank beinhaltet jede eingesandte Rechnung bis zur Granularität der einzelnen Rechnungspositionen. Die Daten dürfen für wissenschaftliche Zwecke verwendet werden, da Krankenversicherer bundesnahe Betriebe sind. Voraussetzung ist, dass die Daten nur in anonymisierter Form analysiert werden, und die Resultate nur aggregiert kommuniziert werden, damit keine Rückschlüsse sowohl auf einzelne Versicherte, als auch auf Leistungserbringer möglich sind.
+Die Datenbasis besteht aus zur administrativen Verwendung (Abrechnung) in der OKP erhobenen Daten der Krankenversicherungsgruppe Helsana. Versicherte von Helsana schicken ihre Rechnungen der Leistungserbringer zur Vergütung ein, wo sie zur elektronischen Verarbeitung in einer Datenbank gespeichert werden.  
+Diese Datenbank beinhaltet jede eingesandte Rechnung bis zur Granularität der einzelnen Rechnungspositionen. Die Daten dürfen für wissenschaftliche Zwecke verwendet werden, da Krankenversicherer bundesnahe Betriebe sind. Voraussetzung ist, dass die Daten nur in anonymisierter Form analysiert werden, und die Resultate nur aggregiert kommuniziert werden, damit keine Rückschlüsse sowohl auf einzelne Versicherte, als auch auf Leistungserbringer möglich sind.  
 Der Datensatz enthält keine Informationen, welche eine Identifikation der individuellen Personen und Leistungserbringer zulassen. Jede der Beobachtungen beschreibt Stammdaten der Versicherten und aggregierte Kennzahlen für das Kalenderjahr 2015.
 
 ## Grundpopulation
@@ -75,17 +79,17 @@ Zusätzlich ist zu beachten, dass die Resultate nicht auf die im Abschnitt "Auss
 
 ### Stichprobe
 
-Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ds), fmt = fmt.count)` Beobachtungen. Diese Beschränkung auf die Anzahl Personen in der Analyse wurde vorgenommen, um bezüglich des Treatments gleich grosse Gruppen aufzuweisen, und aus praktischen Gründen (Grösse des Datensatzes).   
+Die Analyse basiert auf einer Stichprobe mit `r Format(nrow(ds), fmt = fmt.count)` Beobachtungen (Personenjahren). Diese Beschränkung auf die Anzahl Personen in der Analyse wurde vorgenommen, um bezüglich des Treatments gleich grosse Gruppen aufzuweisen, und aus praktischen Gründen (Grösse des Datensatzes).   
 
 ### Ausschlüsse
 
 Das Vesichertenkollektiv wurde auf Personen eingeschränkt, welche das gesamte Jahr 2015 eine OKP-Deckung aufgewiesen haben (damit immer ein ganzes Jahr an Leistungen in die Analyse eingeflossen ist). Personen, welche im Jahr 2015 verstorben sind, werden dadurch ausgeschlossen. Die Resultate können somit nicht auf die Situation am Ende des Lebens übertragen werden.  
-Personen < 19 Jahren wurden aus dem Kollektiv ausgeschlossen, da diese unterschiedliche Franchisestufen aufweisen, und die Anzahl der chronischen Erkrankungen nicht mit der verwendeten Methode bestimmen lassen.  
+Personen < 19 Jahren wurden aus dem Kollektiv ausgeschlossen, da diese unterschiedliche Franchisestufen aufweisen, und die Anzahl der chronischen Erkrankungen nicht mit der verwendeten Methode bestimmt werden kann.  
 
 Nach einer ersten Analyse der Daten (Tabelle \ref{tbl:tbl.abstract}) wurden zudem Datensätze ausgeschlossen, welche fehlende Werte in den Variablen für die Anzahl chronische Erkrankungen und/oder zu den Stammdaten ihres Wohnorts aufwiesen.  
-Bei den Personen ohne die Angabe der Anzahl chronischer Erkrankungen handelt es sich um Bewohner von Langzeitpflegeeinrichtungen, bei denen der Medikamentenkonsum pauschal abgerechnet wird. Diese spezielle Untergruppe der Versicherten weist mutmasslich auch ein deutlich unterschiedliches Verhalten bezüglich der Zielgrösse Anzahl Arztbesuche auf, und ein Ausschluss ist damit sinnvoll, auch wenn die Resultate dann nicht auf diese Gruppe übertragen werden kann.  
+Bei den Personen ohne die Angabe der Anzahl chronischer Erkrankungen handelt es sich um Bewohner von Langzeitpflegeeinrichtungen, bei denen der Medikamentenkonsum pauschal abgerechnet wird. Diese spezielle Untergruppe der Versicherten weist mutmasslich auch ein deutlich unterschiedliches Verhalten bezüglich der Zielgrösse Anzahl Arztbesuche auf, und ein Ausschluss ist damit sinnvoll, auch wenn die Resultate dann nicht auf diese Gruppe übertragen werden können.  
 
-Für den Umgang mit den fehlenden Werten zu den Stammdaten des Wohnorts (Stadt/Land und Grossregion) gäbe es andere Möglichkeiten, als den Ausschluss der Beobachtungen. Beispiele hierfür sind Einführung neuer Kategorien, oder Vorhersagemodelle für diese Grössen aufgrund der bekannten Einflussgrössen. Allerdings führte das Einführen neuer Kategorien in diesen beiden Variablen zu einem Kollaps in der Schätzfunktion des Regressionsmodells welcher nicht gelöst werden konnte, und ein separates Modell für diese Variablen hätte den Rahmen dieser Arbeit gesprengt. Da es sich nur um einen sehr geringen Prozentsatz der Beobachtungen handelt, kann ein Ausschluss dieser hingenommen werden.
+Für den Umgang mit den fehlenden Werten zu den Stammdaten des Wohnorts (Stadt/Land und Grossregion) gibt es auch andere Möglichkeiten, als den Ausschluss der Beobachtungen. Beispiele hierfür sind Einführung neuer Kategorien, oder Vorhersagemodelle für diese Grössen aufgrund der bekannten Einflussgrössen. Allerdings führte das Einführen neuer Kategorien in diesen beiden Variablen zu einem Kollaps in der Schätzfunktion des Regressionsmodells, welcher nicht gelöst werden konnte, und ein separates Modell für diese Variablen hätte den Rahmen dieser Arbeit gesprengt. Da es sich nur um einen sehr geringen Prozentsatz der Beobachtungen handelt, kann ein Ausschluss dieser hingenommen werden.
 
 Dadurch enthält der verwendete Datensatz insgesamt `r Format(nrow(ads.1.mod), fmt = fmt.count)` Beobachtungen.
 
@@ -100,7 +104,7 @@ tbl.abstract <- Abstract(ads.1)
 pander(tbl.abstract, caption = "\\label{tbl:tbl.abstract}Beschreibung der Variablen", justify = rep("left", ncol(tbl.abstract)))
 ```
 
-Für einen ersten Überblick über die Daten sind in Tabelle \ref{tbl:tbl.baseline} die Verteilungen innerhalb der einzelnen Variablen insgesamt sowie in den beiden Gruppen **mit** (Treatmentgruppe) resp. **ohne** (Kontrollgruppe) MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
+Für einen ersten Überblick über die Daten sind in Tabelle \ref{tbl:tbl.baseline} die Verteilungen innerhalb der einzelnen Variablen insgesamt, sowie in den beiden Gruppen mit (Treatmentgruppe, Überschrift "ja") resp. ohne (Kontrollgruppe, Überschrift "nein") MC Modell ersichtlich. Aufgrund der Ausschlüsse sind die beiden Gruppen nicht mehr exakt gleich gross (wie in der Stichprobenziehung ursprünglich vorgegeben), jedoch kann weiterhin von einem balancierten Design gesprochen werden.
 
 ```{r tbl.baseline, echo=FALSE}
 tbl.1 <- TOne(ads.1.mod %>% select(-mc_fg, -age_grp_x), grp = ads.1.mod$mc_fg,
@@ -112,10 +116,10 @@ tbl.1[,1] <- gsub(" ", "&nbsp;", tbl.1[,1], fixed=TRUE) # damit leading spaces b
 kable(tbl.1, caption = "\\label{tbl:tbl.baseline}Baseline-Charakteristika, insgesamt und unterteilt in Treatment- resp. Kontrollgruppe (\"ja\" resp. \"nein\")")
 ```
 
-Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
 P-Werte: [0, 0.001] = \***, (0.001, 0.01] = \**, (0.01, 0.05] = \*, (0.05, 0.1] = \., (0.1,1] =  
+Verwendete Tests: ') Kruskal-Wallis test, ") Fisher exact test, "") Chi-Square test  
   
-Für die numerischen Variablen ist in Tabelle \ref{tbl:tbl.summary.num} ein "five-number summary" dargestellt um sicherzugehen, dass darin keine unplausiblen Extremwerte vorkommen. Alle drei numersischen Variablen sind nach unten begrenzt durch 0, nach oben mit ca. 120 (Alter), ca. 400 (Anzahl Konsultationen pro Jahr, theoretisch mehr als eine Konsultation zulässig, aber nicht regelmässig denkbar), sowie 22 (soviele PCG sind in @huber_identifying_2013 definiert, welche in der Datenaufbereitung verwendet wurden). Die Daten zeigen keine besorgniserregenden Werte.
+Für die numerischen Variablen ist in Tabelle \ref{tbl:tbl.summary.num} ein "five-number summary" dargestellt um sicherzugehen, dass darin keine unplausiblen Extremwerte vorkommen. Alle drei numersischen Variablen sind nach unten begrenzt durch 0, nach oben mit ca. 120 (Alter), ca. 400 (Anzahl Konsultationen pro Jahr, theoretisch mehr als eine Konsultation zulässig, aber nicht regelmässig denkbar), sowie 22 (soviele chronische Erkrankungen sind in @huber_identifying_2013 definiert, welche in der Datenaufbereitung verwendet wurden). Die Daten zeigen keine besorgniserregenden Werte.
 
 ```{r tbl.summary.num, echo=FALSE}
 summary(ads.1.mod %>% select(valter_n, kons_n, pcg_n)) %>% 
@@ -153,9 +157,16 @@ Over-dispersion bedeutet, dass die Zielvariable `kons_n` auch innerhalb der Stuf
 
 ### Negativ-binomiale Modelle
 
-#### Variablenselektion
+#### Bivariate Analysen
 
-In Tabelle \ref{tab:lrt.negbin.crude} wird pro potentiellem und verfügbaren Confounder das Ergebnis eines Likelihood-Ratio Tests von Modellen mit jeweils nur diesem Prädiktor angezeigt. Der Test ist abgesehen von `sprgeb_red_x` für alle Variablen signifikant.  
+In einem ersten Schritt werden bivariate Analysen zwischen der Zielgrösse Anzahl Arztbesuche und allen Confoundern einzeln erstellt, z.B.:
+
+```{r, echo=FALSE}
+glm.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
+print(formula(glm.age))
+```
+
+In Tabelle \ref{tab:lrt.negbin.crude} ist pro Confounder das Ergebnis eines Likelihood-Ratio Tests dieser Modelle angezeigt. Der Test ist abgesehen von `sprgeb_red_x` für alle Variablen signifikant.  
 
 ```{r lrt.negbin.crude, echo=FALSE}
 glm.mc <- glm.nb(formula = kons_n ~ mc_fg, data = ads.1.mod)
@@ -194,7 +205,7 @@ Die beiden numerischen Prädiktoren Alter (`valter_n`) und Anzahl chronische Erk
 
 ##### Alterskategorien anstelle von Alter
 
-In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der kategoriale Term für den Prädiktor Altersgruppe das Modell nicht verbessert. Das Alter wird deshalb weiterhin ausschliesslich als kontinuierliche Variable berücksichtigt.  
+In Tabelle \ref{tab:lrt.negbin.age} ist ersichtlich, dass der kategoriale Term für den Prädiktor Altersgruppe das Modell nicht verbessert. Auch die Hinzunahme eines quadrierten Terms für das Alter verbessert das Modell nicht (hier nicht gezeigt). Das Alter wird deshalb weiterhin ausschliesslich als einfache kontinuierliche Variable berücksichtigt.  
 
 ```{r lrt.negbin.age, echo=FALSE}
 glm.negbin.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
@@ -202,8 +213,6 @@ glm.negbin.age <- glm.nb(formula = kons_n ~ valter_n, data = ads.1.mod)
 glm.negbin.agegrp <- glm.nb(formula = kons_n ~ age_grp_x, data = ads.1.mod)
 pander(anova(glm.negbin.age, glm.negbin.agegrp), caption = "\\label{tab:lrt.negbin.age}Likelihood-Ratio Test mit kontinuierlicher Variable Alter resp. kategorialem Term für die Altersgruppe")
 ```
-
-Auch die Hinzunahme eines quadrierten Terms für das Alter verbessert das Modell nicht (hier nicht gezeigt).
 
 ##### Quadratischer Term für Anzahl chronischer Erkrankungen
 
@@ -295,7 +304,7 @@ conf.high.ja2 <- Format(coef.nb.final.ja[coef.nb.final.ja$term=="mc_fgja","conf.
 Eine Möglichkeit, um dieses zu bestimmen, ist die Stratifikation nach den Stufen der Franchise (eine andere, hier nicht gezeigte, wäre die Bootstrap-Methode). Dadurch ergeben sich Schätzungen für den Effekt eines MC Modells bei Personen mit tiefer Franchise von `r est.nein2` (95%-CI: `r conf.low.nein2`, `r conf.high.nein2`). Bei Personen mit hoher Franchise von `r est.ja2` (95%-CI: `r conf.low.ja2`, `r conf.high.ja2`).  
 Die Schätzung bei Personen mit tiefer Franchise verändert sich durch die Stratifikation nur wenig, und bleibt weiterhin nicht signifikant. Die Schätzung bei Personen mit hoher Franchise ist nach der Stratifikation allerdings ein deutlich anderer Schätzwert berechnet worden, welcher ebenfalls nicht signifikant ist.  
 
-Um die Veränderung im Schätzwert der beiden stratifizierten Modelle anzuschauen, sind in \ref{fig:fig.strat} beider Modelle aufgezeichnet. Dadurch, dass für einige Koeffizienten in den beiden Modellen sehr unterschiedliche Koeffizienten geschätzt werden (insbesondere für die Anzahl chronischer Erkrankungen und das Geschlecht), kann angenommen werden, dass auch noch zwischen dem Effektmodifikator Höhe der Franchise und einigen Confoundern bestehen.
+Um die Veränderung im Schätzwert der beiden stratifizierten Modelle anzuschauen, sind in Abbildung \ref{fig:fig.strat} die Koeffizienten beider Modelle aufgezeichnet. Dadurch, dass für einige Condounder in den beiden Modellen sehr unterschiedliche Koeffizienten geschätzt werden (insbesondere für die Anzahl chronischer Erkrankungen und das Geschlecht), kann angenommen werden, dass auch zwischen dem Effektmodifikator Höhe der Franchise und einigen Confoundern Interaktionen bestehen.
 
 ```{r fig.strat, echo=FALSE, fig.cap="\\label{fig:fig.strat}Schätzungen der beiden stratifizierten Modelle"}
 coef.strat <- rbind(cbind(Franchise = rep("tiefe Franchise", nrow(coef.nb.final.nein)), coef.nb.final.nein),
@@ -310,15 +319,20 @@ coef.strat %>%
 
 # Diskussion
 
-Für die Beantwortung der Frage, ob MC Modelle zu weniger Arztbesuchen führen, standen nur wenige Confounder zur Verfügung, welche im Rahmen der obligatorischen Grundversicherung zu administrativen Zwecken erhoben werden (und auch schon in der bestehenden Literatur zu Kosteneinsparungen mit MC Modellen verwendet wurden). Die Resultate dieser Analyse lassen sich nicht auf die gesamte Bevölkerung verallgemeinern, da einzelne Gruppen ausgeschlossen wurden (Personen < 19 Jahren, Personen im Pflegeheim, Personen welche im Beobachtungszeitraum von einem Jahr verstorben sind).  
-Die Validität der Daten ist hoch, da sie für Abrechnungszwecke automatisiert erhoben wurden. Probleme mit einem systematischen Bias in den Daten sind aufgrund dieser automatisierten Erhebung, sowie dem flächendeckenden Versichertenkollektiv in der Datenbasis, ebenfalls nicht zu erwarten. Einzig der Ausschluss der Beobachtungen mit fehlenden Werten kann potentiell zu einem Bias geführt haben. Da dieser Ausschluss nur 0.5% der Beobachtungen betroffen hat, ist der Einfluss davon allerdings als gering einzuschätzen.  
+Für die Beantwortung der Frage, ob MC Modelle zu weniger Arztbesuchen führen, standen nur wenige Confounder zur Verfügung, welche im Rahmen der obligatorischen Grundversicherung zu administrativen Zwecken erhoben werden (und auch schon in der bestehenden Literatur zu Kosteneinsparungen mit MC Modellen verwendet wurden). Diese Confounder sind sicherlich nicht erschöpfend für die untersuchte Fragestellung.  
+Die Resultate dieser Analyse lassen sich nicht auf die gesamte Bevölkerung verallgemeinern, da einzelne Gruppen ausgeschlossen wurden (Personen < 19 Jahren, Personen im Pflegeheim, Personen welche im Beobachtungszeitraum von einem Jahr verstorben sind).  
+Die Validität der Daten ist hoch, da sie für Abrechnungszwecke automatisiert erhoben wurden. Probleme mit einem systematischen Bias in den Daten sind aufgrund dieser automatisierten Erhebung, sowie dem flächendeckenden Versichertenkollektiv in der Datenbasis, nicht zu erwarten. Einzig der Ausschluss der Beobachtungen mit fehlenden Werten kann potentiell zu einem Bias geführt haben. Da dieser Ausschluss nur 0.5% der Beobachtungen betroffen hat, ist der Einfluss davon allerdings als gering einzuschätzen.  
 
 Die Stufe der Franchise konnte als Effektmodifikator identifiziert werden. Bei Personen mit tiefer Franchise konnte keine signifikante Änderung der Anzahl Arztbesuche durch das MC Modell festgestellt werden (`r est.nein2` (95%-CI: `r conf.low.nein2`, `r conf.high.nein2`)).  
-Bei Personen mit hoher Franchise wurde im nicht stratifizierten Modell eine relevante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja`), allerdings ohne Vertrauensintervall. In einem stratifizierten Modell bei Personen mit hoher Franchise wurde dann eine nicht signifikante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja2` (95%-CI: `r conf.low.ja2`, `r conf.high.ja2`)).  
+Bei Personen mit hoher Franchise wurde im nicht stratifizierten Modell eine relevante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja`), allerdings ohne Vertrauensintervall. In einem stratifizierten Modell mit Personen mit hoher Franchise wurde dann eine nicht signifikante Reduktion der Anzahl Arztbesuche geschätzt (`r est.ja2` (95%-CI: `r conf.low.ja2`, `r conf.high.ja2`)).  
+  
+Durch einen Vergleich der geschätzten Koeffizienten in den beiden stratifizierten Modellen (Abbildung \ref{fig:fig.strat}) konnte der Bedarf nach einem mit Interaktionen zwischen den Confoudern erweiterten Modell aufgezeigt werden.
 
-Somit lässt sich sagen, dass MC Modelle bei Personen mit tiefer Franchise kaum zu weniger Arztbesuchen führen. Bei Personen mit hoher Franchise ist für die Beantwortung der Frage eine Erweiterung des verwendeten Modells nötig, da die Resultate keinen eindeutigen Schluss zulassen.  
+# Schlussfolgerung
 
-Die Hypothese, dass MC Modelle zu weniger Arztbesuchen führen, erhält durch diese Analyse kaum Unterstützung.
+Es lässt sich sagen, dass MC Modelle bei Personen mit tiefer Franchise kaum zu weniger Arztbesuchen führen. Bei Personen mit hoher Franchise ist für die Beantwortung der Frage eine Erweiterung des verwendeten Modells nötig, da die Resultate keinen eindeutigen Schluss zulassen.  
+
+Die Hypothese, dass MC Modelle zu weniger Arztbesuchen führen, erhält durch diese Analyse wenig Unterstützung.
 
 # Bibliographie
 

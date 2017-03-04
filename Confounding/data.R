@@ -24,7 +24,7 @@ ads.1.mod <-
 Label(ads.1$e_vp_id) <- "anonymisierte ID"
 Label(ads.1$sex_x) <- "Geschlecht"
 Label(ads.1$valter_n) <- "Alter"
-Label(ads.1$franch_elig_fg) <- "erhoehte Franchise"
+Label(ads.1$franch_elig_fg) <- "erhöhte Franchise"
 Label(ads.1$okp_unfall_fg) <- "Unfalldeckung"
 Label(ads.1$mc_fg) <- "Managed Care Modell"
 Label(ads.1$sprgeb_red_x) <- "Sprachgebiet"
