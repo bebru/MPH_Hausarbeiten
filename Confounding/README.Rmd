@@ -1,12 +1,6 @@
 # Fragen
 
 * was tun mit fehlenden Werten?
-* wie werden die Paraameter eines Poisson- resp. neg.-binomialen Modells interpretiert?
-    * Intercept: durchschnittliche Anzahl Konsultationen der referenzkategorie
-    * Koeffizienten: Faktoren auf Intercept
-* soll die Zielvariable logarhythmiert werden? wohl eher nicht, da Poisson-Verteilung. 
-Allerdings ist der Test in der Tabelle mit den Baseline-Charakteristika fraglich.
-    * die Link-Funktion ist der Logarhythmus! Koeffizienten exponentieren!
 * Bibliographie erstellen?:
     * ja
 
@@ -29,3 +23,7 @@ Allerdings ist der Test in der Tabelle mit den Baseline-Charakteristika fraglich
         * Vergleich der Koeffizienten in Männer- und Frauenmodell miteinander vergleichen. Wo grosse Unterschiede sind die Interaktion dieses Prädiktors mit sex_x ebenfalls ins Modell nehmen. Allenfalls ein Modell mit allen Interaktionen mit sex_x erstellen.
 * Struktur: Einführung, Methoden, Resultate, Diskussion (inkl. Limitationen), Schlussfolgerung
 * ev. Korrelationsmatrix für Erkennung der Confounder?
+
+# Wo ist das File conf_brb.Rmd
+
+Im MPH-Ordner .../V108_10_17/Leistungsnachweis
