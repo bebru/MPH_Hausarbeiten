@@ -1,13 +1,13 @@
 ---
-title: "SiL - Sozialmedizinische individuelle Lösungen"
+title: "SiL - Sozialmedizinische individuelle LÃ¶sungen"
 classoption: a4paper
 date: "8 Sept. 2017"
 output:
-  word_document:
-    toc: yes
   pdf_document:
     keep_tex: yes
     number_sections: yes
+    toc: yes
+  word_document:
     toc: yes
 documentclass: article
 header-includes:
@@ -47,11 +47,26 @@ Aufgrund der vorherrschenden Ausrichtung auf akute Krankheitssituationen sind im
 
 # Hausbsuche SiL - Sozialmedizinische individuelle Lösungen
 
-"Hausbsuche SiL - Sozialmedizinische individuelle Lösungen" (SiL) ist ein Projekt des Gesundheitsnetzes 2025 der Stadt Zürich. Das Ziel des Projektes ist, dass Betroffene länger zu Hause im gewohnten Umfeld leben können und Angehörigen der Umgang mit der Krankheit erleichtert wird. Verschiedenen Dienstleistern wie Hausärzten und Spitex wird zudem fachspezifischer Hilfe zur Verfügung gestellt.
+"Hausbsuche SiL - Sozialmedizinische individuelle Lösungen" (SiL) ist ein Projekt des Gesundheitsnetzes 2025 der Stadt Zürich. Das Ziel des Projektes ist, dass Betroffene länger zu Hause im gewohnten Umfeld leben können und Angehörigen der Umgang mit der Krankheit erleichtert wird. Hospitalisationen aufgrund einer Dekompensation sollen durch dieses ambulante Angebot vermieden werden. SiL stellt eine spezialisierte integrierte Langzeitversorgung von Menschen mit Demenz und ihren Angehörigen dar.
+
+## Zielgruppe
+
+Die Zielgruppe von SiL sind in erster Linie zu Hause lebende Menschen mit Demenz, sowie ihre Angehörigen. Die medizinische Betreuung von Demenzerkrankten stellt auch eine Herausforderung für die entsprechenden Hausärztinnen und Hausärzte dar, welche durch SiL ebenso wie das formelle Betreuungs-und Pflegeteam (z.B. Spitex) fachspezifische Hilfe erhalten. Ebenso soll das informelle Betreueungssystem (z.B Nachbarn) miteinbezogen und unterstützt werden.
+
+## Massnahmen
 
 SiL stellt ein Bündel von Massnahmen für Personen mit Demenz zur Verfügung. Diese umfassen unter anderem frühzeitige Abklärungen, gezieltes Training noch vorhanderen Fähigkeiten, Schulungen und Selbsthilfegruppen,
 
 ## Geschäftsmodell
+
+SiL wurde 2008 als Pilotprojekt im Rahmen des Gesundheitsnetzes 2025 der Stadt Zürich gestartet. Zusammen mit der Memory-Klinik Entlisberg wurde das Projekt 2010 in die neu gegründete Gerontologische Beratungsstelle in das Pflegezentrum Entlisberg integriert. Seit 2012 ist SiL kein Projekt mehr, sondern ein ständiges Angebot der Gerontologischen Beratungsstelle. 2017 wurde im Pflegezentrum Riesbach ein Kompetenzzentrum für die Pflege und Betreuung von Demenzbetroffenen geschaffen, welches auch die Beratungsstelle SiL umfasst.
+
+## div. Links
+
+* Entstehung, allg. Infos: [Aufsuchende Beratung für Menschen mit Demenz](https://www.google.ch/url?sa=t&rct=j&q=&esrc=s&source=web&cd=6&ved=0ahUKEwjd1vjW0_rVAhXCXBoKHfZUA0MQFghEMAU&url=https%3A%2F%2Fwww.stadt-zuerich.ch%2Fcontent%2Fdam%2Fstzh%2Fgud%2FDeutsch%2FPZZ%2FDokumente%2FPr%25C3%25A4sentationen%2FSBK-Kongress%2FPZZ_SBK_2013_Demenzberatung.pdf&usg=AFQjCNEudZQ4YRBQ7g6oEe0XRUdsD1JG_w)
+* Tarife SiL, z.B. Art. 14 hier: [Aufnahme- und Taxordnung Pflegezentren der Stadt Zürich (ATO) ](https://www.stadt-zuerich.ch/content/dam/stzh/gud/Deutsch/PZZ/Dokumente/Taxen/PZZ_Aufnahme_Taxordnung.pdf)
+* BAG: [Nationale Demenzstrategie](https://www.bag.admin.ch/bag/de/home/themen/strategien-politik/nationale-gesundheitsstrategien/nationale-demenzstrategie-2014-2017.html)
+* GDK: [Nationale Demenzstrategie](http://www.gdk-cds.ch/index.php?id=998)
 
 # Zusammenfassung
 
