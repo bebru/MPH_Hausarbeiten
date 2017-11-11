@@ -25,13 +25,158 @@ bibliography: bebru.bib
 
 # Einführung
 
-* Exposition: @ingold_larmbelastung_2009
+## Beschreibung Szenario
+
+* Gesundheitseffekte und externen Kosten des Lärms sind für die Schweiz für das 
+Jahr 2010 quantifiziert worden
+* Im Sommer 2013 hat das Parlament beschlossen lärmige Güterwagen in der Schweiz zu verbieten
+* Zurzeit gibt es keine verfügbare Datengrundlage um abzuschätzen wie sich das 
+auf die Lärmexposition der Bevölkerung auswirkt
+
+Berechnen Sie auf der Basis dieser Annahmen wie viele Todesfälle und Spitaltage 
+wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können. 
+
+**nur ein Szenario berechnen**
+
+* Definition des Szenarios
+    * Welche Gesundheitskosten können eingespart werden, wenn ein Rauchverbot für 
+    öffentliche Räume eingeführt wird.
+* Bestimmung der massgeblichen Exposition(en)(Indikator/en)
+    * Anzahl Stunden pro Woche in öffentlichen Räumen (Expositionen zu Hause werden 
+    nicht berücksichtigt)
+* Bestimmung der Schwelle ab der Effekte quantifiziert werden sollen
+    * 0 (jede Exposition soll berücksichtigt werden)
+* Bezugszeit
+    * 2006
+* Bezugspopulation
+    * Schweizer Bevölkerung ab 14 Jahren (für Jüngere Exposition in öffentlichen 
+    Räumen minim)
+
+* Definition/Eingrenzen des Szenarios
+* Bestimmung der massgeblichen Exposition(en) (Indikator/en)
+* Bestimmung der Schwelle ab der Effekte quantifiziert werden sollen
+* Bezugszeitpunkt
+* Bezugspopulation
+
+
+## Expositionsabschätzung
+
+* Bestimmen der Expositionsverteilung in der Bevölkerung:
+    * @ingold_larmbelastung_2009
+
+
+### Annahmen
+
+Daher nehmen wir vereinfacht an, dass bei Personen, die nachts Bahnlärm über 60 dB 
+exponiert sind, die Lärmbelastung in der Nacht um 2 dB abnimmt. Für Personen die 
+nachts zwischen 50 und 60 dB exponiert sind, nehmen wir eine Abnahme von 1 dB an. 
+Keine Veränderung trete am Tag oder bei Personen, die <50 dB exponiert sind, auf.
+
+## Expositions-Wirkungsbeziegung
+
 * Expositions-Wirkungsbeziehung: @heritier_transportation_2017
+
+* Form der Expositions-Wirkungsbeziehung bestimmen
+    * linear
+* Definieren, ob ‚time lag‘ berücksichtigt werden soll
+    * Kein Time-lag
+* Konsistenz der Expositionsmasse
+    * Für Smoking Ban Studien: direkt übertragbar (keine Expositionsabschätzung)
+    * Prospektive Studien: mit einem Raucher wohnen
+    * mit einem Raucher wohnen =Tabakrauchexposition von >7 h pro Woche in 
+    öffentlichen Räumen (mittels Literaturreview hergeleitet)
+
+### Gesundheitseffekte
+
+* Bestimmen der Effekte, die berücksichtigt werden sollen.
+* Mögliche Kriterien:
+    * Evidenz, epidemiologische Datenlage (z.B. keine belastbaren Studien zu 
+    Medikamentengebrauch)
+    * Keine Doppelzählungen (z.B. Hausarztkonsultationen)
+    * Ökonomische Quantifizierbarkeit (z.B. Lungenfunktionsreduktion, 
+    Vermeidungsverhalten)
+* Akute vs. chronische Effekte differenzieren (->Studiendesign)
+
+Alle Gesundheitseffekte, für die eine hinreichende oder suggestive mit
+Passivrauchen besteht gemäss Report of the General Surgeon, 2006:
+Lungenkrebs, ischämische Herzkrankheiten, Brustkrebs bei Frauen,
+Nasenhöhlenkrebs, Schlaganfall, chronische Bronchitis, Asthma,
+Frühgeburten, plötzlicher Kindstod
+
+* Datenbasis für Herleitung der Expositions-Wirkungsbeziehungen, z.B. eigene Meta-Analyse, 
+publizierte Meta-Analysen/Reviews, Reports von anerkannten Organisationen, etc.
+    * Einschlusskriterien: 1. Priorität: Smoking Ban Studien, 2. Prioriät: 
+    prospektive Studien 3. (falls keineprospektive Studien) Fall-Kontrollstudien 
+    ->plötzlicher Kindstod
+    * eigene systematische Literatursuche und Meta-Analyse durchgeführt für 
+    Lungenkrebs, ischämische Herzerkrankungen, Kindstod
+    * Eigene Meta-Analyse der prospektiven Studien aus dem Report of the General 
+    Surgeon, 2006
+
+### Effects of a ban
+
+Introduction of a smoking ban in public places including workplaces: what effects can be expected
+    * reduction passive smoke exposure of nonsmokers
+    * reduction cigarette consumption of smokers
+    * increase of the rate of non-smokers
+
+### Krankheitshäufigkeit
+
+* Daten zur beobachteten Krankheitshäufigkeit
+    * Todesursachenstatistik, Krankenhausstatistik, bevölkerungsbasierte Studien 
+    (z.B. SCARPOL, SAPALDIA)
+* Art der Daten (Inzidenz, Prävalenz)
+    * korrespondierend zu den epidemiologischen Studien
+* Darunterliegendes Kollektiv
+    * Gesamtbevölkerung
+
+
 
 # Methode
 
+* Berechnungsmethode bestimmen:
+    * Morbidität: attributable Fälle
+    * Mortalität: Verlorene Lebensjahre (YLL)
+
+## Annahmen
+
 # Resultate
 
+**Berechnen Sie auf der Basis dieser Annahmen wie viele Todesfälle und Spitaltage 
+wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können.** 
+
+Berechnung der Krankheits-/Todesfälle **(keine YLL oder Kostenschätzungen)**
+
+**attributtable Fälle berechnen**
+
+## Anzahl Fälle
+
+$Anzahl Fälle = Exposition * BeziehungExpositionsWirkung * Krankheitshäufigkeit$
+
+## Sensitivitätsanalyse
+
+* Entscheiden, wie mit Unsicherheiten/Annahmen umgegangen werden soll.
+(Im Rahmen dieser Hausarbeit Konfidenzintervalle beachten und andere Unsicherheiten 
+diskutieren, allenfalls grob quantifizieren)
+
+* Entscheiden, wie mit Unsicherheiten/Annahmen umgegangen werden soll, z.B.:
+    * Sensitivitätsanalysen
+    * Konfidenzintervalle (für Expositions-
+    Wirkungsbeziehung)
+    * Monte-Carlo Simulationen
+
 # Diskussion
+
+## Possible explanation
+
+* Not a true difference?
+    1. chance
+    2. publication bias for smoking ban studies (->overestimation)
+    3. our conversion function for exposure proxy „living with a smoker“ is wrong.
+* True difference?
+    1. smoking ban studies capture all effects (including change of active smoking 
+    and other health relevant behaviour)
+    2. cohort study underestimate true effect of passive smoking (very crude exposure measure)
+
 
 # Bibliographie
