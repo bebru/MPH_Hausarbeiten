@@ -23,13 +23,45 @@ subtitle: Leistungsnachweis Modul \"Umwelt & Gesundheit\" (A001.10.17)
 bibliography: bebru.bib
 ---
 
+```{r results='asis', echo=FALSE, include=FALSE,}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+#formating tables
+library(pander)
+```
+
 # Einführung
 
+Lärm wird nach wie vor als notwendiges Übel angesehen [@ingold_larmbelastung_2009]. 
+Die Folgen von Lärm, neben Wertverlust von Wohneigentum sind auch das seelische und 
+soziale Wohlbefinden und die körperliche Gesundheit betroffen, werden weiterhin 
+bagatellisiert.  
+
+The recent epidemiological literature shows that the mortality effects of noise 
+are much higher than earlier studies suggested [@vienneau_years_2015].
+
+In diesem Health Impact Assessment (HIT) wird aus diesem Grund der Einfluss eines Teils 
+der Änderung der Bundesgesetzes über die Lärmsanierung der Eisenbahnen 
+[@bbi_botschaft_2012] auf die Gesundheit der Schweizer Bevölkerung untersucht. 
+Es wird hier auf den Einfluss des Verbots lärmiger Güterwagen fokussiert.
+
+Die Frage, welche beantwortet werden soll ist:
+
+> Wieviele Todesfälle und Spitaltage aufgrund Herzinfarkten eingespart werden können, 
+wenn die Intervention umgesetzt wird.
+
+Als Bezugspopulation wird die gesamte Schweizer Bevölkerung verwendet.
+
 ## Beschreibung Szenario
+
+* @bundesamt_fur_umwelt_umweltbelastungen_2011
+
+* Untersuchte Intervention: Verbot von lärmigen Güterwagen
+* Bezugszeit: 
 
 * Gesundheitseffekte und externen Kosten des Lärms sind für die Schweiz für das 
 Jahr 2010 quantifiziert worden
 * Im Sommer 2013 hat das Parlament beschlossen lärmige Güterwagen in der Schweiz zu verbieten
+    * @bbi_botschaft_2012
 * Zurzeit gibt es keine verfügbare Datengrundlage um abzuschätzen wie sich das 
 auf die Lärmexposition der Bevölkerung auswirkt
 
@@ -38,12 +70,6 @@ wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können.
 
 **nur ein Szenario berechnen**
 
-* Definition des Szenarios
-    * Welche Gesundheitskosten können eingespart werden, wenn ein Rauchverbot für 
-    öffentliche Räume eingeführt wird.
-* Bestimmung der massgeblichen Exposition(en)(Indikator/en)
-    * Anzahl Stunden pro Woche in öffentlichen Räumen (Expositionen zu Hause werden 
-    nicht berücksichtigt)
 * Bestimmung der Schwelle ab der Effekte quantifiziert werden sollen
     * 0 (jede Exposition soll berücksichtigt werden)
 * Bezugszeit
@@ -58,12 +84,37 @@ wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können.
 * Bezugszeitpunkt
 * Bezugspopulation
 
-
 ## Expositionsabschätzung
 
-* Bestimmen der Expositionsverteilung in der Bevölkerung:
-    * @ingold_larmbelastung_2009
+In der Schweiz misst das nationale Lärmmonitoring SonBase die Exposition gegenüber 
+Lärm [@ingold_larmbelastung_2009]. Dieser Bericht beinhaltet die Anzahl Personen, 
+welche am Tag resp. in der Nacht wie stark von Lärm belastet sind.
 
+
+```{r tbl.espo, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("Referenz-Szenario: Exposition gegenüber Lärm, Anzahl Personen")
+tbl.expo <- "
+  Belastung  | Tag	     | Nacht
+  40-45 dB   | 310'000   | 200'000
+  45-50 dB   | 220'000   | 130'000
+  50-55 dB   | 150'000   | 100'000
+  55-60 dB   | 120'000   | 65'000
+  60-65 dB   | 75'000    | 20'000
+  65-70 dB   | 20'000    | 15'000
+  70-75 dB   | 5'000     | 0
+  >75 dB     | 0         | 0"
+df.expo <- read.delim(textConnection(tbl.expo),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.expo) <- unname(as.list(df.expo[1,])) # put headers on
+df.expo <- df.expo[-1,] # remove first row
+row.names(df.expo)<-NULL
+pander(df.expo, style = 'rmarkdown', justify = c("left","right","right"))
+```
+
+
+weitere Quelle: @karipidis_reconstruction_2014
+
+Fehler in der Expositionsabschätzung besprechen (siehe Handout Expositionsabhschätzung, S. 10).
 
 ### Annahmen
 
@@ -72,9 +123,40 @@ exponiert sind, die Lärmbelastung in der Nacht um 2 dB abnimmt. Für Personen d
 nachts zwischen 50 und 60 dB exponiert sind, nehmen wir eine Abnahme von 1 dB an. 
 Keine Veränderung trete am Tag oder bei Personen, die <50 dB exponiert sind, auf.
 
+
+```{r tbl.annahmen, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("Veränderung der Exposition durch die Intervention")
+tbl.ann <- "
+  Baseline Exposition  | Veränderung durch Intervention
+  tagsüber             | 0 dB
+  nachts, < 50 dB      | 0 dB
+  nachts, 50 bis 60 dB | -1 dB
+  nachts, > 60 dB      | -2 dB"
+df.ann <- read.delim(textConnection(tbl.ann),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.ann) <- unname(as.list(df.ann[1,])) # put headers on
+df.ann <- df.ann[-1,] # remove first row
+row.names(df.ann)<-NULL
+pander(df.ann, style = 'rmarkdown', justify = c("left","right"))
+```
+
+Kein Effekt auf Gesundheit bei $Lden$ < 48 dB [@vienneau_years_2015].
+
+
 ## Expositions-Wirkungsbeziegung
 
-* Expositions-Wirkungsbeziehung: @heritier_transportation_2017
+* @vienneau_years_2015
+    * 
+
+* @heritier_transportation_2017
+    * Exposure-Modell für das Jahr 2001
+    * Assoziation zwischen Lärmexposition $Lden$ und kardiovaskuäre Todesursache
+    * Population:
+        * CH-Bevölkerung, Jahr 2000 Zensus, Todesfälle und Emigration 2000-2008, >= 30 Jahre, 
+        div. weitere Ausschlüsse, 4.41 Mio. Personen  
+    * Outcome: primäre Todesursache gemäss ICD-10
+    * HR pro 10 dB Steigerung, Todesursache, Herzinfarkt:
+        * I21–I22 19,313 (13.5%) 1.023 (1.011–1.036) 1.020 (1.007–1.033)
 
 * Form der Expositions-Wirkungsbeziehung bestimmen
     * linear
