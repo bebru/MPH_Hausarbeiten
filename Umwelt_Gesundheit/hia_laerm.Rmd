@@ -31,23 +31,56 @@ library(pander)
 
 # Einführung
 
-Lärm wird nach wie vor als notwendiges Übel angesehen [@ingold_larmbelastung_2009]. 
+Lärm ("unerwünschter Schall") wird nach wie vor als notwendiges Übel angesehen [@ingold_larmbelastung_2009]. 
 Die Folgen von Lärm, neben Wertverlust von Wohneigentum sind auch das seelische und 
 soziale Wohlbefinden und die körperliche Gesundheit betroffen, werden weiterhin 
-bagatellisiert.  
+bagatellisiert. Aktuelle epidemiologische Studien haben aufgezeigt, dass der Einfluss 
+von Lärm auf die Mortalität wesentlich höher ist, als bisher angenommen [@vienneau_years_2015].
 
-The recent epidemiological literature shows that the mortality effects of noise 
-are much higher than earlier studies suggested [@vienneau_years_2015].
+Die Anzahl der Personen, welche aufgrund von Eisenbahnverkehr erhöhten Lärmbelastungen 
+ausgesetzt sind, ist im Vergleich zu Strassenverkehr deutlich tiefer [@ingold_larmbelastung_2009]. 
+Da lokal jedoch hohe Belastungen aufgrund von Eisenbahnverkehr auftreten können, wurde 
+im Jahr 2013 vom Schweizer Parlament die Änderung des Bundesgesetzes über die Lärmsanierung der Eisenbahnen 
+[@bbi_botschaft_2012] verabschiedet. Diese Vorlage beinhaltet unter anderem 
+Emissionsgrenzwerte für bestehende Güterwagen ab 2020, Schienenschallabsorber und zusätzliche 
+Lärmschutzwände.  
 
-In diesem Health Impact Assessment (HIT) wird aus diesem Grund der Einfluss eines Teils 
-der Änderung der Bundesgesetzes über die Lärmsanierung der Eisenbahnen 
-[@bbi_botschaft_2012] auf die Gesundheit der Schweizer Bevölkerung untersucht. 
-Es wird hier auf den Einfluss des Verbots lärmiger Güterwagen fokussiert.
+In diesem Health Impact Assessment (HIT) soll abgeschätzt werden Welche Auswirkungen 
+dieses Verbot von lärmigen Güterwagen auf die Gesundheit der Schweizer Bevölkerung 
+haben wird.  
 
-Die Frage, welche beantwortet werden soll ist:
+# Szenario
 
-> Wieviele Todesfälle und Spitaltage aufgrund Herzinfarkten eingespart werden können, 
-wenn die Intervention umgesetzt wird.
+Ab dem Jahr 2020 werden durch die Einführung neuer Emissionsgrenzwerte für Güterwagen 
+die Lärmemissionen durch den Eisenbahnverkehr reduziert.
+
+In Tabelle \ref{tbl:tbl.ann} sind die Annahmen aufgeführt, wie sich diese 
+Grenzwerte auf die Lärmbelastung Schweizer Bevölkerung auswirken werden. Es wird 
+also davon ausgegangen, dass die Intervention sich ausschliesslich in der Nacht auswirkt, 
+erst ab einer Belastung über 50 dB (siehe hierzu auch @vienneau_years_2015), und auf 
+Personen mit höherer Belastung stärker als auf solche mit einer mittleren Belastung.
+
+```{r tbl.annahmen, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.ann}Veränderung der Exposition durch die Intervention")
+tbl.ann <- "
+  Baseline Exposition  | Veränderung durch Intervention
+  tagsüber             | 0 dB
+  nachts, < 50 dB      | 0 dB
+  nachts, 50 bis 60 dB | -1 dB
+  nachts, > 60 dB      | -2 dB"
+df.ann <- read.delim(textConnection(tbl.ann),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.ann) <- unname(as.list(df.ann[1,])) # put headers on
+df.ann <- df.ann[-1,] # remove first row
+row.names(df.ann)<-NULL
+pander(df.ann, style = 'rmarkdown', justify = c("left","right"))
+```
+
+
+Die Forschungsfrage lautet:
+
+> Wieviele Spitaltage und Todesfälle aufgrund von Herzinfarkten werden durch das 
+Verbot von lärmigen Güterwagen eingespart?
 
 Als Bezugspopulation wird die gesamte Schweizer Bevölkerung verwendet.
 
@@ -123,24 +156,7 @@ exponiert sind, die Lärmbelastung in der Nacht um 2 dB abnimmt. Für Personen d
 nachts zwischen 50 und 60 dB exponiert sind, nehmen wir eine Abnahme von 1 dB an. 
 Keine Veränderung trete am Tag oder bei Personen, die <50 dB exponiert sind, auf.
 
-
-```{r tbl.annahmen, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
-panderOptions('table.split.table', Inf)
-set.caption("Veränderung der Exposition durch die Intervention")
-tbl.ann <- "
-  Baseline Exposition  | Veränderung durch Intervention
-  tagsüber             | 0 dB
-  nachts, < 50 dB      | 0 dB
-  nachts, 50 bis 60 dB | -1 dB
-  nachts, > 60 dB      | -2 dB"
-df.ann <- read.delim(textConnection(tbl.ann),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
-names(df.ann) <- unname(as.list(df.ann[1,])) # put headers on
-df.ann <- df.ann[-1,] # remove first row
-row.names(df.ann)<-NULL
-pander(df.ann, style = 'rmarkdown', justify = c("left","right"))
-```
-
-Kein Effekt auf Gesundheit bei $Lden$ < 48 dB [@vienneau_years_2015].
+Kein Effekt auf Gesundheit bei L~den~ < 48 dB [@vienneau_years_2015].
 
 
 ## Expositions-Wirkungsbeziegung
