@@ -43,90 +43,81 @@ Da lokal jedoch hohe Belastungen aufgrund von Eisenbahnverkehr auftreten können
 im Jahr 2013 vom Schweizer Parlament die Änderung des Bundesgesetzes über die Lärmsanierung der Eisenbahnen 
 [@bbi_botschaft_2012] verabschiedet. Diese Vorlage beinhaltet unter anderem 
 Emissionsgrenzwerte für bestehende Güterwagen ab 2020, Schienenschallabsorber und zusätzliche 
-Lärmschutzwände.  
+Lärmschutzwände. Eine Abschätzung, wie sich diese Änderungen auf die Gesundheit der 
+Bevölkerung auswirken wird, fehlt bisher.  
 
-In diesem Health Impact Assessment (HIT) soll abgeschätzt werden Welche Auswirkungen 
-dieses Verbot von lärmigen Güterwagen auf die Gesundheit der Schweizer Bevölkerung 
-haben wird.  
+In diesem Health Impact Assessment (HIT) soll abgeschätzt werden, welche Auswirkungen 
+das in der Vorlage enthaltene Verbot von lärmigen Güterwagen auf die Gesundheit der 
+Schweizer Bevölkerung haben wird.  
 
 # Szenario
 
+## Intervention
+
 Ab dem Jahr 2020 werden durch die Einführung neuer Emissionsgrenzwerte für Güterwagen 
-die Lärmemissionen durch den Eisenbahnverkehr reduziert.
+die Lärmemissionen durch den Eisenbahnverkehr reduziert. Dies ist die Intevention, 
+welche in diesem HIA untersucht werden soll.
 
-In Tabelle \ref{tbl:tbl.ann} sind die Annahmen aufgeführt, wie sich diese 
-Grenzwerte auf die Lärmbelastung Schweizer Bevölkerung auswirken werden. Es wird 
-also davon ausgegangen, dass die Intervention sich ausschliesslich in der Nacht auswirkt, 
-erst ab einer Belastung über 50 dB (siehe hierzu auch @vienneau_years_2015), und auf 
-Personen mit höherer Belastung stärker als auf solche mit einer mittleren Belastung.
+## Gesundheitseffekte der Intervention
 
-```{r tbl.annahmen, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
-panderOptions('table.split.table', Inf)
-set.caption("\\label{tbl:tbl.ann}Veränderung der Exposition durch die Intervention")
-tbl.ann <- "
-  Baseline Exposition  | Veränderung durch Intervention
-  tagsüber             | 0 dB
-  nachts, < 50 dB      | 0 dB
-  nachts, 50 bis 60 dB | -1 dB
-  nachts, > 60 dB      | -2 dB"
-df.ann <- read.delim(textConnection(tbl.ann),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
-names(df.ann) <- unname(as.list(df.ann[1,])) # put headers on
-df.ann <- df.ann[-1,] # remove first row
-row.names(df.ann)<-NULL
-pander(df.ann, style = 'rmarkdown', justify = c("left","right"))
-```
+Die zeitliche Auswirkung von Lärm auf die Gesundheit lässt sich in drei Stufen unterteilen: 
 
+* Primäre Wirkung: z.B. Erwachen, EKG Erregung, akuter Blutdruckanstieg
+* Sekundäre Wirkung:  z.B. Müdigkeit, kognitive Fähigkeiten am nächsten Tag
+* Tertiäre Wirkung: Langzeitwirkung auf chronische Erkrankungen
 
-Die Forschungsfrage lautet:
+Gemäss @heritier_transportation_2017 ist der Effekt aufgrund von Eisenbahnlärm bei 
+Herzinfarkten bei den untersuchten kardiovaskulären Krankheiten am höchsten. 
+Aus diesem Grund sollen hier die Anzahl Spitaltage und die Mortalität aufgrund von 
+Herzinfarkten abgeschätzt werden.  
+Ein Zusammenhang zwischen Lärm und Herzinfarkten ist aufgrund aller der oben 
+aufgeführten Wirkungen (primär bis tertiär) denkbar. Somit wird kein time lag 
+zwischen Intervention und möglicher Auswirkung berücksichtigt.  
+
+## Indikatoren
+
+### Exposition
+
+Als Indikator für die Lärmbelastung wird der Schalldruck in Dezibel (dB) gemessen, wobei 
+die unterschiedliche Empfindlichkeit je nach Frequenzbereich des menschlichen Gehörs 
+mitberücksichtigt wird (dB(A)).  
+Da der Schalldruck nur Auskunft über eine Messung zu einem 
+bestimmten Zeitpunkt gibt, die tatsächliche Belastung aber von der Zeitdauer abhängt, 
+wird der sogenannte Mittelungspegel L~eq~ in dB(A) berechnet, welcher eine über die Zeit 
+gemittelte Belastung ausdrückt. Da sich die Lärmbelastung zu verschiedenen Tagesszeiten 
+unterschiedlich stark auswirkt (nächtlicher Lärm ist problematischer als 
+solcher am Tag), wird L~eq~ üblicherweise in L~den~ umgerechnet. In L~den~ werden 
+die abendlichen und nächtlichen Lärmpegel stärker gewichtet als die restlichen.  
+
+L~den~, resp. die Veränderung des L~den~ durch die Intervention, wird in diesem HIA 
+als Indikator für die Exposition verwendet.  
+
+### Outcome
+
+Als Indikator für das Outcome Gesundheit wird sowohl die Morbidität, als auch die 
+Mortalität angeschaut. Gemssen werden diese mit Hilfe der Anzahl Spitaltage (Morbidität), 
+und der Anzahl Todesfälle (Mortalität).
+
+## Forschungsfrage
+
+Intervention, Indikatoren für Exposure und Outcome, sowie die erwarteten 
+Gesundheitseffekte führen zu folgender Forschungsfrage:
 
 > Wieviele Spitaltage und Todesfälle aufgrund von Herzinfarkten werden durch das 
 Verbot von lärmigen Güterwagen eingespart?
-
-Als Bezugspopulation wird die gesamte Schweizer Bevölkerung verwendet.
-
-## Beschreibung Szenario
-
-* @bundesamt_fur_umwelt_umweltbelastungen_2011
-
-* Untersuchte Intervention: Verbot von lärmigen Güterwagen
-* Bezugszeit: 
-
-* Gesundheitseffekte und externen Kosten des Lärms sind für die Schweiz für das 
-Jahr 2010 quantifiziert worden
-* Im Sommer 2013 hat das Parlament beschlossen lärmige Güterwagen in der Schweiz zu verbieten
-    * @bbi_botschaft_2012
-* Zurzeit gibt es keine verfügbare Datengrundlage um abzuschätzen wie sich das 
-auf die Lärmexposition der Bevölkerung auswirkt
-
-Berechnen Sie auf der Basis dieser Annahmen wie viele Todesfälle und Spitaltage 
-wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können. 
-
-**nur ein Szenario berechnen**
-
-* Bestimmung der Schwelle ab der Effekte quantifiziert werden sollen
-    * 0 (jede Exposition soll berücksichtigt werden)
-* Bezugszeit
-    * 2006
-* Bezugspopulation
-    * Schweizer Bevölkerung ab 14 Jahren (für Jüngere Exposition in öffentlichen 
-    Räumen minim)
-
-* Definition/Eingrenzen des Szenarios
-* Bestimmung der massgeblichen Exposition(en) (Indikator/en)
-* Bestimmung der Schwelle ab der Effekte quantifiziert werden sollen
-* Bezugszeitpunkt
-* Bezugspopulation
 
 ## Expositionsabschätzung
 
 In der Schweiz misst das nationale Lärmmonitoring SonBase die Exposition gegenüber 
 Lärm [@ingold_larmbelastung_2009]. Dieser Bericht beinhaltet die Anzahl Personen, 
-welche am Tag resp. in der Nacht wie stark von Lärm belastet sind.
+welche am Tag resp. in der Nacht wie stark von Lärm belastet sind. In Tabelle 
+\ref{tbl:tbl.exp} sind die Anzahl Personen aufgeführt, welche am Tag resp. in der 
+Nacht einem bestimmten Schalldruck (dB(A)) aufgrund von Eisenbahnlärm ausgesetzt sind.  
 
 
 ```{r tbl.espo, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
 panderOptions('table.split.table', Inf)
-set.caption("Referenz-Szenario: Exposition gegenüber Lärm, Anzahl Personen")
+set.caption("\\label{tbl:tbl.exp}Referenz-Szenario: Exposition gegenüber Lärm, Anzahl Personen")
 tbl.expo <- "
   Belastung  | Tag	     | Nacht
   40-45 dB   | 310'000   | 200'000
@@ -144,137 +135,249 @@ row.names(df.expo)<-NULL
 pander(df.expo, style = 'rmarkdown', justify = c("left","right","right"))
 ```
 
+## Auswirkung der Intervention auf die Exposition
 
-weitere Quelle: @karipidis_reconstruction_2014
+Wie sich die Intervention auf die Lärmbelastung konkret auswirken wird, ist nicht bekannt.
+In Tabelle \ref{tbl:tbl.ann} sind deshalb Annahmen darüber aufgeführt, wie sich die neuen 
+Grenzwerte auf die Lärmbelastung der Schweizer Bevölkerung auswirken könnten.  
+Es wird dabei davon ausgegangen, dass sich die Intervention ausschliesslich in der Nacht auswirkt, 
+erst ab einer Belastung über 50 dB(A) (siehe hierzu auch @vienneau_years_2015), und auf 
+Personen mit höherer Belastung stärker als auf solche mit einer mittleren Belastung.
 
-Fehler in der Expositionsabschätzung besprechen (siehe Handout Expositionsabhschätzung, S. 10).
+```{r tbl.annahmen, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.ann}Veränderung der Exposition durch die Intervention")
+tbl.ann <- "
+  Referenz-Exposition  | Veränderung durch Intervention
+  tagsüber             | 0 dB
+  nachts, < 50 dB      | 0 dB
+  nachts, 50 bis 60 dB | -1 dB
+  nachts, > 60 dB      | -2 dB"
+df.ann <- read.delim(textConnection(tbl.ann),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.ann) <- unname(as.list(df.ann[1,])) # put headers on
+df.ann <- df.ann[-1,] # remove first row
+row.names(df.ann)<-NULL
+pander(df.ann, style = 'rmarkdown', justify = c("left","right"))
+```
 
-### Annahmen
+## Population
 
-Daher nehmen wir vereinfacht an, dass bei Personen, die nachts Bahnlärm über 60 dB 
-exponiert sind, die Lärmbelastung in der Nacht um 2 dB abnimmt. Für Personen die 
-nachts zwischen 50 und 60 dB exponiert sind, nehmen wir eine Abnahme von 1 dB an. 
-Keine Veränderung trete am Tag oder bei Personen, die <50 dB exponiert sind, auf.
+Die Annahmen über die Auswirkungen der Intervention legen die diesem HIA zugrunde 
+liegende Population fest. Da sich gemäss diesen die Intervention ausschliesslich auf 
+Personen beschränkt, welche in der Nacht zwischen 50 und 60 dB(A) resp. über 60 dB(A) 
+von Eisenbahnlärm belastet sind, bilden diese beiden Bevölkerungsgruppen die untersuchte 
+Population.
 
-Kein Effekt auf Gesundheit bei L~den~ < 48 dB [@vienneau_years_2015].
+## Expositions-Wirkungsbeziehung
 
+@heritier_transportation_2017 haben die Expositions-Wirkungsbeziehung zwischen Lärm 
+und Herzinfarkt untersucht. Dabei haben sie einen signifikanten linearen Zusammenhang 
+zwischen Eisenbahnlärm und Todesfällen aufgrund von Herzinfarkten (primäre Todesursache) 
+festgestellt. Pro 10 dB Anstieg des Eisenbahnlärms (L~den~(Rail)) wurde ein 
+adjustiertes Hazard Ratio von 1.020 (1.007–1.033) geschätzt. Die Annahme, dass der 
+Zusammenhang zwischen Eisenbahnlärm und Herzinfarkten linear ist, wurde mit 
+Hilfe von kategorialen Expositionsvariablen evaluiert und bestätigt.
 
-## Expositions-Wirkungsbeziegung
+Die Expositionsabschätzung, die Annahmen zur Auswirkung der Intervention auf 
+die Exposition, und die Expositions-Wirkungsbeziehung beziehen sich alle auf das Mass 
+L~den~, und können deshalb ohne weitere Annahmen oder Umformngen miteinander in Beziehung 
+gesetzt werden.  
+Allerdings wurde die Expositions-Wirkungsbeziehung nur für das Outcome Todesursache 
+geschätzt, nicht aber für die Anzahl Spitaltage. Es wird in diesem HIA davon ausgegangen, 
+dass das Hazard Ratio bei 10 dB Anstieg für die Morbidität gleich aussieht wie für die Mortalität.  
 
-* @vienneau_years_2015
-    * 
+## Bezugszeitpunkt
 
-* @heritier_transportation_2017
-    * Exposure-Modell für das Jahr 2001
-    * Assoziation zwischen Lärmexposition $Lden$ und kardiovaskuäre Todesursache
-    * Population:
-        * CH-Bevölkerung, Jahr 2000 Zensus, Todesfälle und Emigration 2000-2008, >= 30 Jahre, 
-        div. weitere Ausschlüsse, 4.41 Mio. Personen  
-    * Outcome: primäre Todesursache gemäss ICD-10
-    * HR pro 10 dB Steigerung, Todesursache, Herzinfarkt:
-        * I21–I22 19,313 (13.5%) 1.023 (1.011–1.036) 1.020 (1.007–1.033)
+Die in diesem HIA verwendeten Daten für die Exposition und die Expositions-Wirkungsbeziehung 
+stammen von unterschiedlichen Bezugszeitpunkten, allerdings alle auf solche vor der Implementierung 
+der Intervention (Zeitraum zwischen 2000 und 2015).
 
-* Form der Expositions-Wirkungsbeziehung bestimmen
-    * linear
-* Definieren, ob ‚time lag‘ berücksichtigt werden soll
-    * Kein Time-lag
-* Konsistenz der Expositionsmasse
-    * Für Smoking Ban Studien: direkt übertragbar (keine Expositionsabschätzung)
-    * Prospektive Studien: mit einem Raucher wohnen
-    * mit einem Raucher wohnen =Tabakrauchexposition von >7 h pro Woche in 
-    öffentlichen Räumen (mittels Literaturreview hergeleitet)
+## Anzahl Spitaltage/Todesfälle
 
-### Gesundheitseffekte
+Die Referenzwerte für die Anzahl Spitaltage resp. Todesfälle aufgrund von Herzifarkten stammen aus 
+der Todesfallstatistik (@bundesamt_fur_statistik_sterbeziffern_2017), resp. der medizinischen 
+Statistik der Krankenhäuser (@bundesamt_fur_statistik_medizinische_2017). 
+In beiden Quellen sind nicht Angaben zu Herzinfarkten direkt, sondern zu Kreislaufkrankheiten 
+(Spitaltage), resp. ischämischen Herzkrankheiten (Todesfälle) zu finden. Bei den Todesfällen wird hier 
+angenommen, dass Herzinfarkte den grössten Teil dieser rapporitierten Fälle ausmachen, 
+und deshalb diese Angaben so verwendet werden können. Bei den Spitaltagen wird davon ausgegangen, dass 
+Herzinfarkte für die Hälfte dieser Spitaltage verantwortlich sind. Zudem wird angenommen, dass sich 
+die Spitaltage auf eine Schweizer Bevölkerung von 8.3 Mio. Personen beziehen.  
+In Tabelle \ref{tbl:tbl.dis} sind die Angaben zu der Anzahl Spitaltage/Todesfällen, bezogen auf 
+jeweils 100'000 Personen, aufgeführt.  
 
-* Bestimmen der Effekte, die berücksichtigt werden sollen.
-* Mögliche Kriterien:
-    * Evidenz, epidemiologische Datenlage (z.B. keine belastbaren Studien zu 
-    Medikamentengebrauch)
-    * Keine Doppelzählungen (z.B. Hausarztkonsultationen)
-    * Ökonomische Quantifizierbarkeit (z.B. Lungenfunktionsreduktion, 
-    Vermeidungsverhalten)
-* Akute vs. chronische Effekte differenzieren (->Studiendesign)
-
-Alle Gesundheitseffekte, für die eine hinreichende oder suggestive mit
-Passivrauchen besteht gemäss Report of the General Surgeon, 2006:
-Lungenkrebs, ischämische Herzkrankheiten, Brustkrebs bei Frauen,
-Nasenhöhlenkrebs, Schlaganfall, chronische Bronchitis, Asthma,
-Frühgeburten, plötzlicher Kindstod
-
-* Datenbasis für Herleitung der Expositions-Wirkungsbeziehungen, z.B. eigene Meta-Analyse, 
-publizierte Meta-Analysen/Reviews, Reports von anerkannten Organisationen, etc.
-    * Einschlusskriterien: 1. Priorität: Smoking Ban Studien, 2. Prioriät: 
-    prospektive Studien 3. (falls keineprospektive Studien) Fall-Kontrollstudien 
-    ->plötzlicher Kindstod
-    * eigene systematische Literatursuche und Meta-Analyse durchgeführt für 
-    Lungenkrebs, ischämische Herzerkrankungen, Kindstod
-    * Eigene Meta-Analyse der prospektiven Studien aus dem Report of the General 
-    Surgeon, 2006
-
-### Effects of a ban
-
-Introduction of a smoking ban in public places including workplaces: what effects can be expected
-    * reduction passive smoke exposure of nonsmokers
-    * reduction cigarette consumption of smokers
-    * increase of the rate of non-smokers
-
-### Krankheitshäufigkeit
-
-* Daten zur beobachteten Krankheitshäufigkeit
-    * Todesursachenstatistik, Krankenhausstatistik, bevölkerungsbasierte Studien 
-    (z.B. SCARPOL, SAPALDIA)
-* Art der Daten (Inzidenz, Prävalenz)
-    * korrespondierend zu den epidemiologischen Studien
-* Darunterliegendes Kollektiv
-    * Gesamtbevölkerung
-
-
+```{r tbl.dis, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.dis}Anzahl Spitaltage resp. Anzahl Todesfälle aufgrund ischämischer Herzkrankheit, 
+            pro 100'000 Personen, Jahr 2015")
+tbl.dis <- "
+                         | Anzahl
+  Spitaltage (in Tagen)  | 8000
+  Todesfälle (in Fällen) | 93.8"
+df.dis <- read.delim(textConnection(tbl.dis),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.dis) <- unname(as.list(df.dis[1,])) # put headers on
+df.dis <- df.dis[-1,] # remove first row
+row.names(df.dis)<-NULL
+pander(df.dis, style = 'rmarkdown', justify = c("left","right"))
+```
 
 # Methode
 
-* Berechnungsmethode bestimmen:
-    * Morbidität: attributable Fälle
-    * Mortalität: Verlorene Lebensjahre (YLL)
+Als Mass für den health impact wird die Anzahl attributablen Fälle berechnet. 
+Es sollen also sowohl für die Anzahl Spitaltage, als auch für die Anzahl Todesfälle 
+in der betrachteten Population der Anzeil berechnet werden, welche aufgrund der 
+untersuchten Intervention (Verbot lärmiger Güterwagen) eingespart werden können.  
 
-## Annahmen
+## Anzahl attributable Fälle
+
+Im folgenden Abschnitt werden die in Tabelle \ref{tbl:tbl.glossar} aufgeführten Abkürzungen verwendet.
+
+```{r tbl.glossar, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.glossar}Beschreibung der verwendeten Abkürzungen")
+tbl.glossar <- "
+  Bezeichnung | Beschreibung
+  N           | Populationsgrösse
+  d           | Anzahl Fälle pro 100'000 Personen
+  HR          | Hazard Ratio
+  Delta~ref~  | Reduktion Exposition in der Literatur (dB)
+  Delta~int~  | Reduktion Exposition aufgrund der Intervention (dB)
+  RR          | Relatives Risiko
+  p~ex~       | Anteil Exponierte
+  AF          | Attributable Fraktion
+  D           | Anzahl Fälle
+  n           | Attributable Fälle"
+df.glossar <- read.delim(textConnection(tbl.glossar),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.glossar) <- unname(as.list(df.glossar[1,])) # put headers on
+df.glossar <- df.glossar[-1,] # remove first row
+row.names(df.glossar)<-NULL
+pander(df.glossar, style = 'rmarkdown', justify = c("right","left"))
+```
+
+
+Für die Berechnung der attributablen Fälle müssen in Zwischenschritten verschiedene 
+Kennzahlen berechnet werden.
+
+Das relative Risiko (RR) gibt an, um welchen Anteil sich das Risiko mit der Intervention 
+in der entsprechenden Population verändert, und wird aus der aus der Literatur und 
+den Annahmen bezüglich der Wirkung der Intervention berechnet:
+
+$RR = 1-(HR-1)*\frac{Delta_{int}}{Delta_{ref}}$
+
+Weiterhin wird der Anteil der Population benötigt, welcher von der Intervention 
+betroffen ist. In diesem Fall sind die beiden Populationen jeweils zu 100% betroffen, 
+weshalb gilt:
+
+$p_{ex} = 1$
+
+Die attributable Fraktion (AF) bezeichnet die Anzahl zusätzlicher Fälle, dividiert durch 
+alle aufgetretenen Fäle:
+
+$AF=\frac{p_{ex}*(RR-1)}{p_{ex}*(RR-1)+1}$
+
+Die Anzahl Fälle in der Population (D) wird aus Literaturangaben und der Grösse der 
+Population berechnet:
+
+$D = N*\frac{d}{100000}$
+
+Die attributablen Fälle, die Fälle also, welche sich aufgrund der Intervention ergeben, 
+können dann aufgrund der attributablen Fraktion und der Anzahl Fälle berechnet werden:
+
+$n = AF*D$
 
 # Resultate
 
-**Berechnen Sie auf der Basis dieser Annahmen wie viele Todesfälle und Spitaltage 
-wegen Herzinfarkt aufgrund dieser Massnahme jährlich eingespart werden können.** 
+Mit Hilfe der im Kapitel Methode aufgeführten Formeln und den im Kapitel Szenario 
+enthaltenen Angaben aus der Literatur und eigenen Annahmen (resp. die der Aufgabenstellung) 
+lassen sich die attributablen Fälle berechnen.
 
-Berechnung der Krankheits-/Todesfälle **(keine YLL oder Kostenschätzungen)**
+## Anzahl Spitaltage
 
-**attributtable Fälle berechnen**
+```{r tbl.hosp, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.hosp}Attributable Spitaltage")
+tbl.hosp <- "
+  Kennzahl   | Population 50-60 dB | Population >60 dB | Bemerkung
+  N          | 165'000             | 35'000            | aus Ingold und Köpfli 2009
+  d          | 8000                | 8000              | pro 100'000 Personen, aus Krankenhausstatistik
+  HR         | 1.020               | 1.020             | pro 10 dB Anstieg, aus Héritier et al. (2017)
+  Delta~int~ | -1                  | -2                | Annahme Auswirkung der Intervention
+  RR         | 0.998               | 0.996             | 
+  p~ex~      | 1                   | 1                 | ganze Population
+  AF         | -0.002              | -0.004            | 
+  D          | 13200               | 2800              | 
+  **n**      | **-26.45**          | **-11.24**        | "
+df.hosp <- read.delim(textConnection(tbl.hosp),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.hosp) <- unname(as.list(df.hosp[1,])) # put headers on
+df.hosp <- df.hosp[-1,] # remove first row
+row.names(df.hosp)<-NULL
+pander(df.hosp, style = 'rmarkdown', justify = c("left","right","right","left"))
+```
 
-## Anzahl Fälle
+Durch die Intervention können somit in der Population welche vor der Intervention 
+mit einem L~den~ von 50-60 dB(A) belastet sind 26 Spitaltage pro Jahr eingespart werden. 
+In der Population mit L~den~ > 60 dB(A) können 11 Spitaltage pro Jahr eingespart werden. 
+Insgesamt spart die Intervention (pro Jahr) somit 37 Spitaltage aufgrund von Herzinfarkten 
+ein.
 
-$Anzahl Fälle = Exposition * BeziehungExpositionsWirkung * Krankheitshäufigkeit$
+## Anzahl Todesfälle
+
+```{r tbl.death, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
+panderOptions('table.split.table', Inf)
+set.caption("\\label{tbl:tbl.death}Attributable Todesfälle")
+tbl.death <- "
+  Kennzahl   | Population 50-60 dB | Population >60 dB | Bemerkung
+  N          | 165'000             | 35'000            | aus Ingold und Köpfli 2009
+  d          | 93.8                | 93.8              | pro 100'000 Personen, aus Todesfallstatistik
+  HR         | 1.020               | 1.020             | pro 10 dB Anstieg, aus Héritier et al. (2017)
+  Delta~int~ | -1                  | -2                | Annahme Auswirkung der Intervention
+  RR         | 0.998               | 0.996             | 
+  p~ex~      | 1                   | 1                 | ganze Population
+  AF         | -0.002              | -0.004            | 
+  D          | 154.77              | 32.83             | 
+  **n**      | **-0.31**           | **-0.13**         | "
+df.death <- read.delim(textConnection(tbl.death),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df.death) <- unname(as.list(df.death[1,])) # put headers on
+df.death <- df.death[-1,] # remove first row
+row.names(df.death)<-NULL
+pander(df.death, style = 'rmarkdown', justify = c("left","right","right","left"))
+```
+
+Durch die Intervention können somit in der Population welche vor der Intervention 
+mit einem L~den~ von 50-60 dB(A) belastet sind 0.31 Todesfälle eingespart werden. 
+In der Population mit L~den~ > 60 dB(A) können 0.13 Todesfälle eingespart werden. 
+Insgesamt spart die Intervention (pro Jahr) somit 0.44 Todesfälle aufgrund von Herzinfarkten 
+ein.
+
 
 ## Sensitivitätsanalyse
 
-* Entscheiden, wie mit Unsicherheiten/Annahmen umgegangen werden soll.
-(Im Rahmen dieser Hausarbeit Konfidenzintervalle beachten und andere Unsicherheiten 
-diskutieren, allenfalls grob quantifizieren)
+Sämtliche in dieser HIA verwendeten Parameter unterliegen einer Unsicherheit. Um 
+den Einfluss dieser Unsicherheit auf die Resultate zu untersuchen ist es sinnvoll, 
+eine Sensitivitätsanalyse durchzuführen. Dabei wird üblicherweise für jeweils einen 
+der Parameter andere Werte verwendet, und die so entstanden Resultate miteinander 
+verglichen:
 
-* Entscheiden, wie mit Unsicherheiten/Annahmen umgegangen werden soll, z.B.:
-    * Sensitivitätsanalysen
-    * Konfidenzintervalle (für Expositions-
-    Wirkungsbeziehung)
-    * Monte-Carlo Simulationen
+* In diesem HIA sollten insbesondere die Werte für die Expositions-Wirkungsbeziehung 
+in eine Sensitivitätsanalyse miteinbezogen werden, da diese eine grosse 
+Streuung aufweisen, und das untere Ende des entsprechenden Konfidenzinervalls 
+sehr nahe bei 1, also keiner Wirkung, ist (HR = 1.020 (1.007–1.033)).
+* Ausserdem sollte die erwartete Wirkung der Intervention auf die Exposition (Reduktion 
+um 1 resp. 2 dB) variiert werden, um einen besseren Eindruck zu erhalten, in welchem Bereich die Resultate 
+variieren könnten.
+* Auch die Schätzung der Referenz-Exposition ist einer starken Unsicherheit unterworfen, welche 
+sich auf die Grösse der betroffenen Population auswirkt. Es wird davon ausgegangen, dass 
+sicht dieser Einfluss nicht entscheidend auf das Resultat auswirkt.
+* Die Messung der Anzahl Spitaltage und Todesfälle dürfte von den verwendeten Parametern 
+am genauesten sein. Allerdings beziehen sich diese nicht direkt auf das gewünschte 
+Outcome Herzinfarkt, sondern allgemeiner auf ischämische Herzkrankheiten. Somit könnte 
+bei diesen beiden Parametern auch mit leicht tieferen Werten gerechnet werden.
 
 # Diskussion
 
-## Possible explanation
-
-* Not a true difference?
-    1. chance
-    2. publication bias for smoking ban studies (->overestimation)
-    3. our conversion function for exposure proxy „living with a smoker“ is wrong.
-* True difference?
-    1. smoking ban studies capture all effects (including change of active smoking 
-    and other health relevant behaviour)
-    2. cohort study underestimate true effect of passive smoking (very crude exposure measure)
-
+Die Hazard Ratio der Expositions-Wirkungsbeziehung ist mit 1.02 sehr tief, ebenso 
+die Annahme über den erwarten Einfluss der Intervention auf die Exposition (Senkung 
+um 1 resp. 2 dB). Somit ist es plausibel, dass die geschätzte Wirkung der Intervention 
+auf die Anzahl Spitaltage ebenso wie auf die Anzahl Todesfälle (0.44 pro Jahr) sehr tief ist.
 
 # Bibliographie
