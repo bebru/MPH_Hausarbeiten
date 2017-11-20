@@ -1,8 +1,7 @@
 ---
 title: "Health Impact Assessment \"Lärm\""
-classoption: a4paper
-date: "21 Nov. 2017"
 author: "Beat Brüngger"
+date: "20 Nov. 2017"
 output:
   pdf_document:
     keep_tex: yes
@@ -10,6 +9,7 @@ output:
     toc: yes
   word_document:
     toc: yes
+classoption: a4paper
 documentclass: article
 header-includes:
 - \usepackage{fancyhdr}
@@ -56,7 +56,7 @@ Schweizer Bevölkerung haben wird.
 ## Intervention
 
 Ab dem Jahr 2020 werden durch die Einführung neuer Emissionsgrenzwerte für Güterwagen 
-die Lärmemissionen durch den Eisenbahnverkehr reduziert. Dies ist die Intevention, 
+die Lärmemissionen durch den Eisenbahnverkehr reduziert. Dies ist die Intervention, 
 welche in diesem HIA untersucht werden soll.
 
 ## Gesundheitseffekte der Intervention
@@ -96,7 +96,7 @@ als Indikator für die Exposition verwendet.
 ### Outcome
 
 Als Indikator für das Outcome Gesundheit wird sowohl die Morbidität, als auch die 
-Mortalität angeschaut. Gemssen werden diese mit Hilfe der Anzahl Spitaltage (Morbidität), 
+Mortalität angeschaut. Gemessen werden diese mit Hilfe der Anzahl Spitaltage (Morbidität), 
 und der Anzahl Todesfälle (Mortalität).
 
 ## Forschungsfrage
@@ -104,7 +104,7 @@ und der Anzahl Todesfälle (Mortalität).
 Intervention, Indikatoren für Exposure und Outcome, sowie die erwarteten 
 Gesundheitseffekte führen zu folgender Forschungsfrage:
 
-> Wieviele Spitaltage und Todesfälle aufgrund von Herzinfarkten werden durch das 
+> Wie viele Spitaltage und Todesfälle aufgrund von Herzinfarkten werden durch das 
 Verbot von lärmigen Güterwagen eingespart?
 
 ## Expositionsabschätzung
@@ -195,13 +195,13 @@ der Intervention (Zeitraum zwischen 2000 und 2015).
 
 ## Anzahl Spitaltage/Todesfälle
 
-Die Referenzwerte für die Anzahl Spitaltage resp. Todesfälle aufgrund von Herzifarkten stammen aus 
+Die Referenzwerte für die Anzahl Spitaltage resp. Todesfälle aufgrund von Herzinfarkten stammen aus 
 der Todesfallstatistik (@bundesamt_fur_statistik_sterbeziffern_2017), resp. der medizinischen 
 Statistik der Krankenhäuser (@bundesamt_fur_statistik_medizinische_2017). 
 In beiden Quellen sind nicht Angaben zu Herzinfarkten direkt, sondern zu Kreislaufkrankheiten 
 (Spitaltage), resp. ischämischen Herzkrankheiten (Todesfälle) zu finden.  
 Bei den Todesfällen wird hier angenommen, dass Herzinfarkte den grössten Teil dieser 
-rapporitierten Fälle ausmachen. Vom ursprünglichen Wert werden zur Korrektur 10% abgezogen.
+rapportierten Fälle ausmachen. Vom ursprünglichen Wert werden zur Korrektur 10% abgezogen.
 Bei den Spitaltagen wird davon ausgegangen, dass Herzinfarkte für die Hälfte dieser Spitaltage 
 verantwortlich sind. Zudem wird angenommen, dass sich die Spitaltage auf eine 
 Schweizer Bevölkerung von 8.3 Mio. Personen beziehen.  
@@ -228,7 +228,7 @@ pander(df.dis, style = 'rmarkdown', justify = c("left","right"))
 
 Als Mass für den health impact wird die Anzahl attributablen Fälle berechnet. 
 Es sollen also sowohl für die Anzahl Spitaltage, als auch für die Anzahl Todesfälle 
-in der betrachteten Population der Anzeil berechnet werden, welche aufgrund der 
+in der betrachteten Population der Anteil berechnet werden, welche aufgrund der 
 untersuchten Intervention (Verbot lärmiger Güterwagen) eingespart werden können.  
 
 ## Anzahl attributable Fälle
@@ -274,7 +274,7 @@ weshalb gilt:
 $p_{ex} = 1$
 
 Die attributable Fraktion (AF) bezeichnet die Anzahl zusätzlicher Fälle, dividiert durch 
-alle aufgetretenen Fäle:
+alle aufgetretenen Fälle:
 
 $AF=\frac{p_{ex}*(RR-1)}{p_{ex}*(RR-1)+1}$
 
@@ -363,7 +363,7 @@ entstanden Resultate zur Punktschätzung mit angegeben:
 
 * In diesem HIA sollten insbesondere die Werte für die Expositions-Wirkungsbeziehung 
 in eine Sensitivitätsanalyse miteinbezogen werden, da diese eine grosse 
-Streuung aufweisen, und das untere Ende des entsprechenden Konfidenzinervalls 
+Streuung aufweisen, und das untere Ende des entsprechenden Konfidenzintervalls 
 sehr nahe bei 1, also keiner Wirkung, liegt (HR = 1.020 (1.007–1.033)).  
 Werden die Grenzen des Konfidenzintervalls der Expositions-Wirkungsbeziehung für die 
 Schätzung verwendet, führt dies zu folgenden Resultaten (Ergebnisse der Sensitivitätsanalyse 
@@ -375,8 +375,8 @@ um 1 resp. 2 dB) variiert werden, um einen besseren Eindruck zu erhalten, in wel
 variieren könnten.
 * Auch die Schätzung der Referenz-Exposition ist einer starken Unsicherheit unterworfen, welche 
 sich auf die Grösse der betroffenen Population auswirkt. Es wird davon ausgegangen, dass 
-sicht dieser Einfluss nicht entscheidend auf das Resultat auswirkt.
-* Die Messung der Anzahl Spitaltage und Todesfälle dürfte von den verwendeten Parametern 
+sich dieser Einfluss nicht entscheidend auf das Resultat auswirkt.
+* Die Messungen der Anzahl Spitaltage und Todesfälle dürften von den verwendeten Parametern 
 am genauesten sein. Allerdings beziehen sich diese nicht direkt auf das gewünschte 
 Outcome Herzinfarkt, sondern allgemeiner auf ischämische Herzkrankheiten resp. 
 Kreislaufkrankheiten. Die Annahmen darüber, welcher Anteil der gemessenen Spitaltage 
@@ -389,7 +389,7 @@ Die Hazard Ratio der Expositions-Wirkungsbeziehung ist mit 1.02 sehr tief, ebens
 die Annahme über den erwarten Einfluss der Intervention auf die Exposition (Senkung 
 um 1 resp. 2 dB(A)). Somit ist es plausibel, dass die geschätzte Wirkung der Intervention 
 auf die Anzahl Spitaltage (38 pro Jahr) ebenso wie auf die Anzahl Todesfälle (0.4 pro Jahr) 
-sehr tief ist. Die Interventnion wirkt sich somit kaum auf die Morbidität oder 
+sehr tief ist. Die Intervention wirkt sich somit kaum auf die Morbidität oder 
 Mortalität der Bevölkerung aus.  
 Eine Sensitivitätsanalyse hat zudem gezeigt, dass auch wenn die Expositions-Wirkungsbeziehung 
 (@heritier_transportation_2017) variiert wird sich die Schätzungen für die Anzahl Spitaltage resp. Todesfälle nicht 
@@ -399,7 +399,7 @@ individuelle Verhalten (z.B. Schliessen der Fenster in der Nacht) der exponierte
 Personen in das Modell mit eingeflossen. Dies kann zu einer 
 Überschätzung der Exposition bei besonders betroffenen Personen führen. Da der 
 Effekt als nicht-differentiell angenommen werden kann, würde allerdings der 
-Effekt der Intervention tendentiell unterschätzt. Insgesamt kann davon ausgegangen 
+Effekt der Intervention tendenziell unterschätzt. Insgesamt kann davon ausgegangen 
 werden, dass sich der Bias in der Expositionsschätzung nicht stark auf die Resultate 
 auswirkt.
 
