@@ -16,6 +16,7 @@ header-includes:
 - \pagestyle{fancy}
 - \fancyhead{}
 - \renewcommand{\headrulewidth}{0pt}
+- \fancyfoot[C]{Health Impact Assessment "Lärm"}
 - \fancyfoot[LE,RO]{\thepage}
 lang: de-CH
 csl: international-journal-of-public-health.csl
@@ -180,7 +181,7 @@ Hilfe von kategorialen Expositionsvariablen evaluiert und bestätigt.
 
 Die Expositionsabschätzung, die Annahmen zur Auswirkung der Intervention auf 
 die Exposition, und die Expositions-Wirkungsbeziehung beziehen sich alle auf das Mass 
-L~den~, und können deshalb ohne weitere Annahmen oder Umformngen miteinander in Beziehung 
+L~den~, und können deshalb ohne weitere Annahmen oder Umformungen miteinander in Beziehung 
 gesetzt werden.  
 Allerdings wurde die Expositions-Wirkungsbeziehung nur für das Outcome Todesursache 
 geschätzt, nicht aber für die Anzahl Spitaltage. Es wird in diesem HIA davon ausgegangen, 
@@ -198,13 +199,15 @@ Die Referenzwerte für die Anzahl Spitaltage resp. Todesfälle aufgrund von Herz
 der Todesfallstatistik (@bundesamt_fur_statistik_sterbeziffern_2017), resp. der medizinischen 
 Statistik der Krankenhäuser (@bundesamt_fur_statistik_medizinische_2017). 
 In beiden Quellen sind nicht Angaben zu Herzinfarkten direkt, sondern zu Kreislaufkrankheiten 
-(Spitaltage), resp. ischämischen Herzkrankheiten (Todesfälle) zu finden. Bei den Todesfällen wird hier 
-angenommen, dass Herzinfarkte den grössten Teil dieser rapporitierten Fälle ausmachen, 
-und deshalb diese Angaben so verwendet werden können. Bei den Spitaltagen wird davon ausgegangen, dass 
-Herzinfarkte für die Hälfte dieser Spitaltage verantwortlich sind. Zudem wird angenommen, dass sich 
-die Spitaltage auf eine Schweizer Bevölkerung von 8.3 Mio. Personen beziehen.  
-In Tabelle \ref{tbl:tbl.dis} sind die Angaben zu der Anzahl Spitaltage/Todesfällen, bezogen auf 
-jeweils 100'000 Personen, aufgeführt.  
+(Spitaltage), resp. ischämischen Herzkrankheiten (Todesfälle) zu finden.  
+Bei den Todesfällen wird hier angenommen, dass Herzinfarkte den grössten Teil dieser 
+rapporitierten Fälle ausmachen. Vom ursprünglichen Wert werden zur Korrektur 10% abgezogen.
+Bei den Spitaltagen wird davon ausgegangen, dass Herzinfarkte für die Hälfte dieser Spitaltage 
+verantwortlich sind. Zudem wird angenommen, dass sich die Spitaltage auf eine 
+Schweizer Bevölkerung von 8.3 Mio. Personen beziehen.  
+
+In Tabelle \ref{tbl:tbl.dis} sind die Angaben zu der Anzahl Spitaltage/Todesfällen inkl. 
+der oben genannten Annahmen und bezogen auf jeweils 100'000 Personen, aufgeführt.  
 
 ```{r tbl.dis, echo=FALSE, message=FALSE, warnings=FALSE, message=FALSE, results='asis'}
 panderOptions('table.split.table', Inf)
@@ -213,7 +216,7 @@ set.caption("\\label{tbl:tbl.dis}Anzahl Spitaltage resp. Anzahl Todesfälle aufg
 tbl.dis <- "
                          | Anzahl
   Spitaltage (in Tagen)  | 8000
-  Todesfälle (in Fällen) | 93.8"
+  Todesfälle (in Fällen) | 85"
 df.dis <- read.delim(textConnection(tbl.dis),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
 names(df.dis) <- unname(as.list(df.dis[1,])) # put headers on
 df.dis <- df.dis[-1,] # remove first row
@@ -315,9 +318,9 @@ pander(df.hosp, style = 'rmarkdown', justify = c("left","right","right","left"))
 ```
 
 Durch die Intervention können somit in der Population welche vor der Intervention 
-mit einem L~den~ von 50-60 dB(A) belastet sind 26 Spitaltage pro Jahr eingespart werden. 
-In der Population mit L~den~ > 60 dB(A) können 11 Spitaltage pro Jahr eingespart werden. 
-Insgesamt spart die Intervention (pro Jahr) somit 37 Spitaltage aufgrund von Herzinfarkten 
+mit einem L~den~ von 50-60 dB(A) belastet sind 26.5 Spitaltage pro Jahr eingespart werden. 
+In der Population mit L~den~ > 60 dB(A) können 11.2 Spitaltage pro Jahr eingespart werden. 
+Insgesamt spart die Intervention (pro Jahr) somit 38 Spitaltage aufgrund von Herzinfarkten 
 ein.
 
 ## Anzahl Todesfälle
@@ -328,14 +331,14 @@ set.caption("\\label{tbl:tbl.death}Attributable Todesfälle")
 tbl.death <- "
   Kennzahl   | Population 50-60 dB | Population >60 dB | Bemerkung
   N          | 165'000             | 35'000            | aus Ingold und Köpfli 2009
-  d          | 93.8                | 93.8              | pro 100'000 Personen, aus Todesfallstatistik
+  d          | 85                  | 85                | pro 100'000 Personen, aus Todesfallstatistik
   HR         | 1.020               | 1.020             | pro 10 dB Anstieg, aus Héritier et al. (2017)
   Delta~int~ | -1                  | -2                | Annahme Auswirkung der Intervention
   RR         | 0.998               | 0.996             | 
   p~ex~      | 1                   | 1                 | ganze Population
   AF         | -0.002              | -0.004            | 
-  D          | 154.77              | 32.83             | 
-  **n**      | **-0.31**           | **-0.13**         | "
+  D          | 140.25              | 29.75             | 
+  **n**      | **-0.28**           | **-0.12**         | "
 df.death <- read.delim(textConnection(tbl.death),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
 names(df.death) <- unname(as.list(df.death[1,])) # put headers on
 df.death <- df.death[-1,] # remove first row
@@ -344,24 +347,29 @@ pander(df.death, style = 'rmarkdown', justify = c("left","right","right","left")
 ```
 
 Durch die Intervention können somit in der Population welche vor der Intervention 
-mit einem L~den~ von 50-60 dB(A) belastet sind 0.31 Todesfälle eingespart werden. 
-In der Population mit L~den~ > 60 dB(A) können 0.13 Todesfälle eingespart werden. 
-Insgesamt spart die Intervention (pro Jahr) somit 0.44 Todesfälle aufgrund von Herzinfarkten 
+mit einem L~den~ von 50-60 dB(A) belastet sind 0.28 Todesfälle eingespart werden. 
+In der Population mit L~den~ > 60 dB(A) können 0.12 Todesfälle eingespart werden. 
+Insgesamt spart die Intervention (pro Jahr) somit 0.4 Todesfälle aufgrund von Herzinfarkten 
 ein.
 
 
 ## Sensitivitätsanalyse
 
-Sämtliche in dieser HIA verwendeten Parameter unterliegen einer Unsicherheit. Um 
-den Einfluss dieser Unsicherheit auf die Resultate zu untersuchen ist es sinnvoll, 
-eine Sensitivitätsanalyse durchzuführen. Dabei wird üblicherweise für jeweils einen 
-der Parameter andere Werte verwendet, und die so entstanden Resultate miteinander 
-verglichen:
+Sämtliche in dieser HIA verwendeten Parameter sind geschätzt oder sind mit einem 
+Messfehler behaftet. Um den Einfluss dieser Unsicherheit auf die Resultate zu 
+untersuchen ist es sinnvoll, eine Sensitivitätsanalyse durchzuführen. Dabei werden 
+üblicherweise für jeweils einen der Parameter andere Werte verwendet, und die so 
+entstanden Resultate zur Punktschätzung mit angegeben:
 
 * In diesem HIA sollten insbesondere die Werte für die Expositions-Wirkungsbeziehung 
 in eine Sensitivitätsanalyse miteinbezogen werden, da diese eine grosse 
 Streuung aufweisen, und das untere Ende des entsprechenden Konfidenzinervalls 
-sehr nahe bei 1, also keiner Wirkung, ist (HR = 1.020 (1.007–1.033)).
+sehr nahe bei 1, also keiner Wirkung, liegt (HR = 1.020 (1.007–1.033)).  
+Werden die Grenzen des Konfidenzintervalls der Expositions-Wirkungsbeziehung für die 
+Schätzung verwendet, führt dies zu folgenden Resultaten (Ergebnisse der Sensitivitätsanalyse 
+in Klammern):
+    * Spitaltage: 38 (13-62)
+    * Todesfälle: 0.4 (0.14-0.66)
 * Ausserdem sollte die erwartete Wirkung der Intervention auf die Exposition (Reduktion 
 um 1 resp. 2 dB) variiert werden, um einen besseren Eindruck zu erhalten, in welchem Bereich die Resultate 
 variieren könnten.
@@ -370,14 +378,30 @@ sich auf die Grösse der betroffenen Population auswirkt. Es wird davon ausgegan
 sicht dieser Einfluss nicht entscheidend auf das Resultat auswirkt.
 * Die Messung der Anzahl Spitaltage und Todesfälle dürfte von den verwendeten Parametern 
 am genauesten sein. Allerdings beziehen sich diese nicht direkt auf das gewünschte 
-Outcome Herzinfarkt, sondern allgemeiner auf ischämische Herzkrankheiten. Somit könnte 
-bei diesen beiden Parametern auch mit leicht tieferen Werten gerechnet werden.
+Outcome Herzinfarkt, sondern allgemeiner auf ischämische Herzkrankheiten resp. 
+Kreislaufkrankheiten. Die Annahmen darüber, welcher Anteil der gemessenen Spitaltage 
+resp. Todesfälle auf Herzinfarkte zurückzuführen sind, sollten ebenfalls in eine 
+Sensitivitätsanalyse einfliessen.
 
 # Diskussion
 
 Die Hazard Ratio der Expositions-Wirkungsbeziehung ist mit 1.02 sehr tief, ebenso 
 die Annahme über den erwarten Einfluss der Intervention auf die Exposition (Senkung 
-um 1 resp. 2 dB). Somit ist es plausibel, dass die geschätzte Wirkung der Intervention 
-auf die Anzahl Spitaltage ebenso wie auf die Anzahl Todesfälle (0.44 pro Jahr) sehr tief ist.
+um 1 resp. 2 dB(A)). Somit ist es plausibel, dass die geschätzte Wirkung der Intervention 
+auf die Anzahl Spitaltage (38 pro Jahr) ebenso wie auf die Anzahl Todesfälle (0.4 pro Jahr) 
+sehr tief ist. Die Interventnion wirkt sich somit kaum auf die Morbidität oder 
+Mortalität der Bevölkerung aus.  
+Eine Sensitivitätsanalyse hat zudem gezeigt, dass auch wenn die Expositions-Wirkungsbeziehung 
+(@heritier_transportation_2017) variiert wird sich die Schätzungen für die Anzahl Spitaltage resp. Todesfälle nicht 
+stark verändern.  
+In der Schätzung der Expositions-Wirkungsbeziehung sind keine Daten über das 
+individuelle Verhalten (z.B. Schliessen der Fenster in der Nacht) der exponierten 
+Personen in das Modell mit eingeflossen. Dies kann zu einer 
+Überschätzung der Exposition bei besonders betroffenen Personen führen. Da der 
+Effekt als nicht-differentiell angenommen werden kann, würde allerdings der 
+Effekt der Intervention tendentiell unterschätzt. Insgesamt kann davon ausgegangen 
+werden, dass sich der Bias in der Expositionsschätzung nicht stark auf die Resultate 
+auswirkt.
+
 
 # Bibliographie
